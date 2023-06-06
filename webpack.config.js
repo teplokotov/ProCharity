@@ -110,6 +110,66 @@ module.exports = {
             template: './src/settings-profile.html',
             inject: 'body'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-contacts.html',
+            template: './src/registration-npo-contacts.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-confirmation-email.html',
+            template: './src/registration-npo-confirmation-email.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-legal.html',
+            template: './src/registration-npo-legal.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-documents.html',
+            template: './src/registration-npo-documents.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-decription.html',
+            template: './src/registration-npo-decription.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-links.html',
+            template: './src/registration-npo-links.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-final.html',
+            template: './src/registration-npo-final.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-contacts.html',
+            template: './src/lk-npo-contacts.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-legal.html',
+            template: './src/lk-npo-legal.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-documents.html',
+            template: './src/lk-npo-documents.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-description.html',
+            template: './src/lk-npo-description.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-links.html',
+            template: './src/lk-npo-links.html',
+            inject: 'body'
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin()
     ]
