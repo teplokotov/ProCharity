@@ -109,8 +109,22 @@
     <h1 class="heading heading_type_title">Описание</h1>
     <form name="competenciesForm" id="competenciesForm" action="registration-npo-links.html" method="get">
       <fieldset class="fieldset">
-        <select name="competencies" id="competencies" class="custom-select" multiple>
+        <select name="competencies" id="npo-activity" class="custom-select" multiple>
           <option hidden>Виды деятельности</option>
+          <optgroup label="Дизайн и верстка">
+            <option value="Тестовый вариант 1">Тестовый вариант 1</option>
+          </optgroup>
+          <optgroup label="Маркетинг и коммуникации">
+            <option value="Социальные сети">Социальные сети</option>
+            <option value="Работа с текстами">Работа с текстами</option>
+            <option value="Email-рассылки">Email-рассылки</option>
+            <option value="Организация мероприятий">Организация мероприятий</option>
+            <option value="Реклама">Реклама</option>
+            <option value="Стратегический маркетинг / Другое">Стратегический маркетинг / Другое</option>
+          </optgroup>
+          <optgroup label="IT">
+            <option value="Тестовый вариант 2">Тестовый вариант 2</option>
+          </optgroup>
         </select>
       </fieldset>
       <fieldset class="fieldset">
@@ -119,7 +133,11 @@
                     maxlength="2000"
                     required></textarea>
           <label class="textarea__label" for="nko-about">Расскажите, чем занимается НКО</label>
-          <button class="btn textarea__btn textarea__btn_type_clear-text"></button>
+          <button type="button" class="hint input__btn input__btn_type_hint">
+            <div class="hint__tooltip">
+              Например, &laquo;Предоставление бесплатных услуг для семей, воспитывающих детей с&nbsp;нарушениями развития&raquo;
+            </div>
+          </button>
           <div class="textarea__counter">
             <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">0</span>
           </div>
@@ -153,7 +171,6 @@
                     maxlength="2000"
                     required></textarea>
           <label class="textarea__label" for="nko-description">Подробнее об НКО</label>
-          <button class="btn textarea__btn textarea__btn_type_clear-text"></button>
           <div class="textarea__counter">
             <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">0</span>
           </div>
