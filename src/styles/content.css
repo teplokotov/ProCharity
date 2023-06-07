@@ -10,6 +10,7 @@
 @import url(../blocks/main/_template/main_template_registration-fullscreen.css);
 @import url(../blocks/main/_template/main_template_registration-form.css);
 @import url(../blocks/main/_template/main_template_first-step.css);
+@import url(../blocks/main/_template/main_template_registration-final.css);
 
 
 
@@ -87,6 +88,7 @@
 @import url(../blocks/content/content.css);
 
 @import url(../blocks/content/_template/content_template_grid-registration.css);
+@import url(../blocks/content/_template/content_template_registration-final.css);
 
 
 
@@ -120,6 +122,7 @@
 @import url(../blocks/heading/_type/heading_type_title.css);
 @import url(../blocks/heading/_type/heading_type_subtitle.css);
 @import url(../blocks/heading/_type/heading_type_registrtion.css);
+@import url(../blocks/heading/_type/heading_type_title_registration-final.css);
 @import url(../blocks/heading/_type/heading_type_title-desktop.css);
 @import url(../blocks/heading/_type/heading_type_title-mobile.css);
 
@@ -346,6 +349,7 @@
 
 @import url(./../blocks/paragraph/_style/paragraph_style_login.css);
 @import url(./../blocks/paragraph/_style/paragraph_style_first-step.css);
+@import url(./../blocks/paragraph/_style/paragraph_style_registration-final.css);
 @import url(./../blocks/paragraph/_style/paragraph_style_desktop.css);
 @import url(./../blocks/paragraph/_style/paragraph_style_mobile.css);
 
