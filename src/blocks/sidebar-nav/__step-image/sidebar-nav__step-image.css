@@ -1,0 +1,12 @@
+.sidebar-nav__step-image {
+    display: block;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+    .sidebar-nav__step-image {
+        display: none;
+    }
+}
