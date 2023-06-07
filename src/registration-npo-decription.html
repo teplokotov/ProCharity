@@ -49,36 +49,26 @@
   <nav class="breadcrumbs">
     <ul class="breadcrumbs__list">
       <li class="breadcrumbs__item">
-        <a href="#" class="breadcrumbs__link">Личный кабинет</a>
+        <a href="#" class="breadcrumbs__link">Регистрация</a>
       </li>
       <li class="breadcrumbs__item">
-        Профиль НКО
+        НКО
       </li>
     </ul>
   </nav>
   <section class="sidebar-nav">
     <ul class="sidebar-nav__list">
       <li class="sidebar-nav__item">
-        <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step sidebar-nav__step_style_lk">
-            <span class="sidebar-nav__step-text">1</span>
-          </div>
-          <span class="sidebar-nav__item-text">Контактное лицо</span>
-        </a>
+        <span class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_checked"></span>
+        <span class="sidebar-nav__item-text">Контактное лицо</span>
       </li>
       <li class="sidebar-nav__item">
-        <div class="sidebar-nav__step sidebar-nav__step_style_lk">
-          <span class="sidebar-nav__step-text">2</span>
-        </div>
+        <span class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_checked"></span>
         <span class="sidebar-nav__item-text">Реквизиты</span>
       </li>
       <li class="sidebar-nav__item">
-        <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step sidebar-nav__step_style_lk">
-            <span class="sidebar-nav__step-text">3</span>
-          </div>
-          <span class="sidebar-nav__item-text">Документы и файлы</span>
-        </a>
+        <span class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_checked"></span>
+        <span class="sidebar-nav__item-text">Документы и файлы</span>
       </li>
       <li class="sidebar-nav__item sidebar-nav__item_type_current">
         <a href="#" class="sidebar-nav__link">
@@ -90,7 +80,7 @@
       </li>
       <li class="sidebar-nav__item">
         <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step sidebar-nav__step_style_lk">
+          <div class="sidebar-nav__step">
             <span class="sidebar-nav__step-text">5</span>
           </div>
           <span class="sidebar-nav__item-text">Ссылки</span>
@@ -103,7 +93,7 @@
   </section>
   <section class="sidebar">
     <h2 class="sidebar__title">Статус профиля</h2>
-    <a href="#" class="sidebar__status sidebar__status_state_process">На модерации</a>
+    <a href="#" class="sidebar__status">Cкрыт</a>
   </section>
   <section class="content">
     <h1 class="heading heading_type_title">Описание</h1>
@@ -129,17 +119,23 @@
       </fieldset>
       <fieldset class="fieldset">
         <div class="textarea">
-          <textarea class="textarea__field textarea__field_autosize" name="textarea" id="nko-about"
+          <textarea class="textarea__field textarea__field_autosize"
+                    placeholder="Расскажите, чем занимается НКО"
+                    name="textarea"
+                    id="nko-about"
                     maxlength="2000"
+                    rows="3"
                     required></textarea>
           <label class="textarea__label" for="nko-about">Расскажите, чем занимается НКО</label>
-          <button type="button" class="hint input__btn input__btn_type_hint">
+          <button class="btn textarea__btn textarea__btn_type_clear-text input__btn_position_first"></button>
+          <button class="hint input__btn input__btn_type_hint">
             <div class="hint__tooltip">
-              Например, &laquo;Предоставление бесплатных услуг для семей, воспитывающих детей с&nbsp;нарушениями развития&raquo;
+              Например, &laquo;Предоставление бесплатных услуг для семей, воспитывающих детей с&nbsp;нарушениями
+              развития&raquo;
             </div>
           </button>
           <div class="textarea__counter">
-            <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">0</span>
+            <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">2000</span>
           </div>
         </div>
       </fieldset>
@@ -167,10 +163,15 @@
       </fieldset>
       <fieldset class="fieldset">
         <div class="textarea">
-          <textarea class="textarea__field textarea__field_autosize" name="textarea" id="nko-description"
+          <textarea class="textarea__field textarea__field_autosize"
+                    placeholder="Подробнее об НКО"
+                    name="textarea"
+                    id="nko-description"
                     maxlength="2000"
+                    rows="3"
                     required></textarea>
           <label class="textarea__label" for="nko-description">Подробнее об НКО</label>
+          <button class="btn textarea__btn textarea__btn_type_clear-text"></button>
           <div class="textarea__counter">
             <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">0</span>
           </div>
