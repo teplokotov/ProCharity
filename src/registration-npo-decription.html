@@ -52,7 +52,7 @@
         <a href="#" class="breadcrumbs__link">Личный кабинет</a>
       </li>
       <li class="breadcrumbs__item">
-        Мои данные
+        Профиль НКО
       </li>
     </ul>
   </nav>
@@ -63,29 +63,29 @@
           <div class="sidebar-nav__step sidebar-nav__step_style_lk">
             <span class="sidebar-nav__step-text">1</span>
           </div>
-          <span class="sidebar-nav__item-text">Личные данные</span>
+          <span class="sidebar-nav__item-text">Контактное лицо</span>
         </a>
       </li>
-      <li class="sidebar-nav__item sidebar-nav__item_type_current">
-        <div class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_current">
+      <li class="sidebar-nav__item">
+        <div class="sidebar-nav__step sidebar-nav__step_style_lk">
           <span class="sidebar-nav__step-text">2</span>
         </div>
-        <span class="sidebar-nav__item-text">Компетенции</span>
+        <span class="sidebar-nav__item-text">Реквизиты</span>
       </li>
       <li class="sidebar-nav__item">
         <a href="#" class="sidebar-nav__link">
           <div class="sidebar-nav__step sidebar-nav__step_style_lk">
             <span class="sidebar-nav__step-text">3</span>
           </div>
-          <span class="sidebar-nav__item-text">Мотивация</span>
+          <span class="sidebar-nav__item-text">Документы и файлы</span>
         </a>
       </li>
-      <li class="sidebar-nav__item">
+      <li class="sidebar-nav__item sidebar-nav__item_type_current">
         <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step sidebar-nav__step_style_lk">
+          <div class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_current">
             <span class="sidebar-nav__step-text">4</span>
           </div>
-          <span class="sidebar-nav__item-text">Портфолио</span>
+          <span class="sidebar-nav__item-text">Описание</span>
         </a>
       </li>
       <li class="sidebar-nav__item">
@@ -93,7 +93,7 @@
           <div class="sidebar-nav__step sidebar-nav__step_style_lk">
             <span class="sidebar-nav__step-text">5</span>
           </div>
-          <span class="sidebar-nav__item-text">Социальные сети</span>
+          <span class="sidebar-nav__item-text">Ссылки</span>
         </a>
       </li>
     </ul>
@@ -103,38 +103,61 @@
   </section>
   <section class="sidebar">
     <h2 class="sidebar__title">Статус профиля</h2>
-    <a href="#" class="sidebar__status">Cкрыт</a>
-  </section>
-  <section class="sidebar sidebar_type_profile-progress">
-    <h2 class="sidebar__title">Профиль заполнен на 66%</h2>
-    <div class="progress-bar">
-      <div class="progress-bar__bg">
-        <div class="progress-bar__scale"></div>
-      </div>
-      <button class="btn btn_type_refresh btn_type_refresh-process"></button>
-    </div>
-    <p class="sidebar__description">Узнай, <a class="sidebar__link" href="">как заполнить
-      профиль,</a> чтобы тебя выбрали исполнителем</p>
+    <a href="#" class="sidebar__status sidebar__status_state_process">На модерации</a>
   </section>
   <section class="content">
     <h1 class="heading heading_type_title">Описание</h1>
-    <form name="competenciesForm" id="competenciesForm" action="lk-motivation.html" method="get">
+    <form name="competenciesForm" id="competenciesForm" action="registration-npo-links.html" method="get">
       <fieldset class="fieldset">
         <select name="competencies" id="competencies" class="custom-select" multiple>
-          <option hidden>Выбрать</option>
-          <optgroup label="Дизайн и верстка">
-            <option value="Тестовый вариант 1">Тестовый вариант 1</option>
-          </optgroup>
-          <optgroup label="Маркетинг и коммуникации">
-            <option value="Социальные сети">Социальные сети</option>
-            <option value="Работа с текстами">Работа с текстами</option>
-            <option value="Email-рассылки">Email-рассылки</option>
-            <option value="Организация мероприятий">Организация мероприятий</option>
-            <option value="Реклама">Реклама</option>
-            <option value="Стратегический маркетинг / Другое">Стратегический маркетинг / Другое</option>
-          </optgroup>
-
+          <option hidden>Виды деятельности</option>
         </select>
+      </fieldset>
+      <fieldset class="fieldset">
+        <div class="textarea">
+          <textarea class="textarea__field textarea__field_autosize" name="textarea" id="nko-about"
+                    maxlength="2000"
+                    required></textarea>
+          <label class="textarea__label" for="nko-about">Расскажите, чем занимается НКО</label>
+          <button class="btn textarea__btn textarea__btn_type_clear-text"></button>
+          <div class="textarea__counter">
+            <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">0</span>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset fieldset_template_grid-one-col">
+        <p class="paragraph">
+          В&nbsp;отсутствие финансовой отчетности мы&nbsp;хотели&nbsp;бы узнать о&nbsp;вашей НКО подробнее:
+        </p>
+        <ul class="list">
+          <li class="list__item">
+            какова ее&nbsp;миссия,
+          </li>
+          <li class="list__item">
+            как строится работа,
+          </li>
+          <li class="list__item">
+            в&nbsp;чем заключалась ее&nbsp;деятельность до&nbsp;официального оформления,
+          </li>
+          <li class="list__item">
+            для чего вам необходима регистрация на&nbsp;ProСharity,
+          </li>
+          <li class="list__item">
+            какие задания вы&nbsp;планируете давать волонтерам
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset class="fieldset">
+        <div class="textarea">
+          <textarea class="textarea__field textarea__field_autosize" name="textarea" id="nko-description"
+                    maxlength="2000"
+                    required></textarea>
+          <label class="textarea__label" for="nko-description">Подробнее об НКО</label>
+          <button class="btn textarea__btn textarea__btn_type_clear-text"></button>
+          <div class="textarea__counter">
+            <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">0</span>
+          </div>
+        </div>
       </fieldset>
       <button type="submit" class="btn btn_style_primary content__btn">Сохранить</button>
     </form>
