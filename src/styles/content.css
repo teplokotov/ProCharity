@@ -271,7 +271,6 @@
 /*@import url(../blocks/input/_type/input_type_bottom-interval.css);*/
 
 @import url(../blocks/input/__label/input__label.css);
-@import url(../blocks/input/__label/input__label-icon.css);
 
 @import url(../blocks/input/__btn/input__btn.css);
 
@@ -426,7 +425,11 @@
 
 @import url(../blocks/uploader/__note/uploader__note.css);
 
+/* icon-registration-links */
+@import url(../blocks/label-icon/label-icon.css);
 
 
 /* CropperJS */
 @import url(../vendor/cropperjs.css);
+
+/* icon-registration-links */
