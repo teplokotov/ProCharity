@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -61,7 +61,7 @@
             <li class="sidebar-nav__item">
                 <a href="#" class="sidebar-nav__link">
                     <div class="sidebar-nav__step sidebar-nav__step_style_lk">
-                        <img class="sidebar-nav__step-image" src="<%=require('./images/step.svg')%>"/>
+                        <img class="sidebar-nav__step-image" src="<%=require('./images/step.svg')%>" alt="Стрелочка, оповещающая о заполненном разделе"/>
                     </div>
                     <span class="sidebar-nav__item-text">Контактное лицо</span>
                 </a>
@@ -69,7 +69,7 @@
             <li class="sidebar-nav__item">
                 <a href="#" class="sidebar-nav__link">
                     <div class="sidebar-nav__step sidebar-nav__step_style_lk">
-                        <img class="sidebar-nav__step-image" src="<%=require('./images/step.svg')%>"/>
+                        <img class="sidebar-nav__step-image" src="<%=require('./images/step.svg')%>" alt="Стрелочка, оповещающая о заполненном разделе"/>
                     </div>
                     <span class="sidebar-nav__item-text">Реквизиты</span>
                 </a>
@@ -122,13 +122,13 @@
             <fieldset class="fieldset">
                 <legend class="heading heading_type_subtitle">Свидетельство о регистрации</legend>
                 <div class="uploader__input-container">
-                    <input accept=".jpg, .png, .tiff" class="uploader__input" type="file" name="reg_certificate" id="reg_certificate" multiple>
+                    <input accept=".jpg, .png, .pdf" class="uploader__input" type="file" name="reg_certificate" id="reg_certificate" multiple>
                     <label for="reg_certificate" class="uploader__label">
                         <span class="uploader__text-accent">Выбери файл</span><span
                             class="uploader__text"> или перетащи его сюда</span>
                     </label>
                 </div>
-                <p class="note uploader__note">Jpg, png объемом не более 5 Мб</p>
+                <p class="note uploader__note">Jpg, png, pdf объемом не более 20 Мб</p>
             </fieldset>
             <fieldset class="fieldset">
                 <legend class="heading heading_type_subtitle">Устав с печатью</legend>
