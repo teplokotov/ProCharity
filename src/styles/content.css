@@ -84,6 +84,7 @@
 @import url(../blocks/sidebar-nav/__description-title/sidebar-nav__description-title.css);
 
 @import url(../blocks/sidebar-nav/__description-steps/sidebar-nav__description-steps.css);
+@import url(../blocks/sidebar-nav/__text-column/sidebar-nav__text-column.css);
 
 
 
@@ -263,12 +264,14 @@
 @import url(../blocks/input/__field/_default/input__field_default.css);
 @import url(../blocks/input/__field/_type/input__field_type_calendar.css);
 @import url(../blocks/input/__field/_type/input__field_type_password.css);
+@import url(../blocks/input/__field/_padding-center/input__field_padding-center.css);
 
 
 @import url(../blocks/input/_error/input_error.css);
 /*@import url(../blocks/input/_type/input_type_bottom-interval.css);*/
 
 @import url(../blocks/input/__label/input__label.css);
+@import url(../blocks/input/__label/input__label-icon.css);
 
 @import url(../blocks/input/__btn/input__btn.css);
 
@@ -281,6 +284,7 @@
 
 @import url(../blocks/input/__error-message/input__error-message.css);
 @import url(../blocks/input/__error-message/_visible/input__error-message_visible.css);
+@import url(../blocks/input/_type/input_type_bottom-interval.css);
 
 
 
