@@ -1,0 +1,9 @@
+.fieldset__fullsize-input {
+    grid-column: 1 / span 2;
+}
+
+@media screen and (max-width: 900px) {
+    .fieldset__fullsize-input {
+        grid-column: 1 / span 1;
+    }
+}
