@@ -1,0 +1,10 @@
+.sidebar-nav__step_type_current_reg {
+  background-color: #E6560A;
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar-nav__step_type_current_reg {
+    background-image: none;
+    width: 50%;
+  }
+}

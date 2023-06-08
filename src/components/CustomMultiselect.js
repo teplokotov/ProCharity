@@ -389,8 +389,8 @@ export default class CustomMultiselect {
         // Обрабатываются только элементы optgroup и option,
         // в противном случае в результирующий массив попадут
         // текстовые узлы
-        if (item.tagName === 'OPTGROUP'
-          || item.tagName === 'OPTION') {
+        if ((item.tagName === 'OPTGROUP'
+          || item.tagName === 'OPTION') && !item.hidden) {
 
           // Объект с параметрами варианта выбора
           resultArray.push({
@@ -443,7 +443,7 @@ export default class CustomMultiselect {
 
   //Multi
   _handleParentItemClick(evt) {
-    console.log(window.innerWidth, this._options.mobileScreenBreakpoint, window.outerWidth < this._options.mobileScreenBreakpoint)
+    // console.log(window.innerWidth, this._options.mobileScreenBreakpoint, window.outerWidth < this._options.mobileScreenBreakpoint)
 
     if (window.innerWidth < this._options.mobileScreenBreakpoint) {
       evt.target.classList.toggle(this._options.optionParentOpenedClass);
@@ -720,7 +720,7 @@ export default class CustomMultiselect {
         // присутствовать элементы optgroup, не имеющие вложенных элементов option
         // В этом случае клик по пункту никак обработан не будет
         if (evt.target.dataset.isSelectable === 'true') {
-          console.log(987)
+          // console.log(987)
           // Обработка клика по элементу
           this._handleItemClick(evt);
 
@@ -735,7 +735,7 @@ export default class CustomMultiselect {
         } else {
           // Перед открытием вложенного списка скрываются все ранее открытые элементы
           this._closeOtherItems();
-          console.log('parent')
+          // console.log('parent')
           this._handleParentItemClick(evt);
         }
 
