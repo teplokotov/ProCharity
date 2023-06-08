@@ -259,6 +259,7 @@
 
 /* input */
 @import url(../blocks/input-group/input-group.css);
+@import url(../blocks/input-group/_type/input-group_type_column.css);
 
 
 
