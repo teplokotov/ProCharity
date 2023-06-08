@@ -153,7 +153,7 @@ new CustomMultiselect('#npo-activity',{
   optionSelectedClass: 'custom-select__item_selected-checkbox',
   mobileScreenBreakpoint: 900,
   firstOptionIsTitle: true,
-  useTextSearch: true
+  useTextSearch: false
 }).generate();
 
 
