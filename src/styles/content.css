@@ -265,6 +265,8 @@
 @import url(../blocks/input/__field/_default/input__field_default.css);
 @import url(../blocks/input/__field/_type/input__field_type_calendar.css);
 @import url(../blocks/input/__field/_type/input__field_type_password.css);
+@import url(../blocks/input/__field/_interval-right/input__field_interval-right_large.css);
+@import url(../blocks/input/__field/_interval-right/input__field_interval-right_small.css);
 
 
 @import url(../blocks/input/_error/input_error.css);
