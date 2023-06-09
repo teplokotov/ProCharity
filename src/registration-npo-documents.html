@@ -56,12 +56,12 @@
             </li>
         </ul>
     </nav>
-    <section class="sidebar-nav">
+    <section class="sidebar-nav" aria-label="Боковая панель с разделами профиля НКО">
         <ul class="sidebar-nav__list">
             <li class="sidebar-nav__item">
                 <a href="#" class="sidebar-nav__link">
                     <div class="sidebar-nav__step sidebar-nav__step_style_lk">
-                        <img class="sidebar-nav__step-image" src="<%=require('./images/step.svg')%>" alt="Стрелочка, оповещающая о заполненном разделе"/>
+                        <img class="sidebar-nav__step-image" src="<%=require('./images/step.svg')%>" alt="Стрелочка, оповещающая о заполненном разделе">
                     </div>
                     <span class="sidebar-nav__item-text">Контактное лицо</span>
                 </a>
@@ -69,7 +69,7 @@
             <li class="sidebar-nav__item">
                 <a href="#" class="sidebar-nav__link">
                     <div class="sidebar-nav__step sidebar-nav__step_style_lk">
-                        <img class="sidebar-nav__step-image" src="<%=require('./images/step.svg')%>" alt="Стрелочка, оповещающая о заполненном разделе"/>
+                        <img class="sidebar-nav__step-image" src="<%=require('./images/step.svg')%>" alt="Стрелочка, оповещающая о заполненном разделе">
                     </div>
                     <span class="sidebar-nav__item-text">Реквизиты</span>
                 </a>
@@ -110,7 +110,7 @@
         <form name="competenciesForm" id="competenciesForm" action="registration-npo-decription.html" method="get">
             <fieldset class="fieldset">
                 <legend class="heading heading_type_subtitle">Логотип</legend>
-                <div class="uploader__input-container">
+                <div class="uploader uploader__input-container">
                     <input accept=".jpg, .png, .tiff" class="uploader__input" type="file" name="logotype" id="logotype" multiple>
                     <label for="logotype" class="uploader__label">
                         <span class="uploader__text-accent">Выбери файл</span><span
@@ -121,7 +121,7 @@
             </fieldset>
             <fieldset class="fieldset">
                 <legend class="heading heading_type_subtitle">Свидетельство о регистрации</legend>
-                <div class="uploader__input-container">
+                <div class="uploader uploader__input-container">
                     <input accept=".jpg, .png, .pdf" class="uploader__input" type="file" name="reg_certificate" id="reg_certificate" multiple>
                     <label for="reg_certificate" class="uploader__label">
                         <span class="uploader__text-accent">Выбери файл</span><span
@@ -132,14 +132,14 @@
             </fieldset>
             <fieldset class="fieldset">
                 <legend class="heading heading_type_subtitle">Устав с печатью</legend>
-                <div class="uploader__input-container">
+                <div class="uploader uploader__input-container">
                     <input accept=".doc, .docx, .pdf" class="uploader__input" type="file" name="charter" id="charter" multiple>
                     <label for="charter" class="uploader__label">
                         <span class="uploader__text-accent">Выбери файл</span><span
                             class="uploader__text"> или перетащи его сюда</span>
                     </label>
                 </div>
-                <p class="note uploader__note">Doc, pdf объемом не более 20 Мб каждый</p>
+                <p class="note uploader__note">Doc, pdf объемом не более 20 Мб</p>
             </fieldset>
             <button type="submit" class="btn btn_style_primary content__btn">Сохранить</button>
         </form>
