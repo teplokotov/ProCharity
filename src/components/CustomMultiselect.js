@@ -22,7 +22,7 @@ export default class CustomMultiselect {
    *    resetAllGroupLinkClass          - css-класс ссылок для сброса всех элементов группы (только для мобильной версии)
    *    selectBtnClass                  - css-класс кнопки подтверждения выбора элементов (только для мобильной версии)
    *    resetBtnClass                   - css-класс кнопки сброса всех элементов (только для мобильной версии)
-   *    optionsListClass                - css-класс сипка элементов выбора
+   *    optionsListClass                - css-класс списка элементов выбора
    *    optionClass                     - css-класс элемента выбора
    *    optionParentClass               - css-класс элемента списка, являющегося родительским
    *    optionParentOpenedClass         - css-класс элемента списка, являющегося родительским, имеющего раскрытый дочерний
@@ -99,7 +99,7 @@ export default class CustomMultiselect {
 
   _createHeading() {
     const element = document.createElement('h2');
-    element.textContent = "Выбор компетенции";
+    element.textContent = "Выбор компетенции"; // Это надо выпилить
     element.classList.add(
       ...this._handleClassList(this._options.headingClass)
     );
@@ -425,9 +425,19 @@ export default class CustomMultiselect {
   _handleItemClick(evt) {
     // Если элемент списка иммеет класс выбранного (отмеченного) элемента
     if (evt.target.classList.contains(this._options.optionSelectedClass)) {
-      this._removeChips(evt.target.dataset.val);
+      if (this._options.useSelectCounter) {
+        this._labelElement.textContent = this._selectElement
+          .querySelector('option').textContent + `: ${this._selectElement.selectedOptions.length - 1} из ${this._optionTotalCount}`;
+      } else {
+        this._removeChips(evt.target.dataset.val);
+      }
     } else {
-      this._fieldElement.append(this._createChips(evt.target));
+      if (this._options.useSelectCounter) {
+        this._labelElement.textContent = this._selectElement
+          .querySelector('option').textContent + `: ${this._selectElement.selectedOptions.length + 1} из ${this._optionTotalCount}`;
+      } else {
+        this._fieldElement.append(this._createChips(evt.target));
+      }
     }
 
     // Переключение класса "выбранного" (отмеченного) элемента
@@ -628,6 +638,9 @@ export default class CustomMultiselect {
 
       //Установка обработчиков событий
       this.setEventListeners();
+
+      // Общее кол-во опций
+      this._optionTotalCount = this._selectElement.options.length - 1;
     }
   }
 
