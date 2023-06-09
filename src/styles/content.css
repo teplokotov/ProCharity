@@ -251,6 +251,7 @@
 @import url(../blocks/textarea/__label/textarea__label.css);
 
 @import url(../blocks/textarea/__counter/textarea__counter.css);
+@import url(../blocks/textarea/__counter/_style/textarea__counter_style_invisible.css);
 
 @import url(../blocks/textarea/__btn/textarea__btn.css);
 @import url(../blocks/textarea/__btn/_type/textarea__btn_type_clear-text.css);
