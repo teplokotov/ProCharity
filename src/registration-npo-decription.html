@@ -54,7 +54,7 @@
       <li class="breadcrumbs__item">НКО</li>
     </ul>
   </nav>
-  <section class="sidebar-nav">
+  <section class="sidebar-nav" aria-label="Боковая панель с разделами профиля НКО">
     <ul class="sidebar-nav__list">
       <li class="sidebar-nav__item">
         <span class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_checked"></span>
@@ -70,7 +70,7 @@
       </li>
       <li class="sidebar-nav__item">
         <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_current_reg">
+          <div class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_current-full">
             <span class="sidebar-nav__step-text">4</span>
           </div>
           <span class="sidebar-nav__item-text">Описание</span>
@@ -100,7 +100,11 @@
   </section>
   <section class="content">
     <h1 class="heading heading_type_title">Описание</h1>
-    <form name="competenciesForm" id="competenciesForm" action="registration-npo-links.html" method="get">
+    <form name="competenciesForm"
+          id="competenciesForm"
+          action="#"
+          method="get"
+          novalidate>
       <fieldset class="fieldset">
         <select name="competencies" id="npo-activity" class="custom-select" multiple>
           <option hidden>Виды деятельности</option>
@@ -125,10 +129,10 @@
           <label class="textarea__label" for="nko-about">Чем занимается НКО</label>
           <button class="btn textarea__btn textarea__btn_type_clear-text input__btn_position_first"></button>
           <button class="hint input__btn input__btn_type_hint">
-            <div class="hint__tooltip">
+            <span class="hint__tooltip">
               Например, &laquo;Предоставление бесплатных услуг для семей, воспитывающих детей с&nbsp;нарушениями
               развития&raquo;
-            </div>
+            </span>
           </button>
           <div class="textarea__counter">
             <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">2000</span>

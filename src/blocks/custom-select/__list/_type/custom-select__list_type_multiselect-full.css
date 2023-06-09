@@ -1,0 +1,9 @@
+.custom-select__list_type_multiselect-full {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .custom-select__list_type_multiselect-full {
+        padding: 16px 24px 16px 24px;
+    }
+}

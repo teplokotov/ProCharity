@@ -145,7 +145,7 @@ new CustomMultiselect('#npo-activity',{
   resetAllGroupLinkClass: 'custom-select__link_type_reset',
   selectBtnClass: ['btn', 'btn_style_primary', 'custom-select__btn', 'custom-select__btn_type_select'],
   resetBtnClass: ['btn', 'btn_style_secondary', 'custom-select__btn', 'custom-select__btn_type_reset'],
-  optionsListClass: ['custom-select__list', 'custom-select__list_type_multiselect'],
+  optionsListClass: ['custom-select__list', 'custom-select__list_type_multiselect-full'],
   optionClass: 'custom-select__item',
   optionParentClass: 'custom-select__item_style_parent',
   optionParentOpenedClass: 'custom-select__item_style_parent-opened',
@@ -153,7 +153,7 @@ new CustomMultiselect('#npo-activity',{
   optionSelectedClass: 'custom-select__item_selected-checkbox',
   mobileScreenBreakpoint: 900,
   firstOptionIsTitle: true,
-  useTextSearch: false
+  useTextSearch: true
 }).generate();
 
 
