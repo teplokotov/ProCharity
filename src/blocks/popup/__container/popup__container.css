@@ -20,3 +20,9 @@
   position: relative;
   width: 100%;
 }
+
+@media screen and (max-width: 450px) {
+  .popup_type_window-bottom .popup__container {
+    border-radius: 12px 12px 0 0;
+  }
+}

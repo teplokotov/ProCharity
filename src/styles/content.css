@@ -100,6 +100,7 @@
 
 @import url(../blocks/popup/_type/popup_type_message.css);
 @import url(../blocks/popup/_type/popup_type_window.css);
+@import url(../blocks/popup/_type/popup_type_window-bottom.css);
 
 @import url(../blocks/popup/__container/popup__container.css);
 
