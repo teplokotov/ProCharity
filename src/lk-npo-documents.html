@@ -10,7 +10,7 @@
 <body class="page">
 <header class="header">
     <div class="header__wrap">
-        <span class="menu-icon" type="menu"></span>
+        <button class="menu-icon" type="button"></button>
         <a href="https://procharity.ru/">
             <img alt="ProCharity" class="main-logo" src="<%=require('./images/logo.svg')%>">
         </a>
@@ -56,7 +56,7 @@
             </li>
         </ul>
     </nav>
-    <section class="sidebar-nav">
+    <section class="sidebar-nav" aria-label="Боковая панель с разделами профиля НКО">
         <ul class="sidebar-nav__list">
             <li class="sidebar-nav__item">
                 <a class="sidebar-nav__link" href="#">
@@ -125,7 +125,7 @@
             </fieldset>
             <fieldset class="fieldset fieldset_style_pb-small fieldset_template_grid-one-col">
                 <legend class="paragraph">Свидетельства о регистрации</legend>
-                <div class="uploader uploader__input-container">
+                <div class="uploader__input-container">
                     <input accept=".jpg, .png, .pdf" class="uploader__input" id="reg_certificate" multiple name="reg_certificate"
                            type="file">
                     <label class="uploader__label" for="reg_certificate">
@@ -175,7 +175,7 @@
               name="uploadCertificates">
             <fieldset class="fieldset fieldset_style_pb-small fieldset_template_grid-one-col">
                 <legend class="paragraph">Устав с печатью</legend>
-                <div class="uploader uploader__input-container">
+                <div class="uploader__input-container">
                     <input accept=".doc, .docx, .pdf" class="uploader__input" id="certificates" multiple
                            name="projects"
                            type="file">
