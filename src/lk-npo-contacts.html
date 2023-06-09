@@ -120,8 +120,8 @@
       <p class="avatar__max-volume">Jpg,&nbsp;png объемом не&nbsp;более 5&nbsp;Мб</p>
       <input type="hidden" name="croppedImage" id="croppedImage" class="avatar__cropped-image-input">
     </div>
-    <form name="npoPersonalData" id="npoPersonalData" action="#" method="get" novalidate>
-      <fieldset class="fieldset fieldset_template_grid-form" id="userDate">
+    <form name="npoData" id="npoData" action="#" method="get" novalidate>
+      <fieldset class="fieldset fieldset_template_grid-form" id="representative">
         <legend class="paragraph">Волонтеры увидят эти данные на&nbsp;странице НКО и в ваших заданиях</legend>
         <div class="input">
           <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя" required>
@@ -137,26 +137,26 @@
         </div>
         <div class="fieldset__fullsize-input">
           <div class="input">
-            <input type="text" class="input__field input__field_default input__field_interval-right_small" name="post" id="post" placeholder="Должность" required>
+            <input type="text" class="input__field input__field_default input__field_interval-right_small" name="position" id="position" placeholder="Должность" required>
             <label for="post" class="input__label">Должность</label>
             <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
             <span class="input__error-message">Ошибка</span>
           </div>
         </div>
       </fieldset>
-      <fieldset class="fieldset fieldset_template_grid-form" id="userContacts">
+      <fieldset class="fieldset fieldset_template_grid-form" id="npoContacts">
         <legend class="paragraph">Волонтеры не увидят ваши контакты. Мы&nbsp;будем использовать их, если&nbsp;понадобится уточнить детали или&nbsp;рассказать об изменениях на&nbsp;платформе.</legend>
         <div class="input">
           <input type="email" class="input__field input__field_default input__field_interval-right_large" name="email" id="email" placeholder="Электронная почта" required>
           <label for="email" class="input__label">Электронная почта</label>
           <button class="btn input__btn input__btn_type_clear-text input__btn_position_first"></button>
           <button type="button" class="hint input__btn input__btn_type_hint">
-            <span class="hint__tooltip">По возможности укажите основную электронную почту фонда &mdash; на случай, если ваша перестанет быть актуальной.</span>
+            <span class="hint__tooltip">По возможности укажите основную электронную почту фонда — на случай, если ваша перестанет быть актуальной.</span>
           </button>
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_large" name="telegramName" id="telegramName" placeholder="Ник в Telegram" required>
+          <input type="text" class="input__field input__field_default input__field_interval-right_large" name="telegramName" id="telegramName" placeholder="Ник в Telegram без @ и ссылки" required>
           <label for="telegramName" class="input__label">Ник в Telegram без @ и ссылки</label>
           <button class="btn input__btn input__btn_type_clear-text input__btn_position_first"></button>
           <button type="button" class="hint input__btn input__btn_type_hint">
