@@ -180,6 +180,7 @@
 
 @import url(../blocks/custom-select/__field/custom-select__field.css);
 @import url(../blocks/custom-select/__field/_style/custom-select__field_style_multiselect.css);
+@import url(../blocks/custom-select/__field/_style/custom-select_style_simple.css);
 @import url(../blocks/custom-select/__field/_disabled/custom-select__field_disabled.css);
 
 @import url(../blocks/custom-select/__field-text/custom-select__field-text.css);

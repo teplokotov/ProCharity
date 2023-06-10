@@ -130,7 +130,7 @@ new CustomMultiselect('#npo-activity',{
   wrapClass: ['custom-select__wrap', 'custom-select__wrap_style_multiselect'],
   headingClass: ['heading', 'heading__title', 'custom-select__heading'],
   closeBtnClass: ['btn', 'btn_type_close', 'custom-select__btn-close'],
-  fieldClass: ['custom-select__field', 'custom-select__field_style_multiselect'],
+  fieldClass: ['custom-select__field', 'custom-select__field_style_multiselect','custom-select_style_simple'],
   labelClass: 'custom-select__label',
   chipsClass: 'custom-select__chips',
   chipsTextClass: 'custom-select__chips-text',
