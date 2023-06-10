@@ -65,36 +65,28 @@
         <span class="sidebar-nav__item-text">Контактное лицо</span>
       </li>
       <li class="sidebar-nav__item">
-        <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step">
-            <span class="sidebar-nav__step-text">2</span>
-          </div>
-          <span class="sidebar-nav__item-text">Реквизиты</span>
-        </a>
+        <div class="sidebar-nav__step">
+          <span class="sidebar-nav__step-text">2</span>
+        </div>
+        <span class="sidebar-nav__item-text">Реквизиты</span>
       </li>
       <li class="sidebar-nav__item">
-        <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step">
-            <span class="sidebar-nav__step-text">3</span>
-          </div>
-          <span class="sidebar-nav__item-text">Документы и файлы</span>
-        </a>
+        <div class="sidebar-nav__step">
+          <span class="sidebar-nav__step-text">3</span>
+        </div>
+        <span class="sidebar-nav__item-text">Документы и файлы</span>
       </li>
       <li class="sidebar-nav__item">
-        <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step">
-            <span class="sidebar-nav__step-text">4</span>
-          </div>
-          <span class="sidebar-nav__item-text">Описание</span>
-        </a>
+        <div class="sidebar-nav__step">
+          <span class="sidebar-nav__step-text">4</span>
+        </div>
+        <span class="sidebar-nav__item-text">Описание</span>
       </li>
       <li class="sidebar-nav__item">
-        <a href="#" class="sidebar-nav__link">
-          <div class="sidebar-nav__step">
-            <span class="sidebar-nav__step-text">5</span>
-          </div>
-          <span class="sidebar-nav__item-text">Ссылки</span>
-        </a>
+        <div class="sidebar-nav__step">
+          <span class="sidebar-nav__step-text">5</span>
+        </div>
+        <span class="sidebar-nav__item-text">Ссылки</span>
       </li>
     </ul>
     <div class="sidebar-nav__description">
@@ -106,22 +98,22 @@
     <h1 class="heading heading heading_type_title">Контактное лицо</h1>
     <form name="npoData" id="npoData" action="#" method="get" novalidate>
       <fieldset class="fieldset fieldset_template_grid-form" id="representative">
-        <legend class="paragraph">Волонтеры увидят эти данные на странице НКО и в ваших заданиях
+        <legend class="paragraph">Волонтеры увидят эти данные на&nbsp;странице НКО и в ваших заданиях
         </legend>
         <div class="input">
-          <input type="text" class="input__field" name="name" id="name" placeholder="Имя" required>
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя" required>
           <label for="name" class="input__label">Имя</label>
           <button class="btn input__btn input__btn_type_clear-text"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="text" class="input__field" name="surname" id="surname" placeholder="Фамилия" required>
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="surname" placeholder="Фамилия" required>
           <label for="surname" class="input__label">Фамилия</label>
           <button class="btn input__btn input__btn_type_clear-text"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="text" class="input__field" name="npoINN" id="npoINN"
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="npoINN" id="npoINN"
                  placeholder="ИНН фонда"
                  required>
           <label for="npoINN" class="input__label">ИНН фонда</label>
@@ -129,17 +121,17 @@
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="text" class="input__field" name="position" id="position" placeholder="Должность" required>
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="position" id="position" placeholder="Должность" required>
           <label for="position" class="input__label">Должность</label>
           <button class="btn input__btn input__btn_type_clear-text"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
       </fieldset>
       <fieldset class="fieldset fieldset_template_grid-form" id="npoContacts">
-        <legend class="paragraph">Волонтеры не увидят эти данные. Будем использовать их, если понадобится уточнить детали или рассказать об изменениях на платформе.
+        <legend class="paragraph">Волонтеры не увидят эти данные. Будем&nbsp;использовать их, если понадобится уточнить детали или&nbsp;рассказать об изменениях на&nbsp;платформе.
         </legend>
         <div class="input">
-          <input type="email" class="input__field" name="email" id="email" placeholder="Электронная почта" required>
+          <input type="email" class="input__field input__field_default input__field_interval-right_large" name="email" id="email" placeholder="Электронная почта" required>
           <label for="email" class="input__label">Электронная почта</label>
           <button class="btn input__btn input__btn_type_clear-text input__btn_position_first"></button>
           <button type="button" class="hint input__btn input__btn_type_hint">
@@ -150,7 +142,7 @@
           </button>
         </div>
         <div class="input">
-          <input type="text" class="input__field" name="telegramName" id="telegramName" placeholder="Ник в Telegram без @ и ссылки">
+          <input type="text" class="input__field input__field_default input__field_interval-right_large" name="telegramName" id="telegramName" placeholder="Ник в Telegram без @ и ссылки" required>
           <label for="telegramName" class="input__label">Ник в Telegram без @ и ссылки</label>
           <button class="btn input__btn input__btn_type_clear-text input__btn input__btn_position_first"></button>
           <button type="button" class="hint input__btn input__btn_type_hint">
@@ -163,10 +155,10 @@
       </fieldset>
       <fieldset class="fieldset fieldset_template_grid-form" id="npoPassword">
         <legend class="paragraph">
-          Пароль должен содержать не менее 8 знаков и может включать латинские буквы, цифры и специальные символы
+          Пароль должен содержать не менее 8&nbsp;знаков и может включать латинские буквы, цифры и специальные символы
         </legend>
         <div class="input input_type_pwd">
-          <input type="password" class="input__field input__field_type_password" name="password" id="password"
+          <input type="password" class="input__field input__field_default input__field_type_password input__field_interval-right_small" name="password" id="password"
                  placeholder="Пароль"
                  required>
           <label for="password" class="input__label">
@@ -175,7 +167,7 @@
           <button class="btn input__btn input__btn_type_show-pwd" type="button"></button>
         </div>
         <div class="input input_type_pwd">
-          <input type="password" class="input__field input__field_type_password" name="repassword" id="repassword"
+          <input type="password" class="input__field input__field_default input__field_type_password input__field_interval-right_small" name="repassword" id="repassword"
                  placeholder="Подтверди пароль" required>
           <label for="repassword" class="input__label">
             Подтверди пароль
@@ -357,11 +349,11 @@
 <div class="popup popup_type_window popup_type_window-bottom popup_opened"> 
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">НКО с таким ИНН уже зарегистрирована</h2>
-    <p class="paragraph popup__paragraph">Вы представитель НКО «Название»? Чтобы размещать задания от лица этой организации, вам необходимо получить доступ у администратора этого аккаунта. Для этого оставьте адрес своей электронной почты, и мы отправим его администратору.</p>
+    <p class="paragraph popup__paragraph">Вы представитель НКО «Название»? Чтобы размещать задания от лица этой организации, вам необходимо получить&nbsp;доступ у администратора этого аккаунта. Для этого&nbsp;оставьте адрес своей электронной почты, и мы отправим его администратору.</p>
     <form name="npoRequestAccess" id="npoRequestAccess" action="#" method="get" novalidate>
       <fieldset class="fieldset" id="requestAccess">
         <div class="input">
-          <input type="email" class="input__field" name="email" id="emailForAccess" placeholder="Электронная почта" required>
+          <input type="email" class="input__field input__field_default input__field_interval-right_small" name="email" id="emailForAccess" placeholder="Электронная почта" required>
           <label for="email" class="input__label">Электронная почта</label>
           <button class="btn input__btn input__btn_type_clear-text"></button>
         </div>
