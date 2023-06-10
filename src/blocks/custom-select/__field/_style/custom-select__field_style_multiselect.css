@@ -2,9 +2,3 @@
   flex-wrap: wrap;
   max-width: 100%;
 }
-
-@media screen and (max-width: 900px) {
-  .custom-select__field_style_multiselect {
-    max-height: 48px;
-  }
-}

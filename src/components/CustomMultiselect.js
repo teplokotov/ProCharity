@@ -540,8 +540,9 @@ export default class CustomMultiselect {
       this._resetSelectedOption(option);
       this._changeOption(option);
     })
-  }
 
+    this._renderCountSelector();
+  }
 
   _handleChipsClick(evt) {
     const val = evt.target.dataset.val;
@@ -623,6 +624,13 @@ export default class CustomMultiselect {
     option.classList.remove(this._options.optionSelectedClass);
   }
 
+  _renderCountSelector() {
+    if (this._options.useSelectCounter) {
+      this._labelElement.textContent = this._selectElement
+        .querySelector('option').textContent + `: ${this._selectElement.selectedOptions.length} из ${this._optionTotalCount}`;
+    }
+  }
+
 
   //Multi
   generate() {
@@ -644,10 +652,7 @@ export default class CustomMultiselect {
       // Общее кол-во опций
       this._optionTotalCount = this._selectElement.options.length - 1;
       // Отрисовка текущего выбора
-      if (this._options.useSelectCounter) {
-        this._labelElement.textContent = this._selectElement
-          .querySelector('option').textContent + `: ${this._selectElement.selectedOptions.length} из ${this._optionTotalCount}`;
-      }
+      this._renderCountSelector();
     }
   }
 
