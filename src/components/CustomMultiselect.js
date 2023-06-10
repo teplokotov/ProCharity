@@ -66,7 +66,7 @@ export default class CustomMultiselect {
       mobileScreenBreakpoint: 900,
       firstOptionIsTitle: false,
       useTextSearch: true
-  }) {
+    }) {
     this._selectElement = document.querySelector(selector);
     this._options = options;
 
@@ -413,7 +413,7 @@ export default class CustomMultiselect {
 
     // Если удалось найти внутри элемента select элементы optgroup
     if (optgroups && optgroups.length > 0) {
-      //Передаем их в фукцию для рекурсивного получения данных
+      // Передаем их в функцию для рекурсивного получения данных
       return createDataArray(optgroups);
     }
 
@@ -423,7 +423,7 @@ export default class CustomMultiselect {
 
   //Multi
   _handleItemClick(evt) {
-    // Если элемент списка иммеет класс выбранного (отмеченного) элемента
+    // Если элемент списка имеет класс выбранного (отмеченного) элемента
     if (evt.target.classList.contains(this._options.optionSelectedClass)) {
       if (this._options.useSelectCounter) {
         this._labelElement.textContent = this._selectElement
@@ -447,7 +447,7 @@ export default class CustomMultiselect {
     this._changeOption(evt.target);
 
     // Очистка поля ввода текста
-    this._searchInputElement.value = '';
+    // this._searchInputElement.value = '';
   }
 
 
@@ -478,8 +478,8 @@ export default class CustomMultiselect {
     // Скрываем все родительские пункты списка
     this._optionsListElement.querySelectorAll(`.${this._options.optionParentClass}`)
       .forEach((parentItem) => {
-      parentItem.style.display = 'none';
-    })
+        parentItem.style.display = 'none';
+      })
 
     // Поиск всех элементов списка среди элементов, доступных для выбора
     this._optionsListElement.querySelectorAll(`.${this._options.optionClass}[data-is-selectable="true"]`)
@@ -491,7 +491,9 @@ export default class CustomMultiselect {
           item.style.display = 'list-item';
 
           // Находим родительский пункт списка и делаем его видимым
-          item.closest(`.${this._options.optionParentClass}`).style.display = 'list-item';
+          if (!this._options.useSelectCounter) {
+            item.closest(`.${this._options.optionParentClass}`).style.display = 'list-item';
+          }
 
           resultCounter += 1;
         } else {
@@ -641,6 +643,11 @@ export default class CustomMultiselect {
 
       // Общее кол-во опций
       this._optionTotalCount = this._selectElement.options.length - 1;
+      // Отрисовка текущего выбора
+      if (this._options.useSelectCounter) {
+        this._labelElement.textContent = this._selectElement
+          .querySelector('option').textContent + `: ${this._selectElement.selectedOptions.length} из ${this._optionTotalCount}`;
+      }
     }
   }
 
@@ -742,9 +749,9 @@ export default class CustomMultiselect {
             // После выбора элемента возвращаем фокус на поле
             this._searchInputElement.focus();
           }
-        // Если клик был произведен по элементу списка, который не доступен для
-        // выбора - значит это родительский пункт, при нажатии на который
-        // следует раскрыть дочерний список кликабельных элементов
+          // Если клик был произведен по элементу списка, который не доступен для
+          // выбора - значит это родительский пункт, при нажатии на который
+          // следует раскрыть дочерний список кликабельных элементов
         } else {
           // Перед открытием вложенного списка скрываются все ранее открытые элементы
           this._closeOtherItems();
