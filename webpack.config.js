@@ -170,6 +170,21 @@ module.exports = {
             template: './src/lk-npo-links.html',
             inject: 'body'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-access.html',
+            template: './src/lk-access.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-change-password.html',
+            template: './src/lk-change-password.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-donations.html',
+            template: './src/lk-donations.html',
+            inject: 'body'
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin()
     ]
