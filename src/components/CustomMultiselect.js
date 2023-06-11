@@ -99,7 +99,8 @@ export default class CustomMultiselect {
 
   _createHeading() {
     const element = document.createElement('h2');
-    element.textContent = "Выбор компетенции"; // Это надо выпилить
+    const heading = this._selectElement.querySelector('option').textContent;
+    element.textContent = heading === 'Выбрать' ? 'Выбор компетенции' : heading;
     element.classList.add(
       ...this._handleClassList(this._options.headingClass)
     );
