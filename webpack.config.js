@@ -185,6 +185,11 @@ module.exports = {
             template: './src/lk-donations.html',
             inject: 'body'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-access-item.html',
+            template: './src/lk-access-item.html',
+            inject: 'body'
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin()
     ]
