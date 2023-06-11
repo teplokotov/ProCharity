@@ -108,7 +108,7 @@
     <section class="content">
         <h1 class="heading heading_type_title">Документы и файлы</h1>
         <form class="uploader" enctype="multipart/form-data" id="uploadProjects" method="get" name="uploadProjects">
-            <fieldset class="fieldset fieldset_template_grid-one-col fieldset_style_pb-small">
+            <fieldset class="fieldset fieldset_template_grid-one-col">
                 <legend class="paragraph">Логотип</legend>
                 <ul class="uploader__files-list">
                     <li class="uploader__item">
@@ -123,7 +123,7 @@
                     </li>
                 </ul>
             </fieldset>
-            <fieldset class="fieldset fieldset_style_pb-small fieldset_template_grid-one-col">
+            <fieldset class="fieldset fieldset_template_grid-one-col fieldset_style_pb-small">
                 <legend class="paragraph">Свидетельства о регистрации</legend>
                 <div class="uploader__input-container">
                     <input accept=".jpg, .png, .pdf" class="uploader__input" id="reg_certificate" multiple name="reg_certificate"
@@ -134,7 +134,7 @@
                 </div>
                 <p class="note uploader__note">Jpg, png, pdf объемом не более 20 Мб</p>
             </fieldset>
-            <fieldset class="fieldset fieldset_template_grid-one-col fieldset_style_pb-small">
+            <fieldset class="fieldset fieldset_template_grid-one-col">
                 <ul class="uploader__files-list">
                     <li class="uploader__item">
                         <div class="uploader__file-preview-container uploader__file-preview-container_loading"></div>
@@ -173,7 +173,7 @@
         </form>
         <form class="uploader" enctype="multipart/form-data" id="uploadCertificates" method="get"
               name="uploadCertificates">
-            <fieldset class="fieldset fieldset_style_pb-small fieldset_template_grid-one-col">
+            <fieldset class="fieldset fieldset_template_grid-one-col">
                 <legend class="paragraph">Устав с печатью</legend>
                 <div class="uploader__input-container">
                     <input accept=".doc, .docx, .pdf" class="uploader__input" id="certificates" multiple
@@ -191,7 +191,7 @@
                 <legend class="paragraph">Отчетность в Минюсте</legend>
                 <div class="checkbox">
                     <input type="checkbox" class="checkbox__input" name="reporting" id="reporting" checked>
-                    <label for="reporting" class="checkbox__label checkbox__label_style_notifications">Подтверждаю, что на сайте Минюста опубликована отчетность за прошедший год </label>
+                    <label for="reporting" class="checkbox__label">Подтверждаю, что на сайте Минюста опубликована отчетность за прошедший год </label>
                 </div>
             </fieldset>
             <button class="btn btn_style_primary" type="submit">Сохранить</button>
