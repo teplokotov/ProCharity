@@ -14,6 +14,8 @@ import MobileMenu from "./components/MobileMenu";
 import CustomSelect from "./components/CustomSelect";
 import CustomMultiselect from "./components/CustomMultiselect";
 import Popup from './components/Popup';
+import TablePagination from './components/TablePagination';
+import TableSort from './components/TableSort';
 
 
 // Подключение сторонних библиотек
