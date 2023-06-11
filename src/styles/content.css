@@ -228,13 +228,13 @@
 
 @import url(../blocks/fieldset/__fullsize-input/fieldset__fullsize-input.css);
 
-@import url(../blocks/fieldset/_style/fieldset_style_pb-small.css);
 @import url(../blocks/fieldset/_style/fieldset_style_p-none.css);
 
 @import url(../blocks/fieldset/_template/fieldset_template_grid-form.css);
 @import url(../blocks/fieldset/_template/fieldset_template_grid-project-links.css);
 @import url(../blocks/fieldset/_template/fieldset_template_grid-one-col.css);
 @import url(../blocks/fieldset/_template/fieldset_template_grid-social-links.css);
+@import url(../blocks/fieldset/_style/fieldset_style_pb-small.css);
 
 
 
