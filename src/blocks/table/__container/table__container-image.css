@@ -1,0 +1,7 @@
+.table__container-image {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 25px;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
