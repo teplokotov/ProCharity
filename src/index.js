@@ -183,3 +183,15 @@ new MobileMenu({
   menuContainerClass: 'header__nav',
   menuContainerOpenedClass: 'header__nav_opened'
 }).setEventListeners();
+
+
+
+// ================ LK - ACCESS.HTML 23 cogort ==============//
+//Инстанс попапа добавления нового работника:
+const popupNewWorker = new Popup('#popupNewWorker')
+//Кнопка открытия попапа добавления нового работника:
+const btnAddWorker = document.querySelector('#btnAddWorker')
+//Вешаем слушатель на кнопку для открытия попапа:
+btnAddWorker.addEventListener('click', () => {
+  popupNewWorker.open()
+})
