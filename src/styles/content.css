@@ -452,8 +452,11 @@
 /* table */
 @import url(../blocks/table/table.css);
 @import url(../blocks/table/__body/table__body.css);
-@import url(../blocks/table/__col/table__col.css);
+@import url(../blocks/table/__wrench/table__wrench.css);
+@import url(../blocks/table/__data-cell/table__data-cell.css);
+@import url(../blocks/table/__edit/table__edit.css);
 @import url(../blocks/table/__head/table__head.css);
+@import url(../blocks/table/__name/table__name.css);
 @import url(../blocks/table/__row/table__row.css);
 
 /* pagination */
