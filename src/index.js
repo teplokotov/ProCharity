@@ -56,6 +56,11 @@ if (personalDataForm) {
 const popup = new Popup('.popup');
 popup.setEventListeners();
 
+window.addEventListener('load', function() {
+  const pagination = new TablePagination();
+  pagination.genTables()
+});
+
 // Обеспечение работы модальных окон
 if (avatarContainer) {
   avatarContainer.addEventListener('mousedown', () => {
