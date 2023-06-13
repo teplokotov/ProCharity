@@ -17,18 +17,21 @@
 @media screen and (max-width: 900px) {
   .custom-select__list-container {
     width: calc(100% - 50px);
+    max-width: 736px;
   }
 
   .custom-select__list-container.splash {
-    background: #F1F5F9;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
     left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
     margin-top: 0;
+    background: #F1F5F9;
     overflow: hidden;
     overflow-y: auto;
-    position: fixed;
-    right: 0;
-    top: 0;
   }
 
   .custom-select__item > .custom-select__list-container {
