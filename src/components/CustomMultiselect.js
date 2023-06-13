@@ -65,7 +65,8 @@ export default class CustomMultiselect {
       optionSelectedClass: 'custom-select__item_selected-checkbox',
       mobileScreenBreakpoint: 900,
       firstOptionIsTitle: false,
-      useTextSearch: true
+      useTextSearch: true,
+      isSplash: true
     }) {
     this._selectElement = document.querySelector(selector);
     this._options = options;
@@ -697,8 +698,11 @@ export default class CustomMultiselect {
 
 
   openDropdown() {
-    this._optionsListContainerElement.classList
-      .add(this._options.optionsOpenedListContainerClass);
+    this._optionsListContainerElement.classList.add(this._options.optionsOpenedListContainerClass);
+
+    if (this._options.isSplash) {
+      this._optionsListContainerElement.classList.add('splash');
+    }
   }
 
 

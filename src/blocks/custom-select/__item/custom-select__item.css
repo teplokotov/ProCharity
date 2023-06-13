@@ -10,13 +10,13 @@
 }
 
 @media screen and (min-width: 900px) {
-  .custom-select__item:hover {
+  .custom-select__list-container.splash .custom-select__item:hover {
     background-color: #F5F6F8;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .custom-select__item {
+  .custom-select__list-container.splash .custom-select__item {
     border-bottom: solid .5px #A0ABB5;
     font-weight: 700;
     line-height: 16px;
