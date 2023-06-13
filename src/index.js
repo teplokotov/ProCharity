@@ -193,6 +193,8 @@ const popupNewWorker = new Popup('#popupNewWorker')
 //Кнопка открытия попапа добавления нового работника:
 const btnAddWorker = document.querySelector('#btnAddWorker')
 //Вешаем слушатель на кнопку для открытия попапа:
-btnAddWorker.addEventListener('click', () => {
-  popupNewWorker.open()
-})
+if (btnAddWorker) {
+  btnAddWorker.addEventListener('click', () => {
+    popupNewWorker.open()
+  })
+}
