@@ -156,7 +156,8 @@ new CustomMultiselect('#npo-activity',{
   mobileScreenBreakpoint: 900,
   firstOptionIsTitle: true,
   useTextSearch: true,
-  useSelectCounter: true
+  useSelectCounter: true,
+  isSplash: false
 }).generate();
 
 

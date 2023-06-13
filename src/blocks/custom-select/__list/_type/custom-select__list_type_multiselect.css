@@ -1,5 +1,5 @@
 @media screen and (max-width: 900px) {
-  .custom-select__list_type_multiselect {
+  .custom-select__list-container.splash .custom-select__list_type_multiselect {
     padding: 16px 24px 16px 24px;
   }
 }

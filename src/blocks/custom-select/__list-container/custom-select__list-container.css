@@ -1,7 +1,7 @@
 .custom-select__list-container {
   display: none;
   margin-top: 4px;
-  position: absolute;
+  position: relative;
   width: 100%;
   z-index: 2;
 }
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 900px) {
-  .custom-select__list-container {
+  .custom-select__list-container.splash {
     background: #F1F5F9;
     height: 100%;
     left: 0;
