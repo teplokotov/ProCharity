@@ -49,14 +49,6 @@
 
 
 
-@import url(../blocks/btn/btn.css);
-
-@import url(../blocks/btn/_type/btn_type_refresh.css);
-@import url(../blocks/btn/_type/btn_type_refresh-process.css);
-@import url(../blocks/btn/_type/btn_type_close.css);
-
-
-
 @import url(../blocks/sidebar-nav/sidebar-nav.css);
 
 @import url(../blocks/sidebar-nav/__list/sidebar-nav__list.css);
@@ -134,7 +126,6 @@
 
 
 /* Кнопки */
-
 @import url(../blocks/btn/btn.css);
 
 @import url(../blocks/btn/_style/btn_style_primary.css);
@@ -146,9 +137,9 @@
 @import url(../blocks/btn/_type/btn_type_refresh.css);
 @import url(../blocks/btn/_type/btn_type_delete.css);
 @import url(../blocks/btn/_type/btn_type_add.css);
+@import url(../blocks/btn/_type/btn_type_refresh-process.css);
 
 @import url(../blocks/btn/_position/btn_position_right.css);
-
 
 
 /* Пользовательское отображение select */
@@ -257,7 +248,9 @@
 @import url(../blocks/textarea/__counter/_style/textarea__counter_style_invisible.css);
 
 @import url(../blocks/textarea/__btn/textarea__btn.css);
+@import url(../blocks/textarea/__btn/textarea__btn_position_first.css);
 @import url(../blocks/textarea/__btn/_type/textarea__btn_type_clear-text.css);
+@import url(../blocks/textarea/__btn/_type/textarea__btn_type_hint.css);
 
 
 
