@@ -1,0 +1,5 @@
+.pagination__item_active {
+  color: #FFFFFF;
+  background-color: #72D0DC;
+  border-radius: 4px;
+}

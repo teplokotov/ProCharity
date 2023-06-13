@@ -452,17 +452,24 @@
 /* table */
 @import url(../blocks/table/table.css);
 @import url(../blocks/table/__body/table__body.css);
-@import url(../blocks/table/__container/table__container-image.css);
-@import url(../blocks/table/__wrench/table__wrench.css);
-@import url(../blocks/table/__wrench-heading/table__wrench-heading.css);
+@import url(../blocks/table/__btn-edit/table__btn-edit.css);
+@import url(../blocks/table/__btn-head/table__btn-head.css);
+@import url(../blocks/table/__btn-redact/table__btn-redact.css);
+@import url(../blocks/table/__container-btn/table__container-btn.css);
 @import url(../blocks/table/__data-cell/table__data-cell.css);
+@import url(../blocks/table/__data-container/table__data-container.css);
+@import url(../blocks/table/__wrench/table__wrench.css);
+@import url(../blocks/table/__wrench-container/table__wrench-container.css);
 @import url(../blocks/table/__edit/table__edit.css);
 @import url(../blocks/table/__head/table__head.css);
-@import url(../blocks/table/__image/table__image.css);
+@import url(../blocks/table/__head-text/table__head-text.css);
 @import url(../blocks/table/__name/table__name.css);
+@import url(../blocks/table/__name-container/table__name-container\ .css);
 @import url(../blocks/table/__row/table__row.css);
 
 /* pagination */
 @import url(../blocks/pagination/pagination.css);
+@import url(../blocks/pagination/__btn-left/pagination__btn-left.css);
+@import url(../blocks/pagination/__btn-right/pagination__btn-right.css);
 @import url(../blocks/pagination/__item/pagination__item.css);
 @import url(../blocks/pagination/__item/_active/pagination__item_active.css);

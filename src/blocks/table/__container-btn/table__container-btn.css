@@ -1,7 +1,6 @@
-.table__container-image {
+.table__container-btn {
   display: flex;
   flex-wrap: nowrap;
-  gap: 25px;
+  gap: 12px;
   justify-content: flex-end;
-  padding-right: 10px;
 }

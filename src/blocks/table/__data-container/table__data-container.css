@@ -1,0 +1,9 @@
+.table__data-container {
+  width: 23.64%;
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}

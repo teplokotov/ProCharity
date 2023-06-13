@@ -90,19 +90,28 @@
     <a href="#" class="sidebar__status sidebar__status_state_process">На модерации</a>
   </section>
   <section class="content">
-    <!-- <form> -->
+    <form action="#" method="get">
       <h1 class="heading heading_type_title">Сотрудники</h1>
-      <fieldset class="fieldset fieldset_template_grid-form fieldset_style_pb-small">
-        <legend class="paragraph">Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО</legend>
+      <fieldset class="fieldset fieldset_template_grid-form">
+        <legend class="paragraph fieldset_style_pb-small">Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО</legend>
+        <button class="btn btn_style_primary" id="btnAddWorker">Добавить</button>
       </fieldset>
-      <button class="btn btn_style_primary" id="btnAddWorker">Добавить</button>
-    <!-- </form> -->
+    </form>
     <table class="table">
       <thead class="table__head">
         <tr class="table__row">
-          <th class="table__name">Фамилия и имя</th>
-          <th td class="table__wrench-heading">Права</th>
-          <th class="table__data-cell">Дата регистрации</th>
+          <th class="table__name-container">
+            <p class="table__head-text">Фамилия и имя</p>
+            <button class="table__btn-head"></button>
+          </th>
+          <th td class="table__wrench-container">
+            <p class="table__head-text">Права</p>
+            <button class="table__btn-head"></button>
+          </th>
+          <th class="table__data-container">
+            <p class="table__head-text">Дата регистрации</p>
+            <button class="table__btn-head"></button>
+          </th>
           <th class="table__edit"> </th>
         </tr>
       </thead>
@@ -112,9 +121,9 @@
           <td class="table__wrench"><img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
         </tr>
@@ -123,234 +132,221 @@
           <td class="table__wrench"></td>
           <td class="table__data-cell">12.01.2018 11:27</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Щедрина-Вольфембюттельская Мария</td>
           <td class="table__wrench"><img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора"></td>
           <td class="table__data-cell">28.09.2021 08:04</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name"><div></div class="asd">Яковлев Анатолий</div></td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">14.12.2020 18:39</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Яковлев Анатолий</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"><img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>"  class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image"alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
         <tr class="table__row">
           <td class="table__name">Виноградов Михаил</td>
           <td class="table__wrench"></td>
           <td class="table__data-cell">16.05.2020 14:30</td>
           <td class="table__edit">
-            <div class="table__container-image">
-              <img src="<%=require('./images/TableEdit.svg')%>" class="table__image" alt="Кнопка редактировать данные сотрудника">
-              <img src="<%=require('./images/TableRedact.svg')%>" class="table__image" alt="">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
             </div>
           </td>
-          <!-- <td class="table__col">Опции</td> -->
         </tr>
       </tbody>
     </table>
     <div class="pagination">
-      <div class="pagination__item pagination__item_active">1</div>
-      <div class="pagination__item">2</div>
+      <button class="pagination__btn-left"></button>
+      <button class="pagination__item pagination__item_active">1</button>
+      <button class="pagination__item">2</button>
+      <button class="pagination__item">3</button>
+      <button class="pagination__item">4</button>
+      <button class="pagination__item">5</button>
+      <button class="pagination__item">6</button>
+      <button class="pagination__btn-right"></button>
     </div>
   </section>
 </main>

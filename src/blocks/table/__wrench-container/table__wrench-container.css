@@ -1,0 +1,8 @@
+.table__wrench-container{
+  width: 12.64%;
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
