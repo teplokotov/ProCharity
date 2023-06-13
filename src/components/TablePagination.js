@@ -1,17 +1,11 @@
 export default class TablePagination {
-  constructor(perPage = 20) {
-    this._perPage = perPage;
-    this._loadTable = this.loadTable.bind(this)
-  }
 
   genTables() {
-    const tables = document.querySelectorAll(".table");
-    for (let i = 0; i < tables.length; i++) {
-      this._perPage = parseInt(tables[i].dataset.pagecount);
-      this._createFooters(tables[i]);
-      this._createTableMeta(tables[i]);
-      this._loadTable(tables[i]);
-    }
+    const table = document.querySelector(".table");
+    this._perPage = parseInt(table.dataset.pagecount);
+    this._createFooters(table);
+    this._createTableMeta(table);
+    this._loadTable(table);
   }
 
   _createTableMeta(table) {
@@ -20,7 +14,7 @@ export default class TablePagination {
 
   _createFooters(table) {
     let hasHeader = false;
-    if (table.querySelector('th'))
+    if (table.querySelector('.table__head'))
       hasHeader = true;
 
     let rows = table.rows.length;
@@ -29,41 +23,48 @@ export default class TablePagination {
       rows = rows - 1;
 
     let numPages = rows / this._perPage;
-    const pager = document.createElement("div");
+    const pager = document.querySelector(".pagination");
 
-    // add an extra page, if we're
     if (numPages % 1 > 0)
       numPages = Math.floor(numPages) + 1;
 
-    pager.className = "pager";
+    const arrowLeft = document.createElement("button");
+    arrowLeft.className = "pagination__btn-left";
+    pager.appendChild(arrowLeft);
+
     for (let i = 0; i < numPages; i++) {
-      const page = document.createElement("div");
+      const page = document.createElement("button");
       page.innerHTML = (i + 1).toString();
-      page.className = "pager-item";
+      page.className = "pagination__item";
       page.dataset.index = i.toString();
 
       if (i === 0)
-        page.classList.add("selected");
-
-      page.addEventListener('click', function () {
-        const parent = this.parentNode;
-        const items = parent.querySelectorAll(".pager-item");
-        for (let x = 0; x < items.length; x++) {
-          items[x].classList.remove("selected");
-        }
-        this.classList.add('selected');
-        table.dataset.currentpage = this.dataset.index;
-        this._loadTable(table)
-      });
+        page.classList.add("pagination__item_active");
+      const callback = this._pageCallback.bind(this, page, table)
+      page.addEventListener('click', callback);
       pager.appendChild(page);
     }
-    table.parentNode.insertBefore(pager, table);
+    const arrowRight = document.createElement("button");
+    arrowRight.className = "pagination__btn-right";
+    pager.appendChild(arrowRight);
+    table.parentNode.insertBefore(table, pager);
   }
 
-  loadTable(table) {
+  _pageCallback(button, table) {
+    const parent = button.parentNode;
+    const items = parent.querySelectorAll(".pagination__item");
+    for (let x = 0; x < items.length; x++) {
+      items[x].classList.remove("pagination__item_active");
+    }
+    button.classList.add('pagination__item_active');
+    table.dataset.currentpage = button.dataset.index;
+    this._loadTable(table);
+  }
+
+  _loadTable(table) {
     let startIndex = 0;
 
-    if (table.querySelector('th'))
+    if (table.querySelector('.table__head'))
       startIndex = 1;
 
     console.log(startIndex);
@@ -74,9 +75,9 @@ export default class TablePagination {
 
     for (let x = startIndex; x < rows.length; x++) {
       if (x < start || x >= end)
-        rows[x].classList.add("inactive"); //ToDo поменять класс
+        rows[x].classList.add("table__row-inactive");
       else
-        rows[x].classList.remove("inactive");
+        rows[x].classList.remove("table__row-inactive");
     }
   }
 

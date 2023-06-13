@@ -1,0 +1,7 @@
+.table__row {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border-bottom:  1px solid #E3E9F0;
+  box-sizing: border-box;
+}

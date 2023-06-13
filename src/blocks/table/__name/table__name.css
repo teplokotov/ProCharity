@@ -1,0 +1,7 @@
+.table__name {
+  width: 37.5%;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  text-align: start;
+}

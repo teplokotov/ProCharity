@@ -90,169 +90,255 @@
     <a href="#" class="sidebar__status sidebar__status_state_process">На модерации</a>
   </section>
   <section class="content">
-    <form>
+    <form action="#" method="get">
       <h1 class="heading heading_type_title">Сотрудники</h1>
-      <fieldset class="fieldset fieldset_template_grid-form fieldset_style_pb-small">
-        <legend class="paragraph">Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО</legend>
+      <fieldset class="fieldset fieldset_template_grid-form">
+        <legend class="paragraph fieldset_style_pb-small">Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО</legend>
+        <button class="btn btn_style_primary" id="btnAddWorker">Добавить</button>
       </fieldset>
-      <button class="btn btn_style_primary">Добавить</button>
     </form>
-    <table class="table" data-pagecount="3">
+    <table class="table" data-pagecount="10">
       <thead class="table__head">
         <tr class="table__row">
-          <th>Фамилия и имя</th>
-          <th>Права</th>
-          <th>Дата регистрации</th>
-          <th></th>
-          <th></th>
+          <th class="table__name-container">
+            <p class="table__head-text">Фамилия и имя</p>
+            <button class="table__btn-head"></button>
+          </th>
+          <th td class="table__wrench-container">
+            <p class="table__head-text">Права</p>
+            <button class="table__btn-head"></button>
+          </th>
+          <th class="table__data-container">
+            <p class="table__head-text">Дата регистрации</p>
+            <button class="table__btn-head"></button>
+          </th>
+          <th class="table__edit"> </th>
         </tr>
       </thead>
       <tbody class="table__body">
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"><img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Новоселова Алевтина</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">12.01.2018 11:27</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Щедрина-Вольфембюттельская Мария</td>
+          <td class="table__wrench"><img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора"></td>
+          <td class="table__data-cell">28.09.2021 08:04</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Яковлев Анатолий</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">14.12.2020 18:39</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Яковлев Анатолий</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"><img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
         <tr class="table__row">
-          <td class="table__col">Виноградов Михаил</td>
-          <td class="table__col">Ключ</td>
-          <td class="table__col">16.05.2020 14:30</td>
-          <td class="table__col">Карандаш</td>
-          <td class="table__col">Опции</td>
+          <td class="table__name">Виноградов Михаил</td>
+          <td class="table__wrench"></td>
+          <td class="table__data-cell">16.05.2020 14:30</td>
+          <td class="table__edit">
+            <div class="table__container-btn">
+              <button class="table__btn-edit"></button>
+              <button class="table__btn-redact"></button>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
     <div class="pagination">
-      <div class="pagination__item pagination__item_active">1</div>
-      <div class="pagination__item">2</div>
     </div>
   </section>
 </main>
@@ -423,5 +509,49 @@
     </a>
   </div>
 </footer>
+
+<div class="popup popup_type_window" id="popupNewWorker">
+  <div class="popup__container">
+    <h2 class="heading heading_type_title popup__title">Новый сотрудник</h2>
+    <div class="checkbox">
+      <input type="checkbox" class="checkbox__input" name="notification-1" id="notification-1" checked="">
+      <label for="notification-1" class="checkbox__label checkbox__label_style_notifications">Права администратора</label>
+      <button type="button" class="hint">
+        <div class="hint__tooltip hint__tooltip_position_right-bottom ">
+          <p class="">Сотрудник с&nbsp;правами администратора может:</p>
+          <ul class="list-ul">
+            <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
+            <li>редактировать профиль организации.</li>
+          </ul>
+        </div>
+      </button>
+    </div>
+    <form action="#" method="get">
+      <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="representative">
+        <div class="input">
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя" required="">
+          <label for="name" class="input__label">Имя</label>
+          <button class="btn input__btn input__btn_type_clear-text"></button>
+          <span class="input__error-message">Ошибка</span>
+        </div>
+        <div class="input">
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="surname" placeholder="Фамилия" required="">
+          <label for="surname" class="input__label">Фамилия</label>
+          <button class="btn input__btn input__btn_type_clear-text"></button>
+          <span class="input__error-message">Ошибка</span>
+        </div>
+        <div class="input">
+          <input type="email" class="input__field input__field_default input__field_interval-right_small" name="position" id="position" placeholder="Электронная почта" required="">
+          <label for="position" class="input__label">Электронная почта"</label>
+          <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
+          <span class="input__error-message">Ошибка</span>
+        </div>
+      </fieldset>   
+      <button type="submit" class="btn btn_style_primary">Добавить</button>
+      <button class="btn btn_type_close popup__btn-close"></button>
+    </form>
+  </div>
+
+</div>
 </body>
 </html>
