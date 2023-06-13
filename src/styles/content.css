@@ -454,6 +454,7 @@
 @import url(../blocks/table/__body/table__body.css);
 @import url(../blocks/table/__btn-edit/table__btn-edit.css);
 @import url(../blocks/table/__btn-head/table__btn-head.css);
+@import url(../blocks/table/__btn-head/_rotate/table__btn-head_rotate.css);
 @import url(../blocks/table/__btn-redact/table__btn-redact.css);
 @import url(../blocks/table/__container-btn/table__container-btn.css);
 @import url(../blocks/table/__data-cell/table__data-cell.css);
@@ -463,6 +464,7 @@
 @import url(../blocks/table/__edit/table__edit.css);
 @import url(../blocks/table/__head/table__head.css);
 @import url(../blocks/table/__head-text/table__head-text.css);
+@import url(../blocks/table/__head-text/_sort/table__head-text_sort.css);
 @import url(../blocks/table/__name/table__name.css);
 @import url(../blocks/table/__name-container/table__name-container\ .css);
 @import url(../blocks/table/__row/table__row.css);

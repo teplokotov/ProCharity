@@ -1,0 +1,4 @@
+.table__btn-head_rotate {
+  transform: rotate(180deg);
+  opacity: 1;
+}
