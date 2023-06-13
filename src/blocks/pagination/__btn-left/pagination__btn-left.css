@@ -13,8 +13,6 @@
 }
 
 .pagination__btn-left:hover {
-  transform: scale(1.3);
   transition: 0.2s linear;
   background-image: url(../../../images/TableArrowLeftHover.svg);
-
 }
