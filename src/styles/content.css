@@ -303,6 +303,7 @@
 /*Отображение и изменение аватара*/
 
 @import url(../blocks/avatar/avatar.css);
+@import url(../blocks/avatar/_location/_preview/avatar_location_preview.css);
 
 @import url(../blocks/avatar/__container/avatar__container.css);
 
