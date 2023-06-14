@@ -109,6 +109,7 @@
 @import url(../blocks/popup/__btn-close/popup__btn-close.css);
 
 @import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/__title/_text-weight/popup__title_text-weight.css);
 
 
 
@@ -140,7 +141,7 @@
 @import url(../blocks/btn/_type/btn_type_refresh-process.css);
 
 @import url(../blocks/btn/_position/btn_position_right.css);
-
+@import url(../blocks/btn/_style/btn_style_none.css);
 
 /* Пользовательское отображение select */
 
@@ -288,6 +289,7 @@
 @import url(../blocks/input/__error-message/input__error-message.css);
 @import url(../blocks/input/__error-message/_visible/input__error-message_visible.css);
 @import url(../blocks/input/_type/input_type_bottom-interval.css);
+@import url(../blocks/input/_type/input_type_desk-none.css);
 
 
 

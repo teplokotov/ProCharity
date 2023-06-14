@@ -31,7 +31,7 @@
 
 @media screen and (max-width: 900px) {
   .btn_style_secondary {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     max-width: 100%;
     order: 1;
     width: 100%;
