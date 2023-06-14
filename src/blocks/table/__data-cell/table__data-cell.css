@@ -4,3 +4,9 @@
   padding-left: 10px;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 900px) {
+  .table__data-cell   {
+    display: none;
+  }
+}

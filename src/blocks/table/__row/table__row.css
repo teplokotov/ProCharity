@@ -5,3 +5,10 @@
   border-bottom:  1px solid #E3E9F0;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 900px) {
+  .table__row   {
+    justify-content: space-between;
+    height: 44px;
+  }
+}
