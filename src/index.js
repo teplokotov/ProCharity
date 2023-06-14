@@ -209,13 +209,36 @@ new MobileMenu({
 
 
 // ================ LK - ACCESS.HTML 23 cogort ==============//
+const popupSelector = {
+  popupNewWorker: '#popupNewWorker',
+  popupDataWorker: '#popupDataWorker',
+
+}
+const btnSelector = {
+  btnAddWorker: '#btnAddWorker',
+  btnDataWorker: '.table__btn-edit'
+}
+
 //Инстанс попапа добавления нового работника:
-const popupNewWorker = new Popup('#popupNewWorker')
+const popupNewWorker = new Popup(popupSelector.popupNewWorker)
+popupNewWorker.setEventListeners()
 //Кнопка открытия попапа добавления нового работника:
-const btnAddWorker = document.querySelector('#btnAddWorker')
+const btnAddWorker = document.querySelector(btnSelector.btnAddWorker)
 //Вешаем слушатель на кнопку для открытия попапа:
 if (btnAddWorker) {
   btnAddWorker.addEventListener('click', () => {
     popupNewWorker.open()
   })
+}
+
+//Инстанс попапа добавления данных сотрудника:
+const popupDataWorker = new Popup(popupSelector.popupDataWorker)
+popupDataWorker.setEventListeners()
+//Кнопка открытия попапа добавления нового работника:
+const btnDataWorker = document.querySelectorAll(btnSelector.btnDataWorker)
+//Вешаем слушатель на кнопку для открытия попапа:
+if (btnDataWorker) {
+  btnDataWorker.forEach(item => {
+    item.addEventListener('click', () => popupDataWorker.open())
+  });
 }
