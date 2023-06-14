@@ -93,8 +93,8 @@
     <form action="#" method="get">
       <h1 class="heading heading_type_title">Сотрудники</h1>
       <fieldset class="fieldset fieldset_template_grid-form">
-        <legend class="paragraph fieldset_style_pb-small">Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО</legend>
-        <button class="btn btn_style_primary" id="btnAddWorker">Добавить</button>
+        <legend class="paragraph fieldset_style_pb-small paragraph_fat">Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО</legend>
+        <button class="btn btn_style_primary" id="btnAddWorker" type="button">Добавить</button>
       </fieldset>
     </form>
     <table class="table" data-pagecount="10">
@@ -340,7 +340,7 @@
     </table>
     <div class="input input_type_bottom-interval input_type_desk-none">
       <select name="connection" id="connection" class="custom-select">
-        <option hidden="">Сортировать: по фамили и имени</option>
+        <option hidden="">Сортировать: по фамилии и имени</option>
         <option value="по фамили и имени">Фамилия и имя</option>
         <option value="Электронная почта">Права администратора</option>
         <option value="Телефон">Дата регистрации</option>
@@ -524,11 +524,11 @@
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Новый сотрудник</h2>
     <div class="checkbox">
-      <input type="checkbox" class="checkbox__input" name="notification-1" id="notification-1" checked="">
+      <input type="checkbox" class="checkbox__input" name="notification-1" id="notification-1" checked>
       <label for="notification-1" class="checkbox__label checkbox__label_style_notifications">Права администратора</label>
       <button type="button" class="hint">
         <div class="hint__tooltip hint__tooltip_position_right-bottom ">
-          <p class="">Сотрудник с&nbsp;правами администратора может:</p>
+          <p class="paragraph_margin-none">Сотрудник с&nbsp;правами администратора может:</p>
           <ul class="list-ul">
             <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
             <li>редактировать профиль организации.</li>
@@ -536,41 +536,42 @@
         </div>
       </button>
     </div>
-    <form action="#" method="get">
+    <form action="#" method="get" novalidate>
       <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="representative">
         <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя" required="">
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя">
           <label for="name" class="input__label">Имя</label>
           <button class="btn input__btn input__btn_type_clear-text"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="surname" placeholder="Фамилия" required="">
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="surname" placeholder="Фамилия">
           <label for="surname" class="input__label">Фамилия</label>
           <button class="btn input__btn input__btn_type_clear-text"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="email" class="input__field input__field_default input__field_interval-right_small" name="position" id="position" placeholder="Электронная почта" required="">
-          <label for="position" class="input__label">Электронная почта"</label>
+          <input type="email" class="input__field input__field_default input__field_interval-right_small" name="posiemailion" id="email" placeholder="Электронная почта">
+          <label for="email" class="input__label">Электронная почта"</label>
           <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
       </fieldset>   
-      <button type="submit" class="btn btn_style_primary">Добавить</button>
+      <button type="button" class="btn btn_style_primary">Добавить</button>
       <button class="btn btn_type_close popup__btn-close"></button>
     </form>
   </div>
 </div>
-<div class="popup popup_type_window" id="">
+
+<div class="popup popup_type_window" id="popupDataWorker">
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Данные сотрудника</h2>
     <div class="checkbox">
-      <input type="checkbox" class="checkbox__input" name="notification-1" id="notification-1" checked="">
+      <input type="checkbox" class="checkbox__input" name="notification-1" id="notification-1" checked>
       <label for="notification-1" class="checkbox__label checkbox__label_style_notifications">Права администратора</label>
       <button type="button" class="hint">
         <div class="hint__tooltip hint__tooltip_position_right-bottom ">
-          <p class="">Сотрудник с&nbsp;правами администратора может:</p>
+          <p class="paragraph_margin-none">Сотрудник с&nbsp;правами администратора может:</p>
           <ul class="list-ul">
             <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
             <li>редактировать профиль организации.</li>
@@ -581,91 +582,50 @@
     <form action="#" method="get">
       <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="representative">
         <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя" value="Новоселова" required="">
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя" value="Новоселова" required>
           <label for="name" class="input__label">Имя</label>
-          <button class="btn input__btn input__btn_type_clear-text"></button>
+          <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="surname" placeholder="Фамилия" value="Алевтина" required="">
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="surname" placeholder="Фамилия" value="Алевтина" required>
           <label for="surname" class="input__label">Фамилия</label>
-          <button class="btn input__btn input__btn_type_clear-text"></button>
+          <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="email" class="input__field input__field_default input__field_interval-right_small" name="position" id="position" placeholder="Электронная почта" value="user@mail.ru" required="">
+          <input type="email" class="input__field input__field_default input__field_interval-right_small" name="position" id="position" placeholder="Электронная почта" value="user@mail.ru" required>
           <label for="position" class="input__label">Электронная почта"</label>
           <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
       </fieldset>   
-      <button type="submit" class="btn btn_style_primary">Добавить</button>
-      <button class="btn btn_type_close popup__btn-close"></button>
+      <button type="button" class="btn btn_style_primary" >Добавить</button>
+      <button class="btn btn_type_close popup__btn-close" type="button"></button>
     </form>
   </div>
 </div>
-<div class="popup popup_type_window" id="">
-  <div class="popup__container">
-    <h2 class="heading heading_type_title popup__title">Данные сотрудника</h2>
-    <div class="checkbox">
-      <input type="checkbox" class="checkbox__input" name="notification-1" id="notification-1" checked="">
-      <label for="notification-1" class="checkbox__label checkbox__label_style_notifications">Права администратора</label>
-      <button type="button" class="hint">
-        <div class="hint__tooltip hint__tooltip_position_right-bottom ">
-          <p class="">Сотрудник с&nbsp;правами администратора может:</p>
-          <ul class="list-ul">
-            <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
-            <li>редактировать профиль организации.</li>
-          </ul>
-        </div>
-      </button>
-    </div>
-    <form action="#" method="get">
-      <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="representative">
-        <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя" value="Новоселова" required="">
-          <label for="name" class="input__label">Имя</label>
-          <button class="btn input__btn input__btn_type_clear-text"></button>
-          <span class="input__error-message">Ошибка</span>
-        </div>
-        <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="surname" placeholder="Фамилия" value="Алевтина" required="">
-          <label for="surname" class="input__label">Фамилия</label>
-          <button class="btn input__btn input__btn_type_clear-text"></button>
-          <span class="input__error-message">Ошибка</span>
-        </div>
-        <div class="input">
-          <input type="email" class="input__field input__field_default input__field_interval-right_small" name="position" id="position" placeholder="Электронная почта" value="user@mail.ru" required="">
-          <label for="position" class="input__label">Электронная почта"</label>
-          <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
-          <span class="input__error-message">Ошибка</span>
-        </div>
-      </fieldset>   
-      <button type="submit" class="btn btn_style_primary">Добавить</button>
-      <button class="btn btn_type_close popup__btn-close"></button>
-    </form>
-  </div>
-</div>
+
 <div class="popup popup_type_message">
   <div class="popup__container">
     <p class="popup__title popup__title_text-weight">Приглашение и пароль для входа
       в личный кабинет отправили
       на электронную почту <a href="#" class="link link_style_dark">user@mail.ru</a></p>
-    <button class="btn btn_type_close popup__btn-close"></button>
+    <button class="btn btn_type_close popup__btn-close" type="button"></button>
   </div>
 </div>
 <div class="popup popup_type_message">
   <div class="popup__container">
     <p class="popup__title popup__title_text-weight">Не удалось добавить сотрудника
       Обновите страницу или попробуйте позже</p>
-    <button class="btn btn_type_close popup__btn-close"></button>
+    <button class="btn btn_type_close popup__btn-close" type="button"></button>
   </div>
 </div>
 <div class="popup popup_type_message">
   <div class="popup__container">
     <p class="popup__title popup__title_text-weight">Яблочкина Виктория</p>
     <p class="popup__text">Данные пользователя успешно удалены</p>
-    <button class="btn btn_type_close popup__btn-close"></button>
+    <button class="btn btn_type_close popup__btn-close" type="button"></button>
   </div>
 </div>
 
@@ -673,10 +633,10 @@
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Сбросить пароль сотрудника?</h2>
     <p class="popup__paragraph popup__paragraph_fat">Новый пароль будет отправлен на электронную почту found@mail.ru</p>
-    <form name="npoRequestAccess" id="npoRequestAccess" action="#" method="get" novalidate="">
-      <button type="submit" class="btn btn_style_primary">Сбросить</button>
+    <form name="npoRequestAccess" id="npoRequestAccess" action="#" method="get" novalidate>
+      <button type="submit" class="btn btn_style_primary" type="button">Сбросить</button>
     </form>
-    <button class="btn btn_type_close popup__btn-close"></button>
+    <button class="btn btn_type_close popup__btn-close" type="button"></button>
   </div>
 </div>
 
@@ -684,11 +644,12 @@
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Удалить данные сотрудника?</h2>
     <p class="popup__paragraph popup__paragraph_fat">Данные о сотруднике Новоселова Алевтина будут удалены</p>
-    <form name="npoRequestAccess" id="npoRequestAccess" action="#" method="get" novalidate="">
-      <button type="submit" class="btn btn_style_primary">Удалить</button>
+    <form name="npoRequestAccess" id="npoRequestAccess" action="#" method="get" novalidate>
+      <button type="submit" class="btn btn_style_primary" type="button">Удалить</button>
     </form>
-    <button class="btn btn_type_close popup__btn-close"></button>
+    <button class="btn btn_type_close popup__btn-close" type="button"></button>
   </div>
 </div>
+
 </body>
 </html>

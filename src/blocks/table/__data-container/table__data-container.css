@@ -1,5 +1,6 @@
 .table__data-container {
-  width: 23.64%;
+  width: 100%;
+  max-width: 174px;
   display: flex;
   gap: 8px;
   flex-wrap: nowrap;

@@ -1,5 +1,6 @@
 .table__name {
-  width: 37.5%;
+  width: 100%;
+  max-width: 276px;
   overflow: hidden; 
   text-overflow: ellipsis; 
   white-space: nowrap;

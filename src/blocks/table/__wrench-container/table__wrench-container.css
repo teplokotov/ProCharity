@@ -1,5 +1,6 @@
 .table__wrench-container{
-  width: 12.64%;
+  width: 100%;
+  max-width: 64px;
   display: flex;
   gap: 8px;
   flex-wrap: nowrap;
