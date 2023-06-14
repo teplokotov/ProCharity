@@ -60,7 +60,7 @@ window.addEventListener('load', function() {
   const table = document.querySelector(".table");
   if (table) {
     const pagination = new TablePagination(table);
-    pagination.genTables()
+    pagination.genTables();
   }
 });
 

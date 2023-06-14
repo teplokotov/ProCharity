@@ -42,7 +42,7 @@ export default class TablePagination {
 
       if (i === 0)
         page.classList.add("pagination__item_active");
-      const callback = this._pageCallback.bind(this, page, table, page.dataset.index)
+      const callback = this._pageCallback.bind(this, page, table, page.dataset.index);
       page.addEventListener('click', callback);
       pager.appendChild(page);
     }
@@ -59,9 +59,9 @@ export default class TablePagination {
     const pages = document.querySelectorAll('.pagination__item').length;
    arrowRight.addEventListener('click', () => {
      let _index = parseInt(table.dataset.currentpage);
-     if (_index <= pages-1) {
+     if (_index < pages-1) {
        _index++;
-       const page = document.querySelectorAll(".pagination__item")[_index]
+       const page = document.querySelectorAll(".pagination__item")[_index];
 
        const callback = this._pageCallback.bind(this, page, table, _index);
        callback();
@@ -77,6 +77,16 @@ export default class TablePagination {
         callback();
       }
     })
+  }
+
+  openPage(table, pageNum) {
+    const pages = document.querySelectorAll('.pagination__item').length;
+    if (pageNum > 0 && pageNum <= pages) {
+      const _index = pageNum - 1;
+      const page = document.querySelectorAll(".pagination__item")[_index]
+      const callback = this._pageCallback.bind(this, page, table, _index);
+      callback();
+    }
   }
 
   _pageCallback(button, table, index) {
