@@ -1,5 +1,3 @@
-import {logPlugin} from "@babel/preset-env/lib/debug";
-
 export default class CustomMultiselect {
   /**
    *
@@ -35,41 +33,42 @@ export default class CustomMultiselect {
    *                                    использоваться в качестве подписи поля и не будет выводиться
    *                                    в кастомизированном списке
    *    useTextSearch                   - true | false - использовать / не использовать текстовый поиск по элементам списка
+   *    useSelectCounter                - true | false - отображение счетчика выбранных опций
+   *    isSplash                        - true | false - показывать выбор опций для мобильной версии в модельном окне
    */
   constructor(
-    selector,
-    options = {
-      wrapClass: ['custom-select__wrap', 'custom-select__wrap_style_multiselect'],
-      headingClass: ['heading', 'heading__title', 'custom-select__heading'],
-      closeBtnClass: ['btn', 'btn_type_close', 'custom-select__btn-close'],
-      fieldClass: ['custom-select__field', 'custom-select__field_style_multiselect'],
-      labelClass: 'custom-select__label',
-      chipsClass: 'custom-select__chips',
-      chipsTextClass: 'custom-select__chips-text',
-      chipsDeleteBtnClass: ['btn', 'custom-select__chips-delete-btn'],
-      searchInputClass: 'custom-select__input',
-      messageContainerClass: 'custom-select__message',
-      modalClass: 'custom-select__modal',
-      optionsListContainerClass: 'custom-select__list-container',
-      optionsOpenedListContainerClass: 'custom-select__list-container__opened',
-      linkClass: 'custom-select__link',
-      selectAllGroupLinkClass: 'custom-select__link_type_select-all',
-      resetAllGroupLinkClass: 'custom-select__link_type_reset',
-      selectBtnClass: ['btn', 'btn_style_primary', 'custom-select__btn', 'custom-select__btn_type_select'],
-      resetBtnClass: ['btn', 'btn_style_secondary', 'custom-select__btn', 'custom-select__btn_type_reset'],
-      optionsListClass: ['custom-select__list', 'custom-select__list_type_multiselect'],
-      optionClass: 'custom-select__item',
-      optionParentClass: 'custom-select__item_style_parent',
-      optionParentOpenedClass: 'custom-select__item_style_parent-opened',
-      optionSelectableClass: 'custom-select__item_style_checkbox',
-      optionSelectedClass: 'custom-select__item_selected-checkbox',
-      mobileScreenBreakpoint: 900,
-      firstOptionIsTitle: false,
-      useTextSearch: true,
-      isSplash: true
-    }) {
+    selector, {...options} = {}) {
     this._selectElement = document.querySelector(selector);
-    this._options = options;
+    this._options = {};
+    this._options.wrapClass = options.wrapClass ?? ['custom-select__wrap', 'custom-select__wrap_style_multiselect'];
+    this._options.headingClass = options.headingClass ?? ['heading', 'heading__title', 'custom-select__heading'];
+    this._options.closeBtnClass = options.closeBtnClass ?? ['btn', 'btn_type_close', 'custom-select__btn-close'];
+    this._options.fieldClass = options.fieldClass ?? ['custom-select__field', 'custom-select__field_style_multiselect'];
+    this._options.labelClass = options.labelClass ?? 'custom-select__label';
+    this._options.chipsClass = options.chipsClass ?? 'custom-select__chips';
+    this._options.chipsTextClass = options.chipsTextClass ?? 'custom-select__chips-text';
+    this._options.chipsDeleteBtnClass = options.chipsDeleteBtnClass ?? ['btn', 'custom-select__chips-delete-btn'];
+    this._options.searchInputClass = options.searchInputClass ?? 'custom-select__input';
+    this._options.messageContainerClass = options.messageContainerClass ?? 'custom-select__message';
+    this._options.modalClass = options.modalClass ?? 'custom-select__modal';
+    this._options.optionsListContainerClass = options.optionsListContainerClass ?? 'custom-select__list-container';
+    this._options.optionsOpenedListContainerClass = options.optionsOpenedListContainerClass ?? 'custom-select__list-container__opened';
+    this._options.linkClass = options.linkClass ?? 'custom-select__link';
+    this._options.selectAllGroupLinkClass = options.selectAllGroupLinkClass ?? 'custom-select__link_type_select-all';
+    this._options.resetAllGroupLinkClass = options.resetAllGroupLinkClass ?? 'custom-select__link_type_reset';
+    this._options.selectBtnClass = options.selectBtnClass ?? ['btn', 'btn_style_primary', 'custom-select__btn', 'custom-select__btn_type_select'];
+    this._options.resetBtnClass = options.resetBtnClass ?? ['btn', 'btn_style_secondary', 'custom-select__btn', 'custom-select__btn_type_reset'];
+    this._options.optionsListClass = options.optionsListClass ?? ['custom-select__list', 'custom-select__list_type_multiselect'];
+    this._options.optionClass = options.optionClass ?? 'custom-select__item';
+    this._options.optionParentClass = options.optionParentClass ?? 'custom-select__item_style_parent';
+    this._options.optionParentOpenedClass = options.optionParentOpenedClass ?? 'custom-select__item_style_parent-opened';
+    this._options.optionSelectableClass = options.optionSelectableClass ?? 'custom-select__item_style_checkbox';
+    this._options.optionSelectedClass = options.optionSelectedClass ?? 'custom-select__item_selected-checkbox';
+    this._options.mobileScreenBreakpoint = options.mobileScreenBreakpoint ?? 900;
+    this._options.firstOptionIsTitle = options.firstOptionIsTitle ?? false;
+    this._options.useTextSearch = options.useTextSearch ?? true;
+    this._options.useSelectCounter = options.useSelectCounter ?? false;
+    this._options.isSplash = options.isSplash ?? true;
 
     this._handleSearch = this._handleSearch.bind(this);
   }
@@ -721,7 +720,7 @@ export default class CustomMultiselect {
       }
     });
 
-    this._resetBtnElement.addEventListener('mousedown', (evt) => {
+    this._resetBtnElement.addEventListener('mousedown', () => {
       this._handleResetGroup();
     })
 
