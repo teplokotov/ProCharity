@@ -56,11 +56,24 @@ if (personalDataForm) {
 const popup = new Popup('.popup');
 popup.setEventListeners();
 
-window.addEventListener('load', function() {
-  const table = document.querySelector(".table");
+window.addEventListener('DOMContentLoaded', function() {
+  const table = document.querySelector('.table');
   if (table) {
     const pagination = new TablePagination(table);
     pagination.genTables();
+
+    const sorting = new TableSort({
+      handleOpenPagePagination: (table, pageNum) => {
+        pagination.openPage(table, pageNum);
+        }
+      },
+      table
+    );
+
+    // Начальная сортировка, можно отсортировать по любой колонке (подставить индекс)
+    sorting.initialSorting(0);
+    // Включение сортировки
+    sorting.enableSorting();
   }
 });
 
