@@ -288,6 +288,7 @@
 @import url(../blocks/input/__error-message/input__error-message.css);
 @import url(../blocks/input/__error-message/_visible/input__error-message_visible.css);
 @import url(../blocks/input/_type/input_type_bottom-interval.css);
+@import url(../blocks/input/_type/input_type_desk-none.css);
 
 
 

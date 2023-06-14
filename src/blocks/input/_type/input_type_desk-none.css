@@ -1,0 +1,9 @@
+.input_type_desk-none {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .input_type_desk-none   {
+    display: flex;
+  }
+}
