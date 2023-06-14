@@ -1,11 +1,13 @@
 export default class TablePagination {
+  constructor(table) {
+    this._table = table;
+  }
 
   genTables() {
-    const table = document.querySelector(".table");
-    this._perPage = parseInt(table.dataset.pagecount);
-    this._createFooters(table);
-    this._createTableMeta(table);
-    this._loadTable(table);
+    this._perPage = parseInt(this._table.dataset.pagecount);
+    this._createTableMeta(this._table);
+    this._createFooters(this._table);
+    this._loadTable(this._table);
   }
 
   _createTableMeta(table) {
@@ -40,24 +42,51 @@ export default class TablePagination {
 
       if (i === 0)
         page.classList.add("pagination__item_active");
-      const callback = this._pageCallback.bind(this, page, table)
+      const callback = this._pageCallback.bind(this, page, table, page.dataset.index)
       page.addEventListener('click', callback);
       pager.appendChild(page);
     }
     const arrowRight = document.createElement("button");
     arrowRight.className = "pagination__btn-right";
     pager.appendChild(arrowRight);
+    this._arrowsEventListener(table);
     table.parentNode.insertBefore(table, pager);
   }
 
-  _pageCallback(button, table) {
+  _arrowsEventListener(table) {
+    const arrowRight = document.querySelector('.pagination__btn-right');
+    const arrowLeft = document.querySelector('.pagination__btn-left');
+    const pages = document.querySelectorAll('.pagination__item').length;
+   arrowRight.addEventListener('click', () => {
+     let _index = parseInt(table.dataset.currentpage);
+     if (_index <= pages-1) {
+       _index++;
+       const page = document.querySelectorAll(".pagination__item")[_index]
+
+       const callback = this._pageCallback.bind(this, page, table, _index);
+       callback();
+     }
+   });
+    arrowLeft.addEventListener('click', () => {
+      let _index = parseInt(table.dataset.currentpage);
+      if (_index > 0) {
+        _index--;
+        const page = document.querySelectorAll(".pagination__item")[_index]
+
+        const callback = this._pageCallback.bind(this, page, table, _index);
+        callback();
+      }
+    })
+  }
+
+  _pageCallback(button, table, index) {
     const parent = button.parentNode;
     const items = parent.querySelectorAll(".pagination__item");
     for (let x = 0; x < items.length; x++) {
       items[x].classList.remove("pagination__item_active");
     }
     button.classList.add('pagination__item_active');
-    table.dataset.currentpage = button.dataset.index;
+    table.dataset.currentpage = index;
     this._loadTable(table);
   }
 
@@ -66,8 +95,6 @@ export default class TablePagination {
 
     if (table.querySelector('.table__head'))
       startIndex = 1;
-
-    console.log(startIndex);
 
     const start = (parseInt(table.dataset.currentpage) * table.dataset.pagecount) + startIndex;
     const end = start + parseInt(table.dataset.pagecount);

@@ -57,8 +57,11 @@ const popup = new Popup('.popup');
 popup.setEventListeners();
 
 window.addEventListener('load', function() {
-  const pagination = new TablePagination();
-  pagination.genTables()
+  const table = document.querySelector(".table");
+  if (table) {
+    const pagination = new TablePagination(table);
+    pagination.genTables()
+  }
 });
 
 // Обеспечение работы модальных окон
