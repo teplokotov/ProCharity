@@ -1,5 +1,6 @@
 .table__data-cell {
-  width: 23.64%;
+  width: 100%;
+  max-width: 174px;
   text-align: left;
   padding-left: 10px;
   box-sizing: border-box;

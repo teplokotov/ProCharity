@@ -1,5 +1,6 @@
 .table__edit {
-  width: 27.45%;
+  width: 100%;
+  max-width: 64px;
 }
 
 @media screen and (max-width: 900px) {
