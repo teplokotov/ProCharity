@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="author" content="Группа 4">
-  <title>ProCharity - Смена пароля</title>
+  <meta name="author" content="Команда 1 Когорта 23 Web+">
+  <title>ProCharity - Сотрудники</title>
 </head>
 <body class="page">
 <header class="header">
@@ -104,7 +104,7 @@
             <p class="table__head-text">Фамилия и имя</p>
             <button class="table__btn-head"></button>
           </th>
-          <th td class="table__wrench-container" data-type="bool">
+          <th class="table__wrench-container" data-type="bool">
             <p class="table__head-text">Права</p>
             <button class="table__btn-head"></button>
           </th>
@@ -339,17 +339,14 @@
       </tbody>
     </table>
     <div class="input input_type_bottom-interval input_type_desk-none">
-      <select name="connection" id="connection" class="custom-select">
-        <option hidden="">Сортировать: по фамилии и имени</option>
-        <option value="по фамили и имени">Фамилия и имя</option>
-        <option value="права администратора">Права администратора</option>
-        <option value="дата регистрации">Дата регистрации</option>
+      <select name="makeSort" id="makeSort" class="custom-select">
+        <option>по фамилии и имени</option>
+        <option>по правам администратора</option>
+        <option>по дате регистрации</option>
       </select>
-      </div>
     </div>
-    <div class="pagination">
-    </div>
-    <button class="btn btn_style_secondary btn_style_none btn_load_more" id="">Показать еще 5</button>
+    <div class="pagination"></div>
+    <button class="btn btn_style_secondary btn_style_none btn_load_more">Показать еще 5</button>
   </section>
 </main>
 <footer class="footer">

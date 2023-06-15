@@ -59,20 +59,31 @@ popup.setEventListeners();
 window.addEventListener('DOMContentLoaded', function() {
   const table = document.querySelector('.table');
   if (table) {
-    const loadMore = document.querySelector(".btn_load_more");
+    const loadMore = document.querySelector('.btn_load_more');
     const pagination = new TablePagination(table);
     pagination.genTables();
     pagination.loadMore(loadMore, table);
     const sorting = new TableSort({
       handleOpenPagePagination: (table, pageNum) => {
         pagination.openPage(table, pageNum);
+        },
+      getMobileSortingType: (optionValue) => {
+        switch (optionValue) {
+          case 'по правам администратора':
+            return 1;
+          case 'по дате регистрации':
+            return 2;
+          case 'по фамилии и имени':
+          default:
+            return 0;
+          }
         }
       },
       table
     );
 
-    // Начальная сортировка, можно отсортировать по любой колонке (подставить индекс)
-    sorting.initialSorting(0);
+    // Первоначальная сортировка по индексу колонки
+    sorting.sortByIndex(0);
     // Включение сортировки
     sorting.enableSorting();
   }
@@ -142,6 +153,24 @@ new CustomSelect('#connection').generate();
 // "Название компании"
 const companyNameCustomField = new CustomSelect('#companyName');
 companyNameCustomField.generate();
+
+
+const CustomSelectOfSort = new CustomSelect('#makeSort', {
+  wrapClass: 'custom-select__wrap',
+  closeBtnClass: ['btn', 'btn_type_close', 'custom-select__btn-close'],
+  fieldClass: 'custom-select__field',
+  fieldDisabledClass: 'custom-select__field_disabled',
+  fieldTextClass: 'custom-select__field-text',
+  optionsListContainerClass: 'custom-select__list-container',
+  optionsOpenedListContainerClass: 'custom-select__list-container__opened',
+  optionsListClass: 'custom-select__list',
+  optionClass: 'custom-select__item',
+  optionParentClass: 'custom-select__item_style_parent',
+  optionSelectedClass: 'custom-select__item_selected',
+  firstOptionIsTitle: false,
+  isSort: true,
+});
+CustomSelectOfSort.generate();
 
 
 // Инициализация кастомного дыухуровнего выпадающего списка для поля

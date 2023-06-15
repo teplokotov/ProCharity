@@ -29,7 +29,8 @@ export default class CustomSelect {
     optionClass: 'custom-select__item',
     optionParentClass: 'custom-select__item_style_parent',
     optionSelectedClass: 'custom-select__item_selected',
-    firstOptionIsTitle: true
+    firstOptionIsTitle: true,
+    isSort: false,
   }) {
     this._selectElement = document.querySelector(selector);
     this._options = options;
@@ -43,6 +44,7 @@ export default class CustomSelect {
       element.selected = !element.selected
     } else {
       this._selectElement.value = option.dataset.val;
+      this._selectElement.dispatchEvent(new Event('change'));
     }
   }
 
@@ -127,9 +129,10 @@ export default class CustomSelect {
       this.setDisabled();
     }
 
-    if (this._options.firstOptionIsTitle) {
-      this._fieldTextElement.textContent = this._selectElement
-        .querySelector('option').textContent;
+    if (this._options.firstOptionIsTitle && !this._options.isSort) {
+      this._fieldTextElement.textContent = this._selectElement.querySelector('option').textContent;
+    } else {
+      this._fieldTextElement.textContent = 'Сортировать: ' + this._selectElement.querySelector('option').textContent;
     }
 
     // Добавление текстового элемента и иконки к полю
@@ -238,7 +241,11 @@ export default class CustomSelect {
       const selectedOption = this._getSelectedOption();
 
       if(selectedOption) {
-        this._fieldTextElement.textContent = selectedOption.textContent;
+        if (!this._options.isSort) {
+          this._fieldTextElement.textContent = selectedOption.textContent;
+        } else {
+          this._fieldTextElement.textContent = 'Сортировать: ' + selectedOption.textContent;
+        }
       }
   }
 
@@ -274,6 +281,20 @@ export default class CustomSelect {
           container.append(list)
           option.append(container);
         }
+
+        parentElement.append(option);
+      } else if (this._options.isSort) {
+        // Создание элемента списка li
+        const option = this._createItem();
+
+        // Добавление атрибута для связки элементов выбора с стандартным select
+        option.setAttribute('data-val', item.value);
+
+        // Установка отображаемого текстового значения
+        option.textContent = item.text;
+
+        // Выбирает первый пункт по умолчанию
+        if (index == 0) this._setSelectedOption(option);
 
         parentElement.append(option);
       }

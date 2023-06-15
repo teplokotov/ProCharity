@@ -1,19 +1,20 @@
 export default class TableSort {
-  constructor({ handleOpenPagePagination }, table) {
+  constructor({ handleOpenPagePagination, getMobileSortingType}, table) {
     this._table = table;
     this._headers = this._table.querySelectorAll('th');
     this._tableBody = this._table.querySelector('tbody');
     this._rows = this._tableBody.querySelectorAll('tr');
-    this._handleOpenPagePagination = handleOpenPagePagination;
     this._colIndex = -1;
     this._previousIndex = -1;
+    this._getMobileSortingType = getMobileSortingType;
+    this._handleOpenPagePagination = handleOpenPagePagination;
   }
 
   _compare = (rowA, rowB) => {
     const rowDataA = rowA.cells[this._currentIndex].innerHTML;
     const rowDataB = rowB.cells[this._currentIndex].innerHTML;
 
-    switch(this._type) {
+    switch (this._type) {
       case 'number':
         return Number.parseFloat(rowDataA) - Number.parseFloat(rowDataB);
       case 'date':
@@ -45,12 +46,11 @@ export default class TableSort {
 
     this._table.appendChild(this._tableBody);
 
-    const pageNum = 1;
-    this._handleOpenPagePagination(this._table, pageNum);
+    this._handleOpenPagePagination(this._table, 1);
   }
 
   _switchStyle() {
-    switch(true) {
+    switch (true) {
       case (this._previousIndex === -1):
         this._previousIndex = this._currentIndex;
         this._headers[this._currentIndex].querySelector('p').classList.add('table__head-text_sort');
@@ -70,12 +70,15 @@ export default class TableSort {
           this._headers[this._currentIndex].querySelector('button').classList.add('table__btn-head_rotate');
         }
         break;
+      default:
+        break;
     }
   }
 
-  initialSorting(index) {
+  sortByIndex(index) {
     this._currentIndex = index;
     this._type = this._headers[index].getAttribute('data-type');
+
     this._switchStyle();
 
     this._sortTable(this._colIndex === this._currentIndex);
@@ -83,15 +86,17 @@ export default class TableSort {
   }
 
   enableSorting() {
+    const makeSortSelector = document.querySelector('#makeSort');
+
+    makeSortSelector.addEventListener('change', () => {
+      const optionValue = String(makeSortSelector.value);
+      this.sortByIndex(this._getMobileSortingType(optionValue));
+    });
+
     this._headers.forEach((header) => {
       if (header.textContent !== '') {
         header.addEventListener('click', () => {
-          this._currentIndex = header.cellIndex;
-          this._type = header.getAttribute('data-type');
-          this._switchStyle();
-
-          this._sortTable(this._colIndex === this._currentIndex);
-          this._colIndex = (this._colIndex === this._currentIndex) ? -1 : this._currentIndex;
+          this.sortByIndex(header.cellIndex);
         });
       }
     });
