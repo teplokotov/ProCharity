@@ -281,8 +281,13 @@ if(btnDelete) {
   })
 }
 
+const formSelector = {
+  popupWorkerForm: '#resetWorkerPassword',
+}
+const popupWorkerForm = document.querySelector('#resetWorkerPassword')
 
-
-
+a.addEventListener('submit', (evt) => {
+  evt.preventDefault()
+  })
 
 

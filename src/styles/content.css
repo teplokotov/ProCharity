@@ -481,3 +481,11 @@
 @import url(../blocks/pagination/__btn-right/pagination__btn-right.css);
 @import url(../blocks/pagination/__item/pagination__item.css);
 @import url(../blocks/pagination/__item/_active/pagination__item_active.css);
+
+
+.sss {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
