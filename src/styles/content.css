@@ -99,6 +99,7 @@
 @import url(../blocks/popup/__paragraph/popup__paragraph_fat.css);
 
 @import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__title/_icon/popup__title_icon_grey.css);
 
 @import url(../blocks/popup/__text/popup__text.css);
 

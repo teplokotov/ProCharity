@@ -1,0 +1,6 @@
+.popup_type_message .popup__title_icon_grey.popup__title:before {
+    content: url(../../../../images/clock-icon.svg);
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
