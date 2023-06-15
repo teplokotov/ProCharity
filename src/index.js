@@ -15,7 +15,6 @@ import CustomSelect from "./components/CustomSelect";
 import CustomMultiselect from "./components/CustomMultiselect";
 import Popup from './components/Popup';
 import TablePagination from './components/TablePagination';
-import TableSort from './components/TableSort';
 
 
 // Подключение сторонних библиотек
@@ -61,20 +60,7 @@ window.addEventListener('DOMContentLoaded', function() {
   if (table) {
     const pagination = new TablePagination(table);
     pagination.genTables();
-
-    const sorting = new TableSort({
-      handleOpenPagePagination: (table, pageNum) => {
-        pagination.openPage(table, pageNum);
-        }
-      },
-      table
-    );
     pagination.loadMore(table);
-
-    // Начальная сортировка, можно отсортировать по любой колонке (подставить индекс)
-    sorting.initialSorting(0);
-    // Включение сортировки
-    sorting.enableSorting();
   }
 });
 

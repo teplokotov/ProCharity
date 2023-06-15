@@ -5,3 +5,10 @@
   gap: 4px;
   padding-top: 20px;
 }
+
+
+@media screen and (max-width: 900px) {
+  .pagination   {
+    display: none;
+  }
+}
