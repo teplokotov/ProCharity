@@ -349,7 +349,7 @@
     </div>
     <div class="pagination">
     </div>
-    <button class="btn btn_style_secondary btn_style_none" id="">Показать еще 5</button>
+    <button class="btn btn_style_secondary btn_style_none btn_load_more" id="">Показать еще 5</button>
   </section>
 </main>
 <footer class="footer">
@@ -537,16 +537,16 @@
       </button>
     </div>
     <form action="#" method="get" novalidate>
-      <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="representative">
+      <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="newWorkerFieldset">
         <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя">
-          <label for="name" class="input__label">Имя</label>
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="newWorkerName" placeholder="Имя">
+          <label for="newWorkerName" class="input__label">Имя</label>
           <button class="btn input__btn input__btn_type_clear-text"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
         <div class="input">
-          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="surname" placeholder="Фамилия">
-          <label for="surname" class="input__label">Фамилия</label>
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" id="newWorkerSurname" placeholder="Фамилия">
+          <label for="newWorkerSurname" class="input__label">Фамилия</label>
           <button class="btn input__btn input__btn_type_clear-text"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
@@ -567,8 +567,8 @@
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Данные сотрудника</h2>
     <div class="checkbox">
-      <input type="checkbox" class="checkbox__input" name="notification-1" id="notification-1" checked>
-      <label for="notification-1" class="checkbox__label checkbox__label_style_notifications">Права администратора</label>
+      <input type="checkbox" class="checkbox__input" name="notification-2" id="notification-2" checked>
+      <label for="notification-2" class="checkbox__label checkbox__label_style_notifications">Права администратора</label>
       <button type="button" class="hint">
         <div class="hint__tooltip hint__tooltip_position_right-bottom ">
           <p class="paragraph_margin-none">Сотрудник с&nbsp;правами администратора может:</p>
@@ -599,7 +599,7 @@
           <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
           <span class="input__error-message">Ошибка</span>
         </div>
-      </fieldset>   
+      </fieldset>
       <button type="button" class="btn btn_style_primary" >Добавить</button>
       <button class="btn btn_type_close popup__btn-close" type="button"></button>
     </form>
@@ -629,23 +629,23 @@
   </div>
 </div>
 
-<div class="popup popup_type_window"> 
+<div class="popup popup_type_window">
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Сбросить пароль сотрудника?</h2>
     <p class="popup__paragraph popup__paragraph_fat">Новый пароль будет отправлен на электронную почту found@mail.ru</p>
-    <form name="npoRequestAccess" id="npoRequestAccess" action="#" method="get" novalidate>
-      <button type="submit" class="btn btn_style_primary" type="button">Сбросить</button>
+    <form name="resetWorkerPassword" id="resetWorkerPassword" action="#" method="get" novalidate>
+      <button class="btn btn_style_primary" type="button">Сбросить</button>
     </form>
     <button class="btn btn_type_close popup__btn-close" type="button"></button>
   </div>
 </div>
 
-<div class="popup popup_type_window"> 
+<div class="popup popup_type_window">
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Удалить данные сотрудника?</h2>
     <p class="popup__paragraph popup__paragraph_fat">Данные о сотруднике Новоселова Алевтина будут удалены</p>
-    <form name="npoRequestAccess" id="npoRequestAccess" action="#" method="get" novalidate>
-      <button type="submit" class="btn btn_style_primary" type="button">Удалить</button>
+    <form name="removeWorkerData" id="removeWorkerData" action="#" method="get" novalidate>
+      <button class="btn btn_style_primary" type="button">Удалить</button>
     </form>
     <button class="btn btn_type_close popup__btn-close" type="button"></button>
   </div>

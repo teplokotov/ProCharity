@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', function() {
   if (table) {
     const pagination = new TablePagination(table);
     pagination.genTables();
-
+    pagination.loadMore(table);
     const sorting = new TableSort({
       handleOpenPagePagination: (table, pageNum) => {
         pagination.openPage(table, pageNum);
