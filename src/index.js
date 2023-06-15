@@ -59,9 +59,10 @@ popup.setEventListeners();
 window.addEventListener('DOMContentLoaded', function() {
   const table = document.querySelector('.table');
   if (table) {
+    const loadMore = document.querySelector(".btn_load_more");
     const pagination = new TablePagination(table);
     pagination.genTables();
-    pagination.loadMore(table);
+    pagination.loadMore(loadMore, table);
     const sorting = new TableSort({
       handleOpenPagePagination: (table, pageNum) => {
         pagination.openPage(table, pageNum);

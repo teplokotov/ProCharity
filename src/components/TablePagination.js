@@ -89,9 +89,8 @@ export default class TablePagination {
     }
   }
 
-  loadMore(table) {
-    const loadMore = document.querySelector(".btn_load_more");
-    loadMore.addEventListener('click', (evt) => {
+  loadMore(loadMoreButton, table) {
+    loadMoreButton.addEventListener('click', (evt) => {
       const inactiveRows = table.querySelectorAll('.table__row-inactive');
       const rowsCount = inactiveRows.length % 5 === 0 ? 5 : inactiveRows;
         for (let x = 0; x < rowsCount; x++) {
@@ -99,7 +98,7 @@ export default class TablePagination {
         }
         const inactiveRowsCount = inactiveRows.length;
         if (inactiveRowsCount - 5 <= 0) {
-          evt.currentTarget.setAttribute('disabled', '');
+          evt.currentTarget.classList.add("btn_style_hidden");
         }
     });
 
