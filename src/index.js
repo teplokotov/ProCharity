@@ -190,19 +190,31 @@ new MobileMenu({
 const popupSelector = {
   popupNewWorker: '#popupNewWorker',
   popupDataWorker: '#popupDataWorker',
-
+  popupResetPassword: '#popupReset',
+  popupDelDataUser: '#popupDelete',
 }
 const btnSelector = {
   btnAddWorker: '#btnAddWorker',
-  btnDataWorker: '.table__btn-edit'
+  btnDataWorker: '.table__btn-edit',
+  btnContextMenu: '.table__btn-redact',
+  btnReset: '.btnReset',
+  btnDelete: '.btnDelete',
+}
+
+const menuSelector ={
+  contextMenu: '.table__menu-body',
+  opened: 'table__menu-body_opened',
+  menuContainer: '.table__menu-container',
+  menuList: 'table__menu-body',
 }
 
 //Инстанс попапа добавления нового работника:
 const popupNewWorker = new Popup(popupSelector.popupNewWorker)
+
 popupNewWorker.setEventListeners()
-//Кнопка открытия попапа добавления нового работника:
+
 const btnAddWorker = document.querySelector(btnSelector.btnAddWorker)
-//Вешаем слушатель на кнопку для открытия попапа:
+
 if (btnAddWorker) {
   btnAddWorker.addEventListener('click', () => {
     popupNewWorker.open()
@@ -211,12 +223,66 @@ if (btnAddWorker) {
 
 //Инстанс попапа добавления данных сотрудника:
 const popupDataWorker = new Popup(popupSelector.popupDataWorker)
+
 popupDataWorker.setEventListeners()
-//Кнопка открытия попапа добавления нового работника:
+
 const btnDataWorker = document.querySelectorAll(btnSelector.btnDataWorker)
-//Вешаем слушатель на кнопку для открытия попапа:
+
 if (btnDataWorker) {
   btnDataWorker.forEach(item => {
     item.addEventListener('click', () => popupDataWorker.open())
   });
 }
+
+
+//Логика открытия контекстного меню
+const btnContextMenu = document.querySelectorAll(btnSelector.btnContextMenu)
+const contextMenu = document.querySelectorAll(menuSelector.contextMenu)
+const btnReset = document.querySelectorAll(btnSelector.btnReset)
+const btnDelete = document.querySelectorAll(btnSelector.btnDelete)
+
+if(btnContextMenu) {
+  btnContextMenu.forEach(item => {
+    item.addEventListener('click', () => {
+      item.closest(menuSelector.menuContainer)
+        .querySelector(menuSelector.contextMenu)
+        .classList.add(menuSelector.opened)
+    })
+  });
+}
+
+if(contextMenu) {
+  contextMenu.forEach(item => {
+    item.addEventListener('click', e => {
+      if (!e.target.classList.contains(menuSelector.menuList)) {
+        item.classList.remove(menuSelector.opened)
+      }  
+    })
+  })
+}
+
+//Инстанс попапа сброса пароля сотрудника
+const popupReset = new Popup(popupSelector.popupResetPassword)
+popupReset.setEventListeners()
+
+if(btnReset) {
+  btnReset.forEach(item => {
+    item.addEventListener('click', () => popupReset.open())
+  })
+}
+
+//Инстанс попапа удаления сотрудника
+const popupDelete = new Popup(popupSelector.popupDelDataUser)
+popupDelete.setEventListeners()
+
+if(btnDelete) {
+  btnDelete.forEach(item => {
+    item.addEventListener('click', () => popupDelete.open())
+  })
+}
+
+
+
+
+
+
