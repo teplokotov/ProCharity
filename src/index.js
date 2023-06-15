@@ -56,11 +56,25 @@ if (personalDataForm) {
 const popup = new Popup('.popup');
 popup.setEventListeners();
 
-window.addEventListener('load', function() {
-  const table = document.querySelector(".table");
+window.addEventListener('DOMContentLoaded', function() {
+  const table = document.querySelector('.table');
   if (table) {
     const pagination = new TablePagination(table);
     pagination.genTables();
+
+    const sorting = new TableSort({
+      handleOpenPagePagination: (table, pageNum) => {
+        pagination.openPage(table, pageNum);
+        }
+      },
+      table
+    );
+    pagination.loadMore(table);
+
+    // Начальная сортировка, можно отсортировать по любой колонке (подставить индекс)
+    sorting.initialSorting(0);
+    // Включение сортировки
+    sorting.enableSorting();
   }
 });
 
@@ -137,33 +151,11 @@ new CustomMultiselect('#competencies').generate();
 
 // Инициализация выпадающего списка для поля выбора деятельности НКО
 new CustomMultiselect('#npo-activity',{
-  wrapClass: ['custom-select__wrap', 'custom-select__wrap_style_multiselect'],
-  headingClass: ['heading', 'heading__title', 'custom-select__heading'],
-  closeBtnClass: ['btn', 'btn_type_close', 'custom-select__btn-close'],
   fieldClass: ['custom-select__field', 'custom-select__field_style_multiselect','custom-select_style_simple'],
-  labelClass: 'custom-select__label',
-  chipsClass: 'custom-select__chips',
-  chipsTextClass: 'custom-select__chips-text',
-  chipsDeleteBtnClass: ['btn', 'custom-select__chips-delete-btn'],
-  searchInputClass: 'custom-select__input',
-  messageContainerClass: 'custom-select__message',
-  modalClass: 'custom-select__modal',
-  optionsListContainerClass: 'custom-select__list-container',
-  optionsOpenedListContainerClass: 'custom-select__list-container__opened',
-  linkClass: 'custom-select__link',
-  selectAllGroupLinkClass: 'custom-select__link_type_select-all',
-  resetAllGroupLinkClass: 'custom-select__link_type_reset',
   selectBtnClass: ['btn', 'btn_style_primary', 'custom-select__btn', 'custom-select__btn_type_select'],
   resetBtnClass: ['btn', 'btn_style_secondary', 'custom-select__btn', 'custom-select__btn_type_reset'],
   optionsListClass: ['custom-select__list', 'custom-select__list_type_multiselect-full'],
-  optionClass: 'custom-select__item',
-  optionParentClass: 'custom-select__item_style_parent',
-  optionParentOpenedClass: 'custom-select__item_style_parent-opened',
-  optionSelectableClass: 'custom-select__item_style_checkbox',
-  optionSelectedClass: 'custom-select__item_selected-checkbox',
-  mobileScreenBreakpoint: 900,
   firstOptionIsTitle: true,
-  useTextSearch: true,
   useSelectCounter: true,
   isSplash: false
 }).generate();
@@ -196,13 +188,36 @@ new MobileMenu({
 
 
 // ================ LK - ACCESS.HTML 23 cogort ==============//
+const popupSelector = {
+  popupNewWorker: '#popupNewWorker',
+  popupDataWorker: '#popupDataWorker',
+
+}
+const btnSelector = {
+  btnAddWorker: '#btnAddWorker',
+  btnDataWorker: '.table__btn-edit'
+}
+
 //Инстанс попапа добавления нового работника:
-const popupNewWorker = new Popup('#popupNewWorker')
+const popupNewWorker = new Popup(popupSelector.popupNewWorker)
+popupNewWorker.setEventListeners()
 //Кнопка открытия попапа добавления нового работника:
-const btnAddWorker = document.querySelector('#btnAddWorker')
+const btnAddWorker = document.querySelector(btnSelector.btnAddWorker)
 //Вешаем слушатель на кнопку для открытия попапа:
 if (btnAddWorker) {
   btnAddWorker.addEventListener('click', () => {
     popupNewWorker.open()
   })
+}
+
+//Инстанс попапа добавления данных сотрудника:
+const popupDataWorker = new Popup(popupSelector.popupDataWorker)
+popupDataWorker.setEventListeners()
+//Кнопка открытия попапа добавления нового работника:
+const btnDataWorker = document.querySelectorAll(btnSelector.btnDataWorker)
+//Вешаем слушатель на кнопку для открытия попапа:
+if (btnDataWorker) {
+  btnDataWorker.forEach(item => {
+    item.addEventListener('click', () => popupDataWorker.open())
+  });
 }
