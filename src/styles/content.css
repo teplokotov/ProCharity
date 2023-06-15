@@ -385,6 +385,8 @@
 
 /* link published */
 @import url(../blocks/link-published/link-published.css);
+@import url(../blocks/link-published/_visibility/link-published_visibility_visible.css);
+@import url(../blocks/link-published/__content/link-publishes__content.css);
 @import url(../blocks/link-published/__title/link-published__title.css);
 @import url(../blocks/link-published/__icon/link-published__icon.css);
 
