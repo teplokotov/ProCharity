@@ -486,3 +486,12 @@
 @import url(../blocks/pagination/__btn-right/pagination__btn-right.css);
 @import url(../blocks/pagination/__item/pagination__item.css);
 @import url(../blocks/pagination/__item/_active/pagination__item_active.css);
+
+/* table element */
+@import url(../blocks/table-element/table-element.css);
+@import url(../blocks/table-element/__header/table-element__header.css);
+@import url(../blocks/table-element/__title/table-element__title.css);
+@import url(../blocks/table-element/__icon/table-element__icon.css);
+@import url(../blocks/table-element/__info/table-element__info.css);
+@import url(../blocks/table-element/__subtitle/table-element__subtitle.css);
+@import url(../blocks/table-element/__date/table-element__date.css);

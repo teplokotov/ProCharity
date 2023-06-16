@@ -1,0 +1,6 @@
+.table-element__info {
+    display: flex;
+    flex-direction: row;
+
+    padding-bottom: 32px;
+}
