@@ -132,6 +132,7 @@
 
 @import url(../blocks/btn/_style/btn_style_primary.css);
 @import url(../blocks/btn/_style/btn_style_secondary.css);
+@import url(../blocks/btn/_style/btn_style_dark.css);
 @import url(../blocks/btn/_style/btn_style_inactive.css);
 @import url(../blocks/btn/_style/btn_style_telegram.css);
 
