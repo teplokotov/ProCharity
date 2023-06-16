@@ -156,17 +156,6 @@ companyNameCustomField.generate();
 
 
 const CustomSelectOfSort = new CustomSelect('#makeSort', {
-  wrapClass: 'custom-select__wrap',
-  closeBtnClass: ['btn', 'btn_type_close', 'custom-select__btn-close'],
-  fieldClass: 'custom-select__field',
-  fieldDisabledClass: 'custom-select__field_disabled',
-  fieldTextClass: 'custom-select__field-text',
-  optionsListContainerClass: 'custom-select__list-container',
-  optionsOpenedListContainerClass: 'custom-select__list-container__opened',
-  optionsListClass: 'custom-select__list',
-  optionClass: 'custom-select__item',
-  optionParentClass: 'custom-select__item_style_parent',
-  optionSelectedClass: 'custom-select__item_selected',
   firstOptionIsTitle: false,
   isSort: true,
 });

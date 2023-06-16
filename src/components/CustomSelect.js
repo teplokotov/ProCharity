@@ -17,23 +17,22 @@ export default class CustomSelect {
    *                                    использоваться в качестве подписи поля и не будет выводиться
    *                                    в кастомизированном списке
    */
-  constructor(selector, options = {
-    wrapClass: 'custom-select__wrap',
-    closeBtnClass: ['btn', 'btn_type_close', 'custom-select__btn-close'],
-    fieldClass: 'custom-select__field',
-    fieldDisabledClass: 'custom-select__field_disabled',
-    fieldTextClass: 'custom-select__field-text',
-    optionsListContainerClass: 'custom-select__list-container',
-    optionsOpenedListContainerClass: 'custom-select__list-container__opened',
-    optionsListClass: 'custom-select__list',
-    optionClass: 'custom-select__item',
-    optionParentClass: 'custom-select__item_style_parent',
-    optionSelectedClass: 'custom-select__item_selected',
-    firstOptionIsTitle: true,
-    isSort: false,
-  }) {
+  constructor(selector, {...options} = {}) {
     this._selectElement = document.querySelector(selector);
-    this._options = options;
+    this._options = {};
+    this._options.wrapClass = options.wrapClass ?? 'custom-select__wrap';
+    this._options.closeBtnClass = options.closeBtnClass ?? ['btn', 'btn_type_close', 'custom-select__btn-close'];
+    this._options.fieldClass = options.fieldClass ?? 'custom-select__field';
+    this._options.fieldDisabledClass = options.fieldDisabledClass ?? 'custom-select__field_disabled';
+    this._options.fieldTextClass = options.fieldTextClass ?? 'custom-select__field-text';
+    this._options.optionsListContainerClass = options.optionsListContainerClass ?? 'custom-select__list-container';
+    this._options.optionsOpenedListContainerClass = options.optionsOpenedListContainerClass ?? 'custom-select__list-container__opened';
+    this._options.optionsListClass = options.optionsListClass ?? 'custom-select__list';
+    this._options.optionClass = options.optionClass ?? 'custom-select__item';
+    this._options.optionParentClass = options.optionParentClass ?? 'custom-select__item_style_parent';
+    this._options.optionSelectedClass = options.optionSelectedClass ?? 'custom-select__item_selected';
+    this._options.firstOptionIsTitle = options.firstOptionIsTitle ?? true;
+    this._options.isSort = options.isSort ?? false;
   }
 
 
