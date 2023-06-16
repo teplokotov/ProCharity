@@ -2,7 +2,7 @@
     background: #3A464C;
     box-sizing: border-box;
     color: #FFFFFF;
-    max-width: max-content;
+    min-width: max-content;
     padding: 16px 28px;
     width: 100%;
     border: solid 2px transparent;

@@ -135,6 +135,8 @@
 @import url(../blocks/btn/_style/btn_style_dark.css);
 @import url(../blocks/btn/_style/btn_style_inactive.css);
 @import url(../blocks/btn/_style/btn_style_telegram.css);
+@import url(../blocks/btn/_style/btn_style_none.css);
+@import url(../blocks/btn/_style/btn_style_hidden.css);
 
 @import url(../blocks/btn/_type/btn_type_close.css);
 @import url(../blocks/btn/_type/btn_type_refresh.css);
@@ -143,8 +145,7 @@
 @import url(../blocks/btn/_type/btn_type_refresh-process.css);
 
 @import url(../blocks/btn/_position/btn_position_right.css);
-@import url(../blocks/btn/_style/btn_style_none.css);
-@import url(../blocks/btn/_style/btn_style_hidden.css);
+@import url(../blocks/btn/_position/btn_position_mb.css);
 
 /* Пользовательское отображение select */
 
