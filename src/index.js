@@ -14,8 +14,11 @@ import MobileMenu from "./components/MobileMenu";
 import CustomSelect from "./components/CustomSelect";
 import CustomMultiselect from "./components/CustomMultiselect";
 import Popup from './components/Popup';
+import PopupWithForm from './components/PopupWithForm';
 import TablePagination from './components/TablePagination';
 import TableSort from './components/TableSort';
+import IconAdmin from './images/Table-key.svg';
+const adminIcon = new Image();
 
 
 // Подключение сторонних библиотек
@@ -55,39 +58,6 @@ if (personalDataForm) {
 
 const popup = new Popup('.popup');
 popup.setEventListeners();
-
-window.addEventListener('DOMContentLoaded', function() {
-  const table = document.querySelector('.table');
-  if (table) {
-    const loadMore = document.querySelector('.btn_load_more');
-    const pagination = new TablePagination(table);
-    pagination.genTables();
-    pagination.loadMore(loadMore, table);
-    const sorting = new TableSort({
-      handleOpenPagePagination: (table, pageNum) => {
-        pagination.openPage(table, pageNum);
-        },
-      getMobileSortingType: (optionValue) => {
-        switch (optionValue) {
-          case 'по правам администратора':
-            return 1;
-          case 'по дате регистрации':
-            return 2;
-          case 'по фамилии и имени':
-          default:
-            return 0;
-          }
-        }
-      },
-      table
-    );
-
-    // Первоначальная сортировка по индексу колонки
-    sorting.sortByIndex(0);
-    // Включение сортировки
-    sorting.enableSorting();
-  }
-});
 
 // Обеспечение работы модальных окон
 if (avatarContainer) {
@@ -204,132 +174,317 @@ new MobileMenu({
 }).setEventListeners();
 
 
+// ================ LK - ACCESS - ITEM.HTML ============== //
 
-// ================ LK - ACCESS.HTML 23 cogort ==============//
-const popupSelector = {
-  popupNewWorker: '#popupNewWorker',
-  popupDataWorker: '#popupDataWorker',
-  popupResetPassword: '#popupReset',
-  popupDelDataUser: '#popupDelete',
-}
-const btnSelector = {
-  btnAddWorker: '#btnAddWorker',
-  btnDataWorker: '.table__btn-edit',
-  btnContextMenu: '.table__btn-redact',
-  btnReset: '.btnReset',
-  btnDelete: '.btnDelete',
-}
+// Экземпляр попапа изменения данных сотрудника:
+const popupEditEmployerItem = new Popup('#popupEditEmployerItem');
+popupEditEmployerItem.setEventListeners();
 
-const menuSelector ={
-  contextMenu: '.table__menu-body',
-  opened: 'table__menu-body_opened',
-  menuContainer: '.table__menu-container',
-  menuList: 'table__menu-body',
-}
+// Экземпляр попапа сброса пароля сотрудника
+const popupResetItem = new Popup('#popupResetItem');
+popupResetItem.setEventListeners();
 
-//Инстанс попапа добавления нового работника:
-const popupNewWorker = new Popup(popupSelector.popupNewWorker)
+// Экземпляр попапа удаления сотрудника
+const popupDeleteItem = new Popup('#popupDeleteItem');
+popupDeleteItem.setEventListeners();
 
-popupNewWorker.setEventListeners()
-
-const btnAddWorker = document.querySelector(btnSelector.btnAddWorker)
-
-if (btnAddWorker) {
-  btnAddWorker.addEventListener('click', () => {
-    popupNewWorker.open()
-  })
-}
-
-//Инстанс попапа добавления данных сотрудника:
-const popupDataWorker = new Popup(popupSelector.popupDataWorker)
-
-popupDataWorker.setEventListeners()
-
-const btnDataWorker = document.querySelectorAll(btnSelector.btnDataWorker)
-
-if (btnDataWorker) {
-  btnDataWorker.forEach(item => {
-    item.addEventListener('click', () => popupDataWorker.open())
-  });
-}
-
-
-//Логика открытия контекстного меню
-const btnContextMenu = document.querySelectorAll(btnSelector.btnContextMenu)
-const contextMenu = document.querySelectorAll(menuSelector.contextMenu)
-const btnReset = document.querySelectorAll(btnSelector.btnReset)
-const btnDelete = document.querySelectorAll(btnSelector.btnDelete)
-
-let indexOfContextMenu = null;
-
-if(btnContextMenu) {
-  btnContextMenu.forEach(item => {
-    item.addEventListener('click', () => {
-      const currentContextMenu = item.closest(menuSelector.menuContainer).querySelector(menuSelector.contextMenu);
-      currentContextMenu.classList.toggle(menuSelector.opened);
-      indexOfContextMenu = [...contextMenu].indexOf(currentContextMenu);
-      contextMenu.forEach((item, index) => {
-        if(index !== indexOfContextMenu) item.classList.remove(menuSelector.opened);
-      });
-
-    })
-  });
-}
-
-if(contextMenu) {
-  contextMenu.forEach(item => {
-    item.addEventListener('click', e => {
-      if (!e.target.classList.contains(menuSelector.menuList)) {
-        item.classList.remove(menuSelector.opened);
-        indexOfContextMenu = null;
-      }  
-    })
-  })
-}
-
-//Инстанс попапа сброса пароля сотрудника
-const popupReset = new Popup(popupSelector.popupResetPassword)
-popupReset.setEventListeners()
-
-if(btnReset) {
-  btnReset.forEach(item => {
-    item.addEventListener('click', () => popupReset.open())
-  })
-}
-
-//Инстанс попапа удаления сотрудника
-const popupDelete = new Popup(popupSelector.popupDelDataUser)
-popupDelete.setEventListeners()
-
-if(btnDelete) {
-  btnDelete.forEach(item => {
-    item.addEventListener('click', () => popupDelete.open())
-  })
-}
-
-// -----
 const changeDataBtn = document.querySelector('#changeData');
 const resetPasswordBtn = document.querySelector('#resetPassword');
 const deleteUserBtn = document.querySelector('#deleteUser');
 
-if(changeDataBtn) {
-  changeDataBtn.addEventListener('click', () => popupDataWorker.open());
+if(changeDataBtn) changeDataBtn.addEventListener('click', () => popupEditEmployerItem.open());
+if(resetPasswordBtn) resetPasswordBtn.addEventListener('click', () => popupResetItem.open());
+if(deleteUserBtn) deleteUserBtn.addEventListener('click', () => popupDeleteItem.open());
+
+// ================ LK - ACCESS.HTML ============== //
+
+const table = document.querySelector('.table');
+const pagination = new TablePagination(table);
+const loadMore = document.querySelector('.btn_load_more');
+const pager = document.querySelector(".pagination");
+
+if (table) {
+  pagination.genTables();
+  pagination.loadMore(loadMore, table);
+  const sorting = new TableSort({
+    handleOpenPagePagination: (table, pageNum) => {
+      pagination.openPage(table, pageNum);
+      },
+    getMobileSortingType: (optionValue) => {
+      switch (optionValue) {
+        case 'по правам администратора':
+          return 1;
+        case 'по дате регистрации':
+          return 2;
+        case 'по фамилии и имени':
+        default:
+          return 0;
+        }
+      }
+    },
+    table
+  );
+
+  // Первоначальная сортировка по индексу колонки
+  sorting.sortByIndex(0);
+  // Включение сортировки
+  sorting.enableSorting();
+
+
+  const popupSelector = {
+    popupAddEmployer: '#popupAddEmployer',
+    popupEditEmployer: '#popupEditEmployer',
+    popupResetPassword: '#popupReset',
+    popupDelDataUser: '#popupDelete',
+  }
+  const btnSelector = {
+    btnAddEmployer: '#btnAddWorker',
+    btnEditEmployer: '.table__btn-edit',
+    btnContextMenu: '.table__btn-redact',
+    btnReset: '.btnReset',
+    btnDelete: '.btnDelete',
+  }
+
+  const menuSelector ={
+    contextMenu: '.table__menu-body',
+    opened: 'table__menu-body_opened',
+    menuContainer: '.table__menu-container',
+    menuList: 'table__menu-body',
+  }
+
+  // Экземпляр попапа добавления нового работника:
+
+  const popupAddEmployer = new PopupWithForm(popupSelector.popupAddEmployer, handleSubmitFormAddEmployer);
+  popupAddEmployer.setEventListeners();
+
+  const btnAddEmployer = document.querySelector(btnSelector.btnAddEmployer);
+
+  if (btnAddEmployer) {
+    btnAddEmployer.addEventListener('click', () => {
+      popupAddEmployer.reset();
+      popupAddEmployer.open();
+    })
+  }
+
+  // Экземпляр попапа изменения данных сотрудника:
+  const popupEditEmployer = new PopupWithForm(popupSelector.popupEditEmployer, handleSubmitFormEditEmployer);
+  popupEditEmployer.setEventListeners();
+
+  const btnEditEmployer = document.querySelectorAll(btnSelector.btnEditEmployer);
+
+  if (btnEditEmployer) {
+    btnEditEmployer.forEach(item => {
+      item.addEventListener('click', handleBtnEditEmployer);
+    });
+  }
+
+  function handleBtnEditEmployer(evt) {
+    const row = evt.target.closest('tr');
+    const tbody = table.querySelector('.table__body');
+    indexOfRow = [...tbody.children].indexOf(row);
+    const fullname = row.querySelector('.table__name').textContent.split(' ');
+    const isAdmin = row.querySelector('.table__wrench').innerHTML !== '';
+    const email = row.querySelector('.table__email').textContent;
+    popupEditEmployer.setInputValues({ 
+      name: { type: 'text', value: fullname[1] },
+      surname: { type: 'text', value: fullname[0] },
+      email: { type: 'email', value: email },
+      isAdmin: { type: 'checkbox', isChecked: isAdmin },
+    });
+    popupEditEmployer.open();
+  }
+
+  // Логика открытия контекстного меню
+  const btnContextMenu = document.querySelectorAll(btnSelector.btnContextMenu);
+  const contextMenu = document.querySelectorAll(menuSelector.contextMenu);
+  const btnReset = document.querySelectorAll(btnSelector.btnReset);
+  const btnDelete = document.querySelectorAll(btnSelector.btnDelete);
+
+  let indexOfContextMenu = null;
+  let indexOfRow;
+
+  if(btnContextMenu) {
+    btnContextMenu.forEach(item => {
+      item.addEventListener('click', handleBtnContextMenu)
+    });
+  }
+
+  function handleBtnContextMenu() {
+    const currentContextMenu = this.closest(menuSelector.menuContainer).querySelector(menuSelector.contextMenu);
+    currentContextMenu.classList.toggle(menuSelector.opened);
+    const contextMenu = document.querySelectorAll(menuSelector.contextMenu);
+    indexOfContextMenu = [...contextMenu].indexOf(currentContextMenu);
+    contextMenu.forEach((item, index) => {
+      if(index !== indexOfContextMenu) item.classList.remove(menuSelector.opened);
+    });
+  }
+
+  if(contextMenu) {
+    contextMenu.forEach(item => {
+      item.addEventListener('click', handleContextMenu)
+    })
+  }
+
+  function handleContextMenu(evt) {
+    if (!evt.target.classList.contains(menuSelector.menuList)) {
+      this.classList.remove(menuSelector.opened);
+      indexOfContextMenu = null;
+    }  
+  }
+
+  // Экземпляр попапа сброса пароля сотрудника
+  const popupReset = new PopupWithForm(popupSelector.popupResetPassword);
+  popupReset.setEventListeners();
+
+  if(btnReset) {
+    btnReset.forEach(item => {
+      item.addEventListener('click', handleBtnReset)
+    })
+  }
+
+  function handleBtnReset(evt) {
+    const row = evt.target.closest('tr');
+    const tbody = table.querySelector('.table__body');
+    indexOfRow = [...tbody.children].indexOf(row);
+    const email = row.querySelector('.table__email').textContent;
+    const data = `Новый пароль будет отправлен на электронную почту <a href="${email}" class="link">${email}</a>`;
+    popupReset.insertData(data);
+    popupReset.open();
+  }
+
+  // Экземпляр попапа удаления сотрудника
+  const popupDelete = new PopupWithForm(popupSelector.popupDelDataUser, handleSubmitFormDeleteEmployer);
+  popupDelete.setEventListeners();
+
+  function handleSubmitFormDeleteEmployer(evt) {
+    evt.preventDefault();
+    const tbody = table.querySelector('.table__body');
+    const currentRow = tbody.children[indexOfRow];
+    currentRow.remove();
+    // Новая отрисовка
+    pager.innerHTML = '';
+    const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
+    pagination.genTables();
+    pagination.loadMore(loadMore, table);
+    pagination.openPage(table, pageNum);
+    // Добавить сортировку вновь
+    popupDelete.close();
+  }
+
+  if(btnDelete) {
+    btnDelete.forEach(item => {
+      item.addEventListener('click', handleBtnDelete);
+    })
+  }
+
+  function handleBtnDelete(evt) {
+    const row = evt.target.closest('tr');
+    const tbody = table.querySelector('.table__body');
+    indexOfRow = [...tbody.children].indexOf(row);
+    const name = row.querySelector('.table__name').textContent;
+    const data = `Данные о сотруднике ${name} будут удалены`;
+    popupDelete.insertData(data);
+    popupDelete.open();
+  }
+
+  // -----
+  const popupAlertPassword = new Popup('#popupAlertPassword');
+  popupAlertPassword.setEventListeners();
+
+  const popupAlertError = new Popup('#popupAlertError');
+  popupAlertError.setEventListeners();
+
+  const popupAlertData = new Popup('#popupAlertData');
+  popupAlertData.setEventListeners();
+
+  // ----
+
+  function handleSubmitFormEditEmployer(evt) {
+    evt.preventDefault();
+    const dataForm = popupEditEmployer.getInputValues();
+    const tbody = table.querySelector('.table__body');
+    const currentRow = tbody.children[indexOfRow];
+    currentRow.querySelector('.table__name').textContent = `${dataForm['name'].value} ${dataForm['surname'].value}`;
+    currentRow.querySelector('.table__email').textContent = `${dataForm['email'].value}`;
+    if (dataForm['isAdmin'].isChecked) {
+      adminIcon.src = IconAdmin;
+      adminIcon.alt = 'Права администратора';
+      currentRow.querySelector('.table__wrench').innerHTML = '';
+      currentRow.querySelector('.table__wrench').append(adminIcon);
+    } else {
+      currentRow.querySelector('.table__wrench').innerHTML = '';
+    }
+    popupEditEmployer.close();
+  }
+
+  function handleSubmitFormAddEmployer(evt) {
+    evt.preventDefault();
+
+    const dataForm = popupAddEmployer.getInputValues();
+
+    const trow = document.createElement('tr');
+    trow.classList.add('table__row');
+
+    const tname = document.createElement('td');
+    tname.classList.add('table__name');
+    tname.textContent = `${dataForm['name'].value} ${dataForm['surname'].value}`;
+    trow.prepend(tname);
+
+    const twrench = document.createElement('td');
+    twrench.classList.add('table__wrench');
+    if (dataForm['isAdmin'].isChecked) {
+      adminIcon.src = IconAdmin;
+      adminIcon.alt = 'Права администратора';
+      twrench.append(adminIcon);
+    }
+    tname.after(twrench);
+
+    const tdate = document.createElement('td');
+    tdate.classList.add('table__data-cell');
+    const currentDate = new Date();
+    const dateOptions = { hour: 'numeric', minute: 'numeric' };
+    tdate.textContent = currentDate.toLocaleDateString('ru-RU', dateOptions).replace(',','');
+    twrench.after(tdate);
+
+    const temail = document.createElement('td');
+    temail.classList.add('table__email');
+    temail.textContent = dataForm['email'].value;
+    tdate.after(temail);
+
+    const tedit = document.createElement('td');
+    tedit.classList.add('table__edit');
+    temail.after(tedit);
+
+    const contextMenu = document.querySelector('#contextMenu');
+    tedit.append(contextMenu.content.cloneNode(true));
+
+    const tbody = table.querySelector('.table__body');
+    tbody.prepend(trow);
+
+    const btnEdit = trow.querySelector('.table__btn-redact');
+    btnEdit.addEventListener('click', handleBtnContextMenu);
+    
+    const menuBody = trow.querySelector('.table__menu-body');
+    menuBody.addEventListener('click', handleContextMenu);
+
+    const btnEditEmployer = trow.querySelector('.table__btn-edit');
+    btnEditEmployer.addEventListener('click', handleBtnEditEmployer);
+
+    const btnReset = trow.querySelector('.btnReset');
+    btnReset.addEventListener('click', handleBtnReset);
+
+    const btnDelete = trow.querySelector('.btnDelete');
+    btnDelete.addEventListener('click', handleBtnDelete);
+
+    // Новая отрисовка
+    pager.innerHTML = '';
+    const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
+    pagination.genTables();
+    pagination.loadMore(loadMore, table);
+    pagination.openPage(table, pageNum);
+    // Добавить сортировку вновь
+
+    popupAddEmployer.close();
+  }
+
 }
-
-if(resetPasswordBtn) {
-  resetPasswordBtn.addEventListener('click', () => popupReset.open());
-}
-
-if(deleteUserBtn) {
-  deleteUserBtn.addEventListener('click', () => popupDelete.open());
-}
-
-// -----
-const popupAlertPassword = new Popup('#popupAlertPassword');
-popupAlertPassword.setEventListeners();
-
-const popupAlertError = new Popup('#popupAlertError');
-popupAlertError.setEventListeners();
-
-const popupAlertData = new Popup('#popupAlertData');
-popupAlertData.setEventListeners();

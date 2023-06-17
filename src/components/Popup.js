@@ -12,6 +12,11 @@ export default class Popup {
     this._popup.classList.remove('popup_opened');
   }
 
+  insertData(data) {
+    const p = this._popup.querySelector('.popup__paragraph');
+    p.innerHTML = data;
+  }
+
   setEventListeners() {
     if (this._popup) {
       this._closeButton = this._popup.querySelector('.popup__btn-close');

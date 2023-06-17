@@ -477,6 +477,7 @@
 @import url(../blocks/table/__wrench-container/table__wrench-container.css);
 @import url(../blocks/table/__edit/table__edit.css);
 @import url(../blocks/table/__head/table__head.css);
+@import url(../blocks/table/__email/table__email.css);
 @import url(../blocks/table/__head-text/table__head-text.css);
 @import url(../blocks/table/__head-text/_sort/table__head-text_sort.css);
 @import url(../blocks/table/__name/table__name.css);

@@ -247,56 +247,50 @@
     </div>
 </footer>
 
-<div class="popup popup_type_window popup_type_window-bottom" id="popupDataWorker">
-    <div class="popup__container">
-        <div class="popup__content">
-            <h2 class="heading heading_type_title popup__title">Данные сотрудника</h2>
-            <form class="form" novalidate>
-                <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="representative">
-                    <div class="checkbox">
-                        <input checked class="checkbox__input" id="isAdmin" name="isAdmin" type="checkbox">
-                        <label class="checkbox__label" for="isAdmin">Права администратора</label>
-                        <div class="hint">
-                            <div class="hint__tooltip">
-                                <p class=" paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</p>
-                                <ul class="list-ul">
-                                    <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
-                                    <li>редактировать профиль организации.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input">
-                        <input class="input__field input__field_default input__field_interval-right_small" id="name"
-                               name="name" placeholder="Имя" required type="text" value="Михаил">
-                        <label class="input__label" for="name">Имя</label>
-                        <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
-                        <span class="input__error-message">Ошибка</span>
-                    </div>
-                    <div class="input">
-                        <input class="input__field input__field_default input__field_interval-right_small" id="surname"
-                               name="surname" placeholder="Фамилия" required type="text" value="Виноградов">
-                        <label class="input__label" for="surname">Фамилия</label>
-                        <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
-                        <span class="input__error-message">Ошибка</span>
-                    </div>
-                    <div class="input">
-                        <input class="input__field input__field_default input__field_interval-right_small" id="email"
-                               name="email" placeholder="Электронная почта" required type="email"
-                               value="user@mail.ru">
-                        <label class="input__label" for="email">Электронная почта</label>
-                        <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
-                        <span class="input__error-message">Ошибка</span>
-                    </div>
-                </fieldset>
-                <button class="btn btn_style_primary" type="submit">Сохранить</button>
-                <button class="btn btn_type_close popup__btn-close" type="button"></button>
-            </form>
+<div class="popup popup_type_window popup_type_window-bottom" id="popupEditEmployerItem">
+  <div class="popup__container">
+    <h2 class="heading heading_type_title popup__title">Данные сотрудника</h2>
+    <form class="form" novalidate>
+      <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column">
+        <div class="checkbox">
+          <input type="checkbox" class="checkbox__input" name="isAdmin" id="isAdminSecond">
+          <label for="isAdminSecond" class="checkbox__label">Права администратора</label>
+          <div class="hint">
+            <div class="hint__tooltip hint__tooltip_position_right-bottom ">
+              <p class="paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</p>
+              <ul class="list-ul">
+                <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
+                <li>редактировать профиль организации.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
+        <div class="input">
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" placeholder="Имя" value="Михаил" required>
+          <label class="input__label">Имя</label>
+          <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+          <span class="input__error-message">Ошибка</span>
+        </div>
+        <div class="input">
+          <input type="text" class="input__field input__field_default input__field_interval-right_small" name="surname" placeholder="Фамилия" value="Виноградов" required>
+          <label class="input__label">Фамилия</label>
+          <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+          <span class="input__error-message">Ошибка</span>
+        </div>
+        <div class="input">
+          <input type="email" class="input__field input__field_default input__field_interval-right_small" name="email" placeholder="Электронная почта" value="found@mail.ru" required>
+          <label class="input__label">Электронная почта"</label>
+          <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+          <span class="input__error-message">Ошибка</span>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn_style_primary">Сохранить</button>
+      <button type="button" class="btn btn_type_close popup__btn-close"></button>
+    </form>
+  </div>
 </div>
 
-<div class="popup popup_type_window popup_type_window-bottom" id="popupReset">
+<div class="popup popup_type_window popup_type_window-bottom" id="popupResetItem">
     <div class="popup__container">
         <div class="popup__content">
             <h2 class="heading heading_type_title popup__title">Сбросить пароль сотрудника?</h2>
@@ -311,11 +305,11 @@
     </div>
 </div>
 
-<div class="popup popup_type_window popup_type_window-bottom" id="popupDelete">
+<div class="popup popup_type_window popup_type_window-bottom" id="popupDeleteItem">
     <div class="popup__container">
         <div class="popup__content">
             <h2 class="heading heading_type_title popup__title">Удалить данные сотрудника?</h2>
-            <p class="popup__paragraph popup__paragraph_fat">Данные о сотруднике Новоселова Алевтина будут удалены</p>
+            <p class="popup__paragraph popup__paragraph_fat">Данные о сотруднике Виноградов Михаил будут удалены</p>
             <form class="form" novalidate>
                 <button class="btn btn_style_primary" type="submit">Удалить</button>
             </form>
