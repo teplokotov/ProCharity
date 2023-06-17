@@ -57,16 +57,16 @@ export default class TablePagination {
     const arrowRight = document.querySelector('.pagination__btn-right');
     const arrowLeft = document.querySelector('.pagination__btn-left');
     const pages = document.querySelectorAll('.pagination__item').length;
-   arrowRight.addEventListener('click', () => {
-     let _index = parseInt(table.dataset.currentpage);
-     if (_index < pages-1) {
-       _index++;
-       const page = document.querySelectorAll(".pagination__item")[_index];
+    arrowRight.addEventListener('click', () => {
+      let _index = parseInt(table.dataset.currentpage);
+      if (_index < pages - 1) {
+        _index++;
+        const page = document.querySelectorAll(".pagination__item")[_index];
 
-       const callback = this._pageCallback.bind(this, page, table, _index);
-       callback();
-     }
-   });
+        const callback = this._pageCallback.bind(this, page, table, _index);
+        callback();
+      }
+    });
     arrowLeft.addEventListener('click', () => {
       let _index = parseInt(table.dataset.currentpage);
       if (_index > 0) {
@@ -108,9 +108,12 @@ export default class TablePagination {
     }
   }
 
-  loadMoreVisibility(loadMoreButton) {
-    if (loadMoreButton.classList.contains("btn_style_hidden")) {
-      loadMoreButton.classList.remove("btn_style_hidden")
+  loadMoreVisibility(loadMoreButton, table) {
+    const inactiveRows = table.querySelectorAll('.table__row-inactive');
+    if (inactiveRows.length >= 5) {
+      if (loadMoreButton.classList.contains("btn_style_hidden")) {
+        loadMoreButton.classList.remove("btn_style_hidden")
+      }
     }
   }
 
