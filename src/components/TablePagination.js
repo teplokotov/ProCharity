@@ -92,16 +92,20 @@ export default class TablePagination {
   loadMore(loadMoreButton, table) {
     loadMoreButton.addEventListener('click', (evt) => {
       const inactiveRows = table.querySelectorAll('.table__row-inactive');
-      const rowsCount = inactiveRows.length % 5 === 0 ? 5 : inactiveRows;
+      const inactiveRowsCount = inactiveRows.length;
+      const rowsCount = inactiveRowsCount - 5 >= 0 ? 5 : inactiveRowsCount;
         for (let x = 0; x < rowsCount; x++) {
           inactiveRows[x].classList.remove("table__row-inactive");
         }
-        const inactiveRowsCount = inactiveRows.length;
         if (inactiveRowsCount - 5 <= 0) {
           evt.currentTarget.classList.add("btn_style_hidden");
         }
     });
 
+  }
+
+  loadMoreVisibility(loadMoreButton) {
+    loadMoreButton.classList.toggle("btn_style_hidden")
   }
 
   _pageCallback(button, table, index) {
