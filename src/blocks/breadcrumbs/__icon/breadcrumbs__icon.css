@@ -1,8 +1,7 @@
 .breadcrumbs__icon {
-    background: url(../../../images/TableArrowLeftHover.svg) center no-repeat;
+    background: url(../../../images/arrow-left-blue.svg) center no-repeat;
     background-size: contain;
-    width: 14px;
-    height: 14px;
-
-    padding-right: 15px;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
 }

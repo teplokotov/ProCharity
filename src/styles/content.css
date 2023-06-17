@@ -92,8 +92,6 @@
 @import url(../blocks/popup/_type/popup_type_window.css);
 @import url(../blocks/popup/_type/popup_type_window-bottom.css);
 
-@import url(../blocks/popup/_mobile/popup_mobile.css);
-
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup__content/popup__content.css);
 
