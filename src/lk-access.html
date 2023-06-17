@@ -731,24 +731,24 @@
   </div>
 </footer>
 
-<div class="popup popup_type_window" id="popupNewWorker">
+<div class="popup popup_type_window popup_type_window-bottom" id="popupNewWorker">
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Новый сотрудник</h2>
-    <div class="checkbox">
-      <input type="checkbox" class="checkbox__input" name="notification-1" id="notification-1" checked>
-      <label for="notification-1" class="checkbox__label checkbox__label_style_notifications">Права администратора</label>
-      <button type="button" class="hint">
-        <div class="hint__tooltip hint__tooltip_position_right-bottom ">
-          <p class="paragraph_margin-none">Сотрудник с&nbsp;правами администратора может:</p>
-          <ul class="list-ul">
-            <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
-            <li>редактировать профиль организации.</li>
-          </ul>
-        </div>
-      </button>
-    </div>
     <form action="#" method="get" novalidate>
       <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="newWorkerFieldset">
+        <div class="checkbox">
+          <input type="checkbox" class="checkbox__input" name="isAdmin" checked>
+          <label for="isAdmin" class="checkbox__label">Права администратора</label>
+          <div class="hint">
+            <div class="hint__tooltip hint__tooltip_position_right-bottom ">
+              <p class="paragraph_margin-none">Сотрудник с&nbsp;правами администратора может:</p>
+              <ul class="list-ul">
+                <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
+                <li>редактировать профиль организации.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div class="input">
           <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="newWorkerName" placeholder="Имя">
           <label for="newWorkerName" class="input__label">Имя</label>
@@ -773,24 +773,24 @@
     </form>
   </div>
 </div>
-<div class="popup popup_type_window" id="popupDataWorker">
+<div class="popup popup_type_window popup_type_window-bottom" id="popupDataWorker">
   <div class="popup__container">
     <h2 class="heading heading_type_title popup__title">Данные сотрудника</h2>
-    <div class="checkbox">
-      <input type="checkbox" class="checkbox__input" name="notification-2" id="notification-2" checked>
-      <label for="notification-2" class="checkbox__label checkbox__label_style_notifications">Права администратора</label>
-      <button type="button" class="hint">
-        <div class="hint__tooltip hint__tooltip_position_right-bottom ">
-          <p class="paragraph_margin-none">Сотрудник с&nbsp;правами администратора может:</p>
-          <ul class="list-ul">
-            <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
-            <li>редактировать профиль организации.</li>
-          </ul>
-        </div>
-      </button>
-    </div>
-    <form action="#" method="get" id="dataWorkerForm">
+    <form class="form" id="dataWorkerForm" novalidate>
       <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column" id="representative">
+        <div class="checkbox">
+          <input type="checkbox" class="checkbox__input" name="isAdmin" id="isAdmin" checked>
+          <label for="isAdmin" class="checkbox__label">Права администратора</label>
+          <div class="hint">
+            <div class="hint__tooltip hint__tooltip_position_right-bottom ">
+              <p class="paragraph_margin-none">Сотрудник с&nbsp;правами администратора может:</p>
+              <ul class="list-ul">
+                <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
+                <li>редактировать профиль организации.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div class="input">
           <input type="text" class="input__field input__field_default input__field_interval-right_small" name="name" id="name" placeholder="Имя" value="Новоселова" required>
           <label for="name" class="input__label">Имя</label>
@@ -810,7 +810,7 @@
           <span class="input__error-message">Ошибка</span>
         </div>
       </fieldset>
-      <button type="submit" class="btn btn_style_primary " id="btnWorkerForm" >Добавить</button>
+      <button type="submit" class="btn btn_style_primary" id="btnWorkerForm">Сохранить</button>
       <button type="button" class="btn btn_type_close popup__btn-close"></button>
     </form>
   </div>
@@ -839,23 +839,23 @@
     </div>
   </div>
 </div>
-<div class="popup popup_type_window" id="popupReset">
+<div class="popup popup_type_window popup_type_window-bottom" id="popupReset">
   <div class="popup__container">
     <h2 class="heading heading_type_title heading_type_small-font paragraph_fat">Сбросить пароль сотрудника?</h2>
     <p class="popup__paragraph popup__paragraph_fat">
       Новый пароль будет отправлен на электронную почту <a href="mailto:found@mail.ru" class="link">found@mail.ru</a>
     </p>
-    <form name="resetWorkerPassword" id="resetWorkerPassword" action="#" method="get" novalidate>
+    <form class="form" id="resetWorkerPassword" novalidate>
       <button type="submit" class="btn btn_style_primary">Сбросить</button>
     </form>
     <button type="button" class="btn btn_type_close popup__btn-close"></button>
   </div>
 </div>
-<div class="popup popup_type_window" id="popupDelete">
+<div class="popup popup_type_window popup_type_window-bottom" id="popupDelete">
   <div class="popup__container">
     <h2 class="heading heading_type_title heading_type_small-font paragraph_fat">Удалить данные сотрудника?</h2>
     <p class="popup__paragraph popup__paragraph_fat">Данные о сотруднике Новоселова Алевтина будут удалены</p>
-    <form name="removeWorkerData" id="removeWorkerData" action="#" method="get" novalidate>
+    <form class="form" id="removeWorkerData" novalidate>
       <button type="submit" class="btn btn_style_primary">Удалить</button>
     </form>
     <button type="button" class="btn btn_type_close popup__btn-close"></button>
