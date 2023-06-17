@@ -372,7 +372,7 @@
 @import url(./../blocks/paragraph/_style/paragraph_style_registration-final.css);
 @import url(./../blocks/paragraph/_style/paragraph_style_desktop.css);
 @import url(./../blocks/paragraph/_style/paragraph_style_mobile.css);
-@import url(./../blocks/paragraph/_margin-none/paragraph_margin-none.css);
+@import url(./../blocks/paragraph/_slim/paragraph_slim.css);
 @import url(./../blocks/paragraph/_fat/paragraph_fat.css);
 
 @import url(../blocks/list/list.css);
