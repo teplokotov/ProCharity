@@ -316,3 +316,13 @@ if(resetPasswordBtn) {
 if(deleteUserBtn) {
   deleteUserBtn.addEventListener('click', () => popupDelete.open());
 }
+
+// -----
+const popupAlertPassword = new Popup('#popupAlertPassword');
+popupAlertPassword.setEventListeners();
+
+const popupAlertError = new Popup('#popupAlertError');
+popupAlertError.setEventListeners();
+
+const popupAlertData = new Popup('#popupAlertData');
+popupAlertData.setEventListeners();

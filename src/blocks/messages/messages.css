@@ -1,0 +1,8 @@
+.messages {
+    display: flex;
+    position: fixed;
+    right: 24px;
+    top: 24px;
+    flex-direction: column;
+    gap: 12px;
+}

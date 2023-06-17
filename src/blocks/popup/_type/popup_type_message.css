@@ -5,6 +5,10 @@
   top: 24px;
 }
 
+.messages .popup_type_message {
+  position: initial;
+}
+
 @media screen and (max-width: 450px) {
   .popup_type_message {
     width: 312px;

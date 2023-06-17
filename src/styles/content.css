@@ -85,7 +85,7 @@
 @import url(../blocks/content/_template/content_template_registration-final.css);
 
 
-
+@import url(../blocks/messages/messages.css);
 @import url(../blocks/popup/popup.css);
 
 @import url(../blocks/popup/_type/popup_type_message.css);
