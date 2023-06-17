@@ -1,6 +1,6 @@
 .table__menu-body {
   display: flex;
-  width: 222px;
+  width: fit-content;
   flex-direction: column;
   flex-wrap: nowrap;
   position: absolute;
