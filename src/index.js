@@ -260,12 +260,18 @@ const contextMenu = document.querySelectorAll(menuSelector.contextMenu)
 const btnReset = document.querySelectorAll(btnSelector.btnReset)
 const btnDelete = document.querySelectorAll(btnSelector.btnDelete)
 
+let indexOfContextMenu = null;
+
 if(btnContextMenu) {
   btnContextMenu.forEach(item => {
     item.addEventListener('click', () => {
-      item.closest(menuSelector.menuContainer)
-        .querySelector(menuSelector.contextMenu)
-        .classList.add(menuSelector.opened)
+      const currentContextMenu = item.closest(menuSelector.menuContainer).querySelector(menuSelector.contextMenu);
+      currentContextMenu.classList.toggle(menuSelector.opened);
+      indexOfContextMenu = [...contextMenu].indexOf(currentContextMenu);
+      contextMenu.forEach((item, index) => {
+        if(index !== indexOfContextMenu) item.classList.remove(menuSelector.opened);
+      });
+
     })
   });
 }
@@ -274,7 +280,8 @@ if(contextMenu) {
   contextMenu.forEach(item => {
     item.addEventListener('click', e => {
       if (!e.target.classList.contains(menuSelector.menuList)) {
-        item.classList.remove(menuSelector.opened)
+        item.classList.remove(menuSelector.opened);
+        indexOfContextMenu = null;
       }  
     })
   })
