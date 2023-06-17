@@ -113,6 +113,9 @@
 
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__title/_text-weight/popup__title_text-weight.css);
+@import url(../blocks/popup/__title/_error/popup__title_error.css);
+@import url(../blocks/popup/_order/_second/popup_order_second.css);
+@import url(../blocks/popup/_order/_third/popup_order_third.css);
 
 
 
@@ -126,6 +129,7 @@
 @import url(../blocks/heading/_type/heading_type_title_registration-final.css);
 @import url(../blocks/heading/_type/heading_type_title-desktop.css);
 @import url(../blocks/heading/_type/heading_type_title-mobile.css);
+@import url(../blocks/heading/_type/heading_type_small-font.css);
 
 
 
@@ -481,6 +485,12 @@
 @import url(../blocks/table/__name-container/table__name-container.css);
 @import url(../blocks/table/__row/table__row.css);
 @import url(../blocks/table/__row-inactive/table__row-inactive.css);
+@import url(../blocks/table/__menu-container/table__menu-container.css);
+@import url(../blocks/table/__menu-body/table__menu-body.css);
+@import url(../blocks/table/__btn-lk/table__btn-lk.css);
+@import url(../blocks/table/__btn-lk/_color-text/table__btn-lk_color-text.css);
+@import url(../blocks/table/__border-lk/table__border-lk.css);
+@import url(../blocks/table/__menu-body/_opened/table__menu-body_opened.css);
 
 /* pagination */
 @import url(../blocks/pagination/pagination.css);
