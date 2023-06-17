@@ -300,4 +300,19 @@ if(btnDelete) {
   })
 }
 
+// -----
+const changeDataBtn = document.querySelector('#changeData');
+const resetPasswordBtn = document.querySelector('#resetPassword');
+const deleteUserBtn = document.querySelector('#deleteUser');
 
+if(changeDataBtn) {
+  changeDataBtn.addEventListener('click', () => popupDataWorker.open());
+}
+
+if(resetPasswordBtn) {
+  resetPasswordBtn.addEventListener('click', () => popupReset.open());
+}
+
+if(deleteUserBtn) {
+  deleteUserBtn.addEventListener('click', () => popupDelete.open());
+}

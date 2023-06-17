@@ -67,13 +67,13 @@
             <fieldset class="fieldset fieldset_template_one-col fieldset_style_p-none">
                 <button class="btn btn_style_primary btn_position_mb" id="changeData" type="button">Изменить данные
                 </button>
-                <button class="btn btn_style_secondary btn_position_mb" id="profile" type="button">Личный кабинет
+                <button class="btn btn_style_secondary btn_position_mb" id="openProfile" type="button">Личный кабинет
                     сотрудника
                 </button>
                 <button class="btn btn_style_secondary btn_position_mb" id="resetPassword" type="button">Сбросить
                     пароль
                 </button>
-                <button class="btn btn_style_dark" id="delete" type="button">Удалить</button>
+                <button class="btn btn_style_dark" id="deleteUser" type="button">Удалить</button>
             </fieldset>
         </form>
     </section>
@@ -284,7 +284,7 @@
                         <input class="input__field input__field_default input__field_interval-right_small" id="email"
                                name="email" placeholder="Электронная почта" required type="email"
                                value="user@mail.ru">
-                        <label class="input__label" for="position">Электронная почта"</label>
+                        <label class="input__label" for="position">Электронная почта</label>
                         <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
                         <span class="input__error-message">Ошибка</span>
                     </div>
@@ -304,14 +304,14 @@
                 Новый пароль будет отправлен на электронную почту <a href="mailto:found@mail.ru" class="link">found@mail.ru</a>
             </p>
             <form class="form" novalidate>
-                <button class="btn btn_style_primary" type="button">Сбросить</button>
+                <button class="btn btn_style_primary" type="submit">Сбросить</button>
             </form>
-            <button class="btn btn_type_close popup__btn-close" type="submit"></button>
+            <button class="btn btn_type_close popup__btn-close" type="button"></button>
         </div>
     </div>
 </div>
 
-<div class="popup popup_type_window popup_type_window-bottom popup_opened" id="popupDelete">
+<div class="popup popup_type_window popup_type_window-bottom" id="popupDelete">
     <div class="popup__container">
         <div class="popup__content">
             <h2 class="heading heading_type_title popup__title">Удалить данные сотрудника?</h2>
