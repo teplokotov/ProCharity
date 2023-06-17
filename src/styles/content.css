@@ -110,6 +110,9 @@
 
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__title/_text-weight/popup__title_text-weight.css);
+@import url(../blocks/popup/__title/_error/popup__title_error.css);
+@import url(../blocks/popup/_order/_second/popup_order_second.css);
+@import url(../blocks/popup/_order/_third/popup_order_third.css);
 
 
 

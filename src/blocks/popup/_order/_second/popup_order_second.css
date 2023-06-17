@@ -1,0 +1,9 @@
+.popup_order_second {
+  top: calc(24px + (12px + 84px) * 1);
+}
+
+@media screen and (max-width: 450px) {
+  .popup_order_second {
+    top: calc(16px + (12px + 84px) * 1);
+  }
+}
