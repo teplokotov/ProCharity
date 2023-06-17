@@ -15,12 +15,11 @@
 
 
 @import url(./../blocks/breadcrumbs/breadcrumbs.css);
-
+@import url(./../blocks/breadcrumbs/_mobile/breadcrumbs_mobile.css);
 @import url(./../blocks/breadcrumbs/__list/breadcrumbs__list.css);
-
 @import url(./../blocks/breadcrumbs/__item/breadcrumbs__item.css);
-
 @import url(./../blocks/breadcrumbs/__link/breadcrumbs__link.css);
+@import url(./../blocks/breadcrumbs/__icon/breadcrumbs__icon.css);
 
 
 
