@@ -15,12 +15,11 @@
 
 
 @import url(./../blocks/breadcrumbs/breadcrumbs.css);
-
+@import url(./../blocks/breadcrumbs/_mobile/breadcrumbs_mobile.css);
 @import url(./../blocks/breadcrumbs/__list/breadcrumbs__list.css);
-
 @import url(./../blocks/breadcrumbs/__item/breadcrumbs__item.css);
-
 @import url(./../blocks/breadcrumbs/__link/breadcrumbs__link.css);
+@import url(./../blocks/breadcrumbs/__icon/breadcrumbs__icon.css);
 
 
 
@@ -93,7 +92,10 @@
 @import url(../blocks/popup/_type/popup_type_window.css);
 @import url(../blocks/popup/_type/popup_type_window-bottom.css);
 
+@import url(../blocks/popup/_mobile/popup_mobile.css);
+
 @import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup__content/popup__content.css);
 
 @import url(../blocks/popup/__paragraph/popup__paragraph.css);
 @import url(../blocks/popup/__paragraph/popup__paragraph_fat.css);
@@ -132,8 +134,11 @@
 
 @import url(../blocks/btn/_style/btn_style_primary.css);
 @import url(../blocks/btn/_style/btn_style_secondary.css);
+@import url(../blocks/btn/_style/btn_style_dark.css);
 @import url(../blocks/btn/_style/btn_style_inactive.css);
 @import url(../blocks/btn/_style/btn_style_telegram.css);
+@import url(../blocks/btn/_style/btn_style_none.css);
+@import url(../blocks/btn/_style/btn_style_hidden.css);
 
 @import url(../blocks/btn/_type/btn_type_close.css);
 @import url(../blocks/btn/_type/btn_type_refresh.css);
@@ -142,8 +147,7 @@
 @import url(../blocks/btn/_type/btn_type_refresh-process.css);
 
 @import url(../blocks/btn/_position/btn_position_right.css);
-@import url(../blocks/btn/_style/btn_style_none.css);
-@import url(../blocks/btn/_style/btn_style_hidden.css);
+@import url(../blocks/btn/_position/btn_position_mb.css);
 
 /* Пользовательское отображение select */
 
@@ -484,3 +488,12 @@
 @import url(../blocks/pagination/__btn-right/pagination__btn-right.css);
 @import url(../blocks/pagination/__item/pagination__item.css);
 @import url(../blocks/pagination/__item/_active/pagination__item_active.css);
+
+/* table element */
+@import url(../blocks/table-element/table-element.css);
+@import url(../blocks/table-element/__header/table-element__header.css);
+@import url(../blocks/table-element/__title/table-element__title.css);
+@import url(../blocks/table-element/__icon/table-element__icon.css);
+@import url(../blocks/table-element/__info/table-element__info.css);
+@import url(../blocks/table-element/__subtitle/table-element__subtitle.css);
+@import url(../blocks/table-element/__date/table-element__date.css);
