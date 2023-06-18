@@ -14,14 +14,14 @@ export default class PopupWithForm extends Popup {
 
     this._inputList.forEach((inputElement) => {
 			const type = inputElement.getAttribute('type');
-			if (type === 'text' || type === 'email') {
-				this._inputValues[inputElement.name] = { type: inputElement.getAttribute('type'), value: inputElement.value };
-			} else if (type === 'checkbox') {
+      if (type === 'checkbox') {
 				this._inputValues[inputElement.name] = { 
 					type: inputElement.getAttribute('type'),
 					isChecked: inputElement.checked
 				};
-			}
+			} else {
+        this._inputValues[inputElement.name] = { type: 'text', value: inputElement.value };
+      }
     });
 
     return this._inputValues;
@@ -39,11 +39,11 @@ export default class PopupWithForm extends Popup {
   setInputValues(data) {
     this._inputList.forEach((inputElement) => {
 			const type = data[inputElement.name].type;
-			if (type === 'text' || type === 'email') {
-      	inputElement.value = data[inputElement.name].value;
-			} else if (type === 'checkbox') {
+      if (type === 'checkbox') {
 				inputElement.checked = data[inputElement.name].isChecked;
-			}
+			} else {
+        inputElement.value = data[inputElement.name].value;
+      }
     });
   }
 
