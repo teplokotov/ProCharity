@@ -468,6 +468,7 @@
 @import url(../blocks/table/__body/table__body.css);
 @import url(../blocks/table/__btn-edit/table__btn-edit.css);
 @import url(../blocks/table/__btn-head/table__btn-head.css);
+@import url(../blocks/table/__btn-head/_active/table__btn-head_active.css);
 @import url(../blocks/table/__btn-head/_rotate/table__btn-head_rotate.css);
 @import url(../blocks/table/__btn-redact/table__btn-redact.css);
 @import url(../blocks/table/__container-btn/table__container-btn.css);

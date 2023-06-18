@@ -210,6 +210,9 @@ if (table) {
     handleOpenPagePagination: (table, pageNum) => {
       pagination.openPage(table, pageNum);
       },
+    handleRefreshloadMoreButton: (table) => {
+      pagination.loadMoreVisibility(loadMore, table);
+      },
     getMobileSortingType: (optionValue) => {
       switch (optionValue) {
         case 'по правам администратора':
@@ -367,7 +370,10 @@ if (table) {
     pagination.genTables();
     pagination.loadMore(loadMore, table);
     pagination.openPage(table, pageNum);
+
     // Добавить сортировку вновь
+    sorting.updateSort();
+
     popupDelete.close();
   }
 
@@ -480,9 +486,10 @@ if (table) {
     pager.innerHTML = '';
     const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
     pagination.genTables();
-    pagination.loadMore(loadMore, table);
     pagination.openPage(table, pageNum);
+
     // Добавить сортировку вновь
+    sorting.updateSort();
 
     popupAddEmployer.close();
   }

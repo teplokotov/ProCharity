@@ -91,7 +91,7 @@ export default class TablePagination {
 
   loadMore(loadMoreButton, table) {
     const inactiveRows = table.querySelectorAll('.table__row-inactive');
-    if (inactiveRows.length >= 5) {
+    if (inactiveRows.length >= 1) {
       loadMoreButton.addEventListener('click', (evt) => {
         const inactiveRows = table.querySelectorAll('.table__row-inactive');
         const inactiveRowsCount = inactiveRows.length;
@@ -110,7 +110,7 @@ export default class TablePagination {
 
   loadMoreVisibility(loadMoreButton, table) {
     const inactiveRows = table.querySelectorAll('.table__row-inactive');
-    if (inactiveRows.length >= 5) {
+    if (inactiveRows.length >= 1) {
       if (loadMoreButton.classList.contains("btn_style_hidden")) {
         loadMoreButton.classList.remove("btn_style_hidden")
       }
