@@ -108,8 +108,10 @@
         <form name="socialLinksForm" id="socialLinksForm" action="#" method="get">
           <fieldset class="fieldset fieldset_template_grid-one-col">
             <div class="input">
-              <input class="input__field input__field_default input__field_padding-center" type="url" placeholder="Сайт" />
-              <button class="btn input__btn input__btn_type_clear-text"></button>
+              <input type="url" class="input__field input__field_default input__field_interval-right_small" name="sait" placeholder="Сайт" value="" required="">
+              <label class="input__label">Сайт</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
             </div>
           </fieldset>
           <fieldset class="fieldset fieldset_template_grid-social-links">
@@ -153,8 +155,10 @@
             <legend class="paragraph">Публикации в СМИ</legend>
             <div class="input-group input-group_type_column">
               <div class="input">
-                <input class="input__field input__field_default input__field_padding-center" type="url" placeholder="https://" />
-                <button class="btn input__btn input__btn_type_clear-text"></button>
+                <input type="url" class="input__field input__field_default input__field_interval-right_small" name="CNN" placeholder="https://" value="" required="">
+                <label class="input__label">https://</label>
+                <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+                <span class="input__error-message">Ошибка</span>
               </div>
             </div>
             <button type="button" class="btn btn_type_add">Добавить ссылку</button>
