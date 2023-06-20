@@ -279,7 +279,6 @@
 
 
 @import url(../blocks/input/_error/input_error.css);
-/*@import url(../blocks/input/_type/input_type_bottom-interval.css);*/
 
 @import url(../blocks/input/__label/input__label.css);
 
@@ -295,9 +294,6 @@
 @import url(../blocks/input/__error-message/input__error-message.css);
 @import url(../blocks/input/__error-message/_visible/input__error-message_visible.css);
 @import url(../blocks/input/_type/input_type_desk-none.css);
-
-
-
 /* checkbox */
 
 @import url(../blocks/checkbox/checkbox.css);
