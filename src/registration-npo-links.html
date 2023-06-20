@@ -106,13 +106,16 @@
       </section>
       <section class="content">
         <h1 class="heading heading_type_title">Ссылки</h1>
+        <form name="socialLinksForm" id="socialLinksForm" action="#" method="get">
         <fieldset class="fieldset" form="socialLinksForm">
           <div class="input">
-            <input type="url" placeholder="Сайт" class="input__field input__field_default input__field_padding-center" />
+            <input type="url" class="input__field input__field_default input__field_interval-right_small" name="sait" placeholder="Сайт" value="" required="">
+            <label class="input__label">Сайт</label>
+            <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+            <span class="input__error-message">Ошибка</span>
           </div>
         </fieldset>
         <h2 class="paragraph">Соцсети</h2>
-        <form name="socialLinksForm" id="socialLinksForm" action="#" method="get">
           <fieldset class="fieldset fieldset_template_grid-social-links">
             <label for="telegram" class="label-icon"><img src="<%=require('./images/Telegram.svg')%>" alt="телеграм" /></label>
             <div class="input">
@@ -175,8 +178,13 @@
           </fieldset>
           <h2 class="paragraph">Публикации в СМИ</h2>
           <fieldset class="fieldset" form="socialLinksForm">
-            <div class="input input_type_bottom-interval">
-              <input type="url" placeholder="https://" class="input__field input__field_default input__field_padding-center" />
+            <div class="input-group input-group_type_column">
+              <div class="input">
+                <input type="url" class="input__field input__field_default input__field_interval-right_small" name="CNN" placeholder="https://" value="" required="">
+                <label class="input__label">https://</label>
+                <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+                <span class="input__error-message">Ошибка</span>
+              </div>
             </div>
             <button type="button" class="btn btn_type_add">Добавить ссылку</button>
           </fieldset>
