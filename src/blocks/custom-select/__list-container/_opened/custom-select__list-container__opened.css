@@ -1,9 +1,0 @@
-.custom-select__list-container__opened {
-  display: block;
-}
-
-@media screen and (max-width: 900px) {
-  .custom-select__item .custom-select__list-container__opened {
-    display: block;
-  }
-}

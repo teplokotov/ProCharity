@@ -39,10 +39,11 @@ export default class CustomMultiselect {
   constructor(
     selector, {...options} = {}) {
     this._selectElement = document.querySelector(selector);
+
     this._options = {};
     this._options.wrapClass = options.wrapClass ?? ['custom-select__wrap', 'custom-select__wrap_style_multiselect'];
     this._options.headingClass = options.headingClass ?? ['heading', 'heading__title', 'custom-select__heading'];
-    this._options.closeBtnClass = options.closeBtnClass ?? ['btn', 'btn_type_close', 'custom-select__btn-close'];
+    this._options.closeBtnClass = options.closeBtnClass ?? ['btn', 'btn_type_close', 'custom-select__btn_type_close'];
     this._options.fieldClass = options.fieldClass ?? ['custom-select__field', 'custom-select__field_style_multiselect'];
     this._options.labelClass = options.labelClass ?? 'custom-select__label';
     this._options.chipsClass = options.chipsClass ?? 'custom-select__chips';
@@ -52,7 +53,7 @@ export default class CustomMultiselect {
     this._options.messageContainerClass = options.messageContainerClass ?? 'custom-select__message';
     this._options.modalClass = options.modalClass ?? 'custom-select__modal';
     this._options.optionsListContainerClass = options.optionsListContainerClass ?? 'custom-select__list-container';
-    this._options.optionsOpenedListContainerClass = options.optionsOpenedListContainerClass ?? 'custom-select__list-container__opened';
+    this._options.optionsOpenedListContainerClass = options.optionsOpenedListContainerClass ?? 'custom-select__list-container_opened';
     this._options.linkClass = options.linkClass ?? 'custom-select__link';
     this._options.selectAllGroupLinkClass = options.selectAllGroupLinkClass ?? 'custom-select__link_type_select-all';
     this._options.resetAllGroupLinkClass = options.resetAllGroupLinkClass ?? 'custom-select__link_type_reset';
@@ -63,7 +64,7 @@ export default class CustomMultiselect {
     this._options.optionParentClass = options.optionParentClass ?? 'custom-select__item_style_parent';
     this._options.optionParentOpenedClass = options.optionParentOpenedClass ?? 'custom-select__item_style_parent-opened';
     this._options.optionSelectableClass = options.optionSelectableClass ?? 'custom-select__item_style_checkbox';
-    this._options.optionSelectedClass = options.optionSelectedClass ?? 'custom-select__item_selected-checkbox';
+    this._options.optionSelectedClass = options.optionSelectedClass ?? 'custom-select__item_style_checked';
     this._options.mobileScreenBreakpoint = options.mobileScreenBreakpoint ?? 900;
     this._options.firstOptionIsTitle = options.firstOptionIsTitle ?? false;
     this._options.useTextSearch = options.useTextSearch ?? true;
@@ -379,14 +380,12 @@ export default class CustomMultiselect {
 
 
   _getOptions() {
-    this._data = [];
-
     // Рекурсивная функция для прохода по всем уровням вложенности элементов
     function createDataArray(array) {
       //Результирующий массив
       const resultArray = [];
 
-      array.forEach((item, index) => {
+      array.forEach(item => {
         // Обрабатываются только элементы optgroup и option,
         // в противном случае в результирующий массив попадут
         // текстовые узлы
@@ -567,7 +566,7 @@ export default class CustomMultiselect {
 
 
   _createItems(data, parentElement) {
-    data.forEach((item, index) => {
+    data.forEach(item => {
       // Создание элемента списка li
       const option = this._createItem();
 

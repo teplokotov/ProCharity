@@ -21,12 +21,12 @@ export default class CustomSelect {
     this._selectElement = document.querySelector(selector);
     this._options = {};
     this._options.wrapClass = options.wrapClass ?? 'custom-select__wrap';
-    this._options.closeBtnClass = options.closeBtnClass ?? ['btn', 'btn_type_close', 'custom-select__btn-close'];
+    this._options.closeBtnClass = options.closeBtnClass ?? ['btn', 'btn_type_close', 'custom-select__btn_type_close'];
     this._options.fieldClass = options.fieldClass ?? 'custom-select__field';
     this._options.fieldDisabledClass = options.fieldDisabledClass ?? 'custom-select__field_disabled';
     this._options.fieldTextClass = options.fieldTextClass ?? 'custom-select__field-text';
     this._options.optionsListContainerClass = options.optionsListContainerClass ?? 'custom-select__list-container';
-    this._options.optionsOpenedListContainerClass = options.optionsOpenedListContainerClass ?? 'custom-select__list-container__opened';
+    this._options.optionsOpenedListContainerClass = options.optionsOpenedListContainerClass ?? 'custom-select__list-container_opened';
     this._options.optionsListClass = options.optionsListClass ?? 'custom-select__list';
     this._options.optionClass = options.optionClass ?? 'custom-select__item';
     this._options.optionParentClass = options.optionParentClass ?? 'custom-select__item_style_parent';
@@ -386,6 +386,5 @@ export default class CustomSelect {
       }
     });
   }
-  
 
 }

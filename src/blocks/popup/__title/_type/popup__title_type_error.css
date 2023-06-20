@@ -1,0 +1,3 @@
+.popup_type_message .popup__title_type_error:before {
+  content: url(../../../../images/IconError.svg);
+}
