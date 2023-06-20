@@ -288,7 +288,7 @@ if (table) {
     const fullname = row.querySelector('.table__name').textContent.split(' ');
     const isAdmin = row.querySelector('.table__wrench').innerHTML !== '';
     const email = row.querySelector('.table__email').textContent;
-    popupEditEmployer.setInputValues({ 
+    popupEditEmployer.setInputValues({
       name: { type: 'text', value: fullname[1] },
       surname: { type: 'text', value: fullname[0] },
       email: { type: 'email', value: email },
@@ -332,7 +332,7 @@ if (table) {
     if (!evt.target.classList.contains(menuSelector.menuList)) {
       this.classList.remove(menuSelector.opened);
       indexOfContextMenu = null;
-    }  
+    }
   }
 
   // Экземпляр попапа сброса пароля сотрудника
@@ -469,7 +469,7 @@ if (table) {
 
     const btnEdit = trow.querySelector('.table__btn-redact');
     btnEdit.addEventListener('click', handleBtnContextMenu);
-    
+
     const menuBody = trow.querySelector('.table__menu-body');
     menuBody.addEventListener('click', handleContextMenu);
 
