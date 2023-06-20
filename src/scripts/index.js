@@ -1,6 +1,6 @@
 // Подключение стилей
-import '../src/styles/layout.css';
-import '../src/styles/content.css';
+import '../styles/layout.css';
+import '../styles/content.css';
 import 'cropperjs/dist/cropper.css'
 
 
@@ -8,24 +8,24 @@ import 'cropperjs/dist/cropper.css'
 import {handleTextareaAutosize} from './textarea-autosize';
 import {handleTextareaSymbolCounter} from './textarea-symbol-counter';
 import {setFilesRemover} from './uploader-file-remover';
-import FieldTextCleaner from './FieldTextCleaner';
-import MobileMenu from "./MobileMenu";
+import FieldTextCleaner from '../components/FieldTextCleaner';
+import MobileMenu from "../components/MobileMenu";
 
-import CustomSelect from "./CustomSelect";
-import CustomMultiselect from "./CustomMultiselect";
-import Popup from './Popup';
-import PopupWithForm from './PopupWithForm';
-import TablePagination from './TablePagination';
-import TableSort from './TableSort';
-import IconAdmin from '../src/images/Table-key.svg';
+import CustomSelect from "../components/CustomSelect";
+import CustomMultiselect from "../components/CustomMultiselect";
+import Popup from '../components/Popup';
+import PopupWithForm from '../components/PopupWithForm';
+import TablePagination from '../components/TablePagination';
+import TableSort from '../components/TableSort';
+import IconAdmin from '../images/Table-key.svg';
 const adminIcon = new Image();
 
 
 // Подключение сторонних библиотек
 import 'cropperjs';
 import Cropper from 'cropperjs';
-import PwdViewer from "./PwdViewer";
-import Avatar from "./Avatar";
+import PwdViewer from "../components/PwdViewer";
+import Avatar from "../components/Avatar";
 
 const avatarContainer = document.querySelector('.avatar__container');
 const image = document.querySelector('.popup__image');
