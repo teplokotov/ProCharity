@@ -1,2 +1,2 @@
 // Подключение стилей
-import './styles/layout.css';
+import '../src/styles/layout.css';
