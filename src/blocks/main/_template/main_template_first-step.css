@@ -7,7 +7,7 @@
   background-color: #F1F7FF;
 }
 
-.main_template_first-step::after {
+.main_template_first-step::before {
   background: url(../../../images/first-step-background.svg) no-repeat right top;
   max-width: 1440px;
   position: absolute;
@@ -19,12 +19,17 @@
   content: '';
 }
 
+.main_template_first-step > .content {
+  z-index: 1;
+}
+
 @media screen and (max-width: 900px) {
   .main_template_first-step {
     grid-template-columns: 100%;
     padding-bottom: 268px;
     padding-top: 24px;
   }
+
   .main_template_first-step::after {
     background: url(../../../images/first-step-background-reverse.svg) no-repeat left bottom;
   }
