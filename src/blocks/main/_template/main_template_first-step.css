@@ -30,7 +30,7 @@
     padding-top: 24px;
   }
 
-  .main_template_first-step::after {
+  .main_template_first-step::before {
     background: url(../../../images/first-step-background-reverse.svg) no-repeat left bottom;
   }
 }
