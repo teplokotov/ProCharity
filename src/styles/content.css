@@ -27,6 +27,7 @@
 @import url(../blocks/sidebar/__status/_state/sidebar__status_state_process.css);
 @import url(../blocks/sidebar/__description/sidebar__description.css);
 @import url(../blocks/sidebar/__link/sidebar__link.css);
+@import url(../blocks/sidebar/__tooltip/sidebar__tooltip.css);
 
 /* Шаги регистрации */
 @import url(../blocks/progress-bar/progress-bar.css);
@@ -215,7 +216,6 @@
 @import url(../blocks/checkbox/__input/checkbox__input.css);
 @import url(../blocks/checkbox/__label/checkbox__label.css);
 @import url(../blocks/checkbox/__label/_style/checkbox__label_style_notifications.css);
-
 
 
 /*Отображение и изменение аватара*/

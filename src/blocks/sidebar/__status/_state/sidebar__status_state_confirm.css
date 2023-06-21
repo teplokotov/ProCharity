@@ -3,6 +3,12 @@
   border: 2px solid transparent;
 }
 
+.sidebar__status_state_confirm:hover {
+  background-color: #CC4D00;
+  border: 2px solid #CC4D00;
+  opacity: 1;
+}
+
 .sidebar__status_state_confirm:active {
   background-color: #CC4D00;
   border: 2px solid #CC4D00;
