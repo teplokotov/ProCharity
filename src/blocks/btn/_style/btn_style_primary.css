@@ -22,8 +22,13 @@
   background: #AA4000;
 }
 
-.btn_style_primary:disabled {
+.btn_style_primary:disabled,
+.btn_style_primary:disabled:hover,
+.btn_style_primary:disabled:focus,
+.btn_style_primary:disabled:active {
+  background: #E65609;
   opacity: .6;
+  cursor: default;
 }
 
 @media screen and (max-width: 900px) {
