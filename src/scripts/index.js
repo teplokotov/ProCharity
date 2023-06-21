@@ -1,9 +1,3 @@
-// Подключение стилей
-import '../styles/layout.css';
-import '../styles/content.css';
-import 'cropperjs/dist/cropper.css'
-
-
 // Подключение компонентов проекта
 import {handleTextareaAutosize} from './textarea-autosize';
 import {handleTextareaSymbolCounter} from './textarea-symbol-counter';
