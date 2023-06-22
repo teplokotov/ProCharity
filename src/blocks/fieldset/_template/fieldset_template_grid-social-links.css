@@ -4,7 +4,7 @@
   gap: 20px;
   grid-auto-rows: minmax(min-content, max-content);
   grid-template-columns: 33px auto;
-  padding-bottom: 32px;
+  padding-bottom: 26px;
 }
 
 @media screen and (max-width: 900px) {
