@@ -14,7 +14,6 @@
   padding: 0 120px 120px 24px;
   row-gap: 24px;
   width: 100%;
-  min-width: 320px;
 }
 
 @media screen and (max-width: 900px) {
