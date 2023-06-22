@@ -26,6 +26,7 @@
 /*  */
 @import url(../blocks/sidebar/sidebar.css);
 @import url(../blocks/sidebar/_type/sidebar_type_profile-progress.css);
+@import url(../blocks/sidebar/_type/sidebar_type_mobile-hidden.css);
 @import url(../blocks/sidebar/__title/sidebar__title.css);
 @import url(../blocks/sidebar/__status/sidebar__status.css);
 @import url(../blocks/sidebar/__status/_state/sidebar__status_state_confirm.css);
