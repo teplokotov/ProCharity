@@ -4,6 +4,7 @@
 @import url(../blocks/main/main.css);
 
 @import url(../blocks/main/_template/main_template_lk.css);
+@import url(../blocks/main/_template/main_template_table-element.css);
 @import url(../blocks/main/_template/main_template_registration.css);
 @import url(../blocks/main/_template/main_template_registration-fullscreen.css);
 @import url(../blocks/main/_template/main_template_registration-form.css);
@@ -17,6 +18,8 @@
 @import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
 @import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
 @import url(../blocks/breadcrumbs/__icon/breadcrumbs__icon.css);
+@import url(../blocks/breadcrumbs/__btn/breadcrumbs__btn.css);
+@import url(../blocks/breadcrumbs/__btn/_type/breadcrumbs__btn_type_return.css);
 
 /*  */
 @import url(../blocks/sidebar/sidebar.css);
@@ -99,6 +102,7 @@
 @import url(../blocks/btn/_style/btn_style_dark.css);
 @import url(../blocks/btn/_style/btn_style_inactive.css);
 @import url(../blocks/btn/_style/btn_style_telegram.css);
+@import url(../blocks/btn/_style/btn_style_wide.css);
 @import url(../blocks/btn/_style/btn_style_none.css);
 @import url(../blocks/btn/_style/btn_style_hidden.css);
 @import url(../blocks/btn/_type/btn_type_close.css);
@@ -362,9 +366,13 @@
 
 /* table element */
 @import url(../blocks/table-element/table-element.css);
-@import url(../blocks/table-element/__header/table-element__header.css);
-@import url(../blocks/table-element/__title/table-element__title.css);
-@import url(../blocks/table-element/__icon/table-element__icon.css);
+@import url(../blocks/table-element/__group/table-element__group.css);
 @import url(../blocks/table-element/__info/table-element__info.css);
-@import url(../blocks/table-element/__subtitle/table-element__subtitle.css);
-@import url(../blocks/table-element/__date/table-element__date.css);
+@import url(../blocks/table-element/__text/table-element__text.css);
+@import url(../blocks/table-element/__text/_type/table-element__text_type_title.css);
+@import url(../blocks/table-element/__text/_type/table-element__text_type_subtitle.css);
+@import url(../blocks/table-element/__wrench-container/table-element__wrench-container.css);
+@import url(../blocks/table-element/__wrench/table-element__wrench.css);
+@import url(../blocks/table-element/__buttons/table-element__buttons.css);
+
+@import url(../blocks/display-none/display-none.css);

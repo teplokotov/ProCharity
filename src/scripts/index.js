@@ -12,7 +12,6 @@ import PopupWithForm from '../components/PopupWithForm';
 import TablePagination from '../components/TablePagination';
 import TableSort from '../components/TableSort';
 import IconAdmin from '../images/Table-key.svg';
-const adminIcon = new Image();
 
 
 // Подключение сторонних библиотек
@@ -192,6 +191,8 @@ if(deleteUserBtn) deleteUserBtn.addEventListener('click', () => popupDeleteItem.
 
 // ================ LK - ACCESS.HTML ============== //
 
+const lkAccess = document.querySelector('#lkAccess');
+const lkAccessItem = document.querySelector('#lkAccessItem');
 const table = document.querySelector('.table');
 const pagination = new TablePagination(table);
 const loadMore = document.querySelector('.btn_load_more');
@@ -234,6 +235,7 @@ if (table) {
     popupResetPassword: '#popupReset',
     popupDelDataUser: '#popupDelete',
   }
+
   const btnSelector = {
     btnAddEmployer: '#btnAddWorker',
     btnEditEmployer: '.table__btn-edit',
@@ -247,6 +249,21 @@ if (table) {
     opened: 'table__menu-body_opened',
     menuContainer: '.table__menu-container',
     menuList: 'table__menu-body',
+  }
+
+  const templateProfileSelector = {
+    template: '#profileSettings',
+    profile: '.table-element',
+    title: '.table-element__text_type_title',
+    wrenchContainer: '.table-element__wrench-container',
+    date: '.table-element__text_type_date',
+  }
+
+  const btnProfileSettings = {
+    btnProfileEditEmployer: '#changeData',
+    btnProfileDeleteEmployer: '#deleteUser',
+    btnProfileResetPassword: '#resetPassword',
+    btnReturnToTable: '#btnReturnToTable',
   }
 
   // Экземпляр попапа добавления нового работника:
@@ -282,9 +299,9 @@ if (table) {
     const fullname = row.querySelector('.table__name').textContent.split(' ');
     const isAdmin = row.querySelector('.table__wrench').innerHTML !== '';
     const email = row.querySelector('.table__email').textContent;
-    popupEditEmployer.setInputValues({
-      name: { type: 'text', value: fullname[1] },
-      surname: { type: 'text', value: fullname[0] },
+    popupEditEmployer.setInputValues({ 
+      name: { type: 'text', value: fullname[0] },
+      surname: { type: 'text', value: fullname[1] },
       email: { type: 'email', value: email },
       isAdmin: { type: 'checkbox', isChecked: isAdmin },
     });
@@ -330,8 +347,14 @@ if (table) {
   }
 
   // Экземпляр попапа сброса пароля сотрудника
-  const popupReset = new PopupWithForm(popupSelector.popupResetPassword);
+  const popupReset = new PopupWithForm(popupSelector.popupResetPassword, handleSubmitFormResetPassword);
   popupReset.setEventListeners();
+
+  function handleSubmitFormResetPassword(evt) {
+    evt.preventDefault();
+
+    popupReset.close();
+  }
 
   if(btnReset) {
     btnReset.forEach(item => {
@@ -358,15 +381,22 @@ if (table) {
     const tbody = table.querySelector('.table__body');
     const currentRow = tbody.children[indexOfRow];
     currentRow.remove();
+    
     // Новая отрисовка
     pager.innerHTML = '';
     const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
     pagination.genTables();
-    pagination.loadMore(loadMore, table);
     pagination.openPage(table, pageNum);
 
     // Добавить сортировку вновь
     sorting.updateSort();
+
+    if (!lkAccessItem.classList.contains('display-none')) {
+      const profileSettings = document.querySelector('.table-element');
+      lkAccessItem.classList.add('display-none');
+      lkAccess.classList.remove('display-none');
+      profileSettings.remove();
+    }
 
     popupDelete.close();
   }
@@ -407,13 +437,39 @@ if (table) {
     currentRow.querySelector('.table__name').textContent = `${dataForm['name'].value} ${dataForm['surname'].value}`;
     currentRow.querySelector('.table__email').textContent = `${dataForm['email'].value}`;
     if (dataForm['isAdmin'].isChecked) {
-      adminIcon.src = IconAdmin;
-      adminIcon.alt = 'Права администратора';
+      const adminIconFormEdit = new Image();
+      adminIconFormEdit.src = IconAdmin;
+      adminIconFormEdit.alt = 'Права администратора';
       currentRow.querySelector('.table__wrench').innerHTML = '';
-      currentRow.querySelector('.table__wrench').append(adminIcon);
+      currentRow.querySelector('.table__wrench').append(adminIconFormEdit);
     } else {
       currentRow.querySelector('.table__wrench').innerHTML = '';
     }
+
+    if (!lkAccessItem.classList.contains('display-none')) {
+      const profileTitle = lkAccessItem.querySelector(templateProfileSelector.title);
+      const profileWrenchContainer = lkAccessItem.querySelector(templateProfileSelector.wrenchContainer);
+      profileTitle.textContent = String(dataForm['name'].value + ' ' + dataForm['surname'].value);
+      if (dataForm['isAdmin'].isChecked) {
+        const adminIconFormEdit = new Image();
+        adminIconFormEdit.src = IconAdmin;
+        adminIconFormEdit.alt = 'Права администратора';
+        profileWrenchContainer.innerHTML = '';
+        profileWrenchContainer.append(adminIconFormEdit);
+      } else {
+        profileWrenchContainer.innerHTML = '';
+      }
+    }
+
+    // Новая отрисовка
+    pager.innerHTML = '';
+    const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
+    pagination.genTables();
+    pagination.openPage(table, pageNum);
+
+    // Добавить сортировку вновь
+    sorting.updateSort();
+
     popupEditEmployer.close();
   }
 
@@ -433,9 +489,10 @@ if (table) {
     const twrench = document.createElement('td');
     twrench.classList.add('table__wrench');
     if (dataForm['isAdmin'].isChecked) {
-      adminIcon.src = IconAdmin;
-      adminIcon.alt = 'Права администратора';
-      twrench.append(adminIcon);
+      const adminIconFormAdd = new Image();
+      adminIconFormAdd.src = IconAdmin;
+      adminIconFormAdd.alt = 'Права администратора';
+      twrench.append(adminIconFormAdd);
     }
     tname.after(twrench);
 
@@ -463,7 +520,7 @@ if (table) {
 
     const btnEdit = trow.querySelector('.table__btn-redact');
     btnEdit.addEventListener('click', handleBtnContextMenu);
-
+    
     const menuBody = trow.querySelector('.table__menu-body');
     menuBody.addEventListener('click', handleContextMenu);
 
@@ -475,6 +532,10 @@ if (table) {
 
     const btnDelete = trow.querySelector('.btnDelete');
     btnDelete.addEventListener('click', handleBtnDelete);
+
+    if (screen.width <= 900) {
+      tname.addEventListener('click', handleClickOnName);
+    }
 
     // Новая отрисовка
     pager.innerHTML = '';
@@ -488,4 +549,97 @@ if (table) {
     popupAddEmployer.close();
   }
 
+  function handleClickOnName(evt) {
+    const header = document.querySelector('.header');
+    lkAccess.classList.add('display-none');
+    lkAccessItem.classList.remove('display-none');
+
+    header.scrollIntoView();
+
+    const row = evt.target.closest('tr');
+    const tbody = table.querySelector('.table__body');
+    indexOfRow = [...tbody.children].indexOf(row);
+    const regDate = row.querySelector('.table__data-cell').textContent;
+    const fullname = row.querySelector('.table__name').textContent.split(' ');
+    const isAdmin = row.querySelector('.table__wrench').innerHTML !== '';
+
+    const profileSettingsContainer = lkAccessItem.querySelector('.content');
+    const profileSettingsTemplate = document.querySelector(templateProfileSelector.template);
+    profileSettingsContainer.append(profileSettingsTemplate.content.cloneNode(true));
+
+    const profileSettings = profileSettingsContainer.querySelector(templateProfileSelector.profile);
+    const profileTitle = profileSettingsContainer.querySelector(templateProfileSelector.title);
+    const profileWrenchContainer = profileSettingsContainer.querySelector(templateProfileSelector.wrenchContainer);
+    const profileDate = profileSettingsContainer.querySelector(templateProfileSelector.date);
+
+    const btnProfileEditEmployer = lkAccessItem.querySelector(btnProfileSettings.btnProfileEditEmployer);
+    const btnProfileDeleteEmployer = lkAccessItem.querySelector(btnProfileSettings.btnProfileDeleteEmployer);
+    const btnProfileResetPassword = lkAccessItem.querySelector(btnProfileSettings.btnProfileResetPassword);
+    const btnReturnToTable = lkAccessItem.querySelector(btnProfileSettings.btnReturnToTable);
+
+    // Заполнение шаблона
+    profileTitle.textContent = String(fullname[0] + ' ' + fullname[1]);
+    profileDate.textContent = String(regDate);
+    if (isAdmin) {
+      const adminIconlkAccessItem = new Image();
+      adminIconlkAccessItem.src = IconAdmin;
+      adminIconlkAccessItem.alt = 'Права администратора';
+      profileWrenchContainer.append(adminIconlkAccessItem);
+    } else {
+      profileWrenchContainer.innerHTML = '';
+    }
+
+    // Обработка кнопки 'изменить данные'
+    btnProfileEditEmployer.addEventListener('click', (evt) => {
+      const fullname = row.querySelector('.table__name').textContent.split(' ');
+      const isAdmin = row.querySelector('.table__wrench').innerHTML !== '';
+      const email = row.querySelector('.table__email').textContent;
+      popupEditEmployer.setInputValues({ 
+        name: { type: 'text', value: fullname[0] },
+        surname: { type: 'text', value: fullname[1] },
+        email: { type: 'email', value: email },
+        isAdmin: { type: 'checkbox', isChecked: isAdmin },
+      });
+      popupEditEmployer.open();
+    });
+
+    // Обработка кнопки 'сбросить пароль'
+    btnProfileResetPassword.addEventListener('click', () => {
+      const email = row.querySelector('.table__email').textContent;
+      const data = `Новый пароль будет отправлен на электронную почту <a href="${email}" class="link">${email}</a>`;
+      popupReset.insertData(data);
+      popupReset.open();
+    });
+
+    // Обработка кнопки 'удалить'
+    btnProfileDeleteEmployer.addEventListener('click', () => {
+      const name = row.querySelector('.table__name').textContent;
+      const data = `Данные о сотруднике ${name} будут удалены`;
+      popupDelete.insertData(data);
+      popupDelete.open();
+    });
+
+    btnReturnToTable.addEventListener('click', () => {
+      // Новая отрисовка
+      pager.innerHTML = '';
+      const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
+      pagination.genTables();
+      pagination.openPage(table, pageNum);
+
+      // Добавить сортировку вновь
+      sorting.updateSort();
+
+      lkAccessItem.classList.add('display-none');
+      lkAccess.classList.remove('display-none');
+      profileSettings.remove();
+      header.scrollIntoView();
+    });
+  }
+
+  const employeeNames = table.querySelectorAll('.table__name');
+  employeeNames.forEach((name) => {
+    if (screen.width <= 900) {
+      name.addEventListener('click', handleClickOnName);
+    }
+  });
 }

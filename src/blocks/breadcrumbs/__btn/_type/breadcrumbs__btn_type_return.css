@@ -1,0 +1,20 @@
+.breadcrumbs__btn_type_return {
+  min-height: 24px;
+  padding-left: 28px;
+  color: #048AA7;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.breadcrumbs__btn_type_return::before {
+  position: absolute;
+  width: 24px;
+  min-height: 24px;
+  background-image: url(../../../../images/arrow-left-blue.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  content: '';
+}

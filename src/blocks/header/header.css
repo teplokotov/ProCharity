@@ -8,6 +8,7 @@
   padding: 0 24px;
   position: relative;
   width: 100%;
+  min-width: 320px;
 }
 
 @media screen and (max-width: 900px) {

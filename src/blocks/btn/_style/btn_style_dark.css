@@ -3,9 +3,9 @@
     box-sizing: border-box;
     color: #FFFFFF;
     min-width: max-content;
-    padding: 16px 28px;
+    padding: 20px 32px;
     width: 100%;
-    border: solid 2px transparent;
+    border: 1px solid transparent;
 }
   
   .btn_style_dark:hover {
@@ -15,7 +15,7 @@
   
   .btn_style_dark:focus {
     background: #24323b;
-    border: 2px solid #1e2b33;
+    border: 1px solid #1e2b33;
   }
   
   .btn_style_dark:active {

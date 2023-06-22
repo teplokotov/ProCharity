@@ -1,6 +1,7 @@
 .table-element__info {
-    display: flex;
-    flex-direction: row;
-
-    padding-bottom: 32px;
+  display: flex;
+  column-gap: 11px;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

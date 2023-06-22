@@ -1,5 +1,5 @@
-.table-element {
+.table-element__buttons {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 14px;
 }
