@@ -10,11 +10,13 @@
 @import url(../blocks/main/_template/main_template_registration-form.css);
 @import url(../blocks/main/_template/main_template_first-step.css);
 @import url(../blocks/main/_template/main_template_registration-final.css);
+@import url(../blocks/main/_pb/main_pb_medium.css);
 
 /* Хлебные крошки */
 @import url(../blocks/breadcrumbs/breadcrumbs.css);
 @import url(../blocks/breadcrumbs/_type/_mobile/breadcrumbs_type_mobile.css);
 @import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
+@import url(../blocks/breadcrumbs/__list/_pt/breadcrumbs__list_pt_small.css);
 @import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
 @import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
 @import url(../blocks/breadcrumbs/__icon/breadcrumbs__icon.css);
