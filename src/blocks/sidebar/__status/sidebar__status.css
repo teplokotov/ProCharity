@@ -1,6 +1,6 @@
 .sidebar__status {
   align-items: center;
-  background-color: #3A464C;
+  background-color: #3a464c;
   border: 2px solid transparent;
   border-radius: 12px;
   box-sizing: border-box;
@@ -32,7 +32,7 @@
 }
 
 .sidebar__status:hover {
-  background-color: #048AA7;
+  background-color: #899094;
 }
 
 .sidebar__status:focus {
@@ -41,5 +41,5 @@
 
 .sidebar__status:active {
   opacity: 1;
-  border: 2px solid #3A464C;
+  border: 2px solid #3a464c;
 }
