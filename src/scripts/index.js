@@ -493,7 +493,6 @@ if (table) {
 
     // Новая отрисовка
     pager.innerHTML = '';
-    console.log(pageNum);
     pagination.genTables();
 
     // Добавить сортировку вновь
@@ -686,19 +685,27 @@ if (table) {
     }
   });
 
+
+  let oldWidth = window.innerWidth;
+
   window.addEventListener('resize', () => {
-    const employeeNames = table.querySelectorAll('.table__name');
-    if (employeeNames.length > 0) {
-      employeeNames.forEach((name) => {
-        if (screen.width <= 900) {
-          name.addEventListener('click', handleClickOnName);
-          pagination.openPage(table, 1);
-          pagination.loadMoreVisibility(loadMore, table);
-        } else {
-          name.removeEventListener('click', handleClickOnName);
-          pagination.openPage(table, 1);         
-        }
-      });
+    const currentWidth = window.innerWidth;
+
+    if (oldWidth !== currentWidth) {
+      oldWidth = currentWidth;
+      const employeeNames = table.querySelectorAll('.table__name');
+      if (employeeNames.length > 0) {
+        employeeNames.forEach((name) => {
+          if (window.innerWidth <= 900) {
+            name.addEventListener('click', handleClickOnName);
+            pagination.openPage(table, 1);
+            pagination.loadMoreVisibility(loadMore, table);
+          } else {
+            name.removeEventListener('click', handleClickOnName);
+            pagination.openPage(table, 1);         
+          }
+        });
+      }
     }
   });
 }
