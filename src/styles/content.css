@@ -178,7 +178,6 @@
 @import url(../blocks/fieldset/_template/fieldset_template_grid-project-links.css);
 @import url(../blocks/fieldset/_template/fieldset_template_grid-one-col.css);
 @import url(../blocks/fieldset/_template/fieldset_template_grid-social-links.css);
-@import url(../blocks/fieldset/_style/fieldset_style_pb-small.css);
 @import url(../blocks/fieldset/_style/fieldset_style_input-column.css);
 @import url(../blocks/fieldset/_pb/fieldset_pb_lmedium.css);
 @import url(../blocks/fieldset/_pb/fieldset_pb_large.css);
@@ -186,6 +185,8 @@
 @import url(../blocks/fieldset/_pb/fieldset_pb_smaller.css);
 @import url(../blocks/fieldset/_pbm/fieldset_pbm_smedium.css);
 @import url(../blocks/fieldset/_pbm/fieldset_pbm_xsmall.css);
+@import url(../blocks/fieldset/_style/fieldset_style_pb-small.css);
+@import url(../blocks/fieldset/_pbm/fieldset_pbm_small.css);
 @import url(../blocks/fieldset/_style/fieldset_style_p-none.css);
 
 

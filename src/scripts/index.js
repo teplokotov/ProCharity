@@ -191,15 +191,10 @@ if(deleteUserBtn) deleteUserBtn.addEventListener('click', () => popupDeleteItem.
 
 // ================ LK - ACCESS.HTML ============== //
 
-const lkAccess = document.querySelector('#lkAccess');
-const lkAccessItem = document.querySelector('#lkAccessItem');
 const table = document.querySelector('.table');
 const pagination = new TablePagination(table);
 const loadMore = document.querySelector('.btn_load_more');
 const pager = document.querySelector(".pagination");
-const mobileTableHead = document.querySelector('.makeSort');
-const fieldsetLegend = lkAccess.querySelector('#fieldsetLegend');
-const fieldsetContainer = lkAccess.querySelector('#fieldsetContainer');
 
 if (table) {
   pagination.genTables();
@@ -230,6 +225,12 @@ if (table) {
   sorting.sortByIndex(0);
   // Включение сортировки
   sorting.enableSorting();
+
+  const lkAccess = document.querySelector('#lkAccess');
+  const lkAccessItem = document.querySelector('#lkAccessItem');
+  const mobileTableHead = document.querySelector('.makeSort');
+  const fieldsetLegend = lkAccess.querySelector('#fieldsetLegend');
+  const fieldsetContainer = lkAccess.querySelector('#fieldsetContainer');
 
 
   if (table.rows.length > 1) {
