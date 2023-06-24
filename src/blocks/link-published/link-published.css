@@ -3,3 +3,9 @@
 
     padding-top: 20px;
 }
+
+@media screen and (max-width: 900px) {
+    .link-published {
+        padding-top: 16px;
+    }
+  }

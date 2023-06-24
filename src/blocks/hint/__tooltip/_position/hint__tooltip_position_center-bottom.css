@@ -1,0 +1,24 @@
+.hint__tooltip_position_center-bottom {
+  bottom: auto;
+  left: -162px;
+  right: auto;
+  top: 30px;
+}
+
+.hint__tooltip_position_center-bottom::after {
+  bottom: auto;
+  left: 167px;
+  right: auto;
+  top: -16px;
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 450px) {
+  .hint__tooltip_position_center-bottom {
+    left: -200px;
+  }
+
+  .hint__tooltip_position_center-bottom::after {
+    left: 205px;
+  }
+}

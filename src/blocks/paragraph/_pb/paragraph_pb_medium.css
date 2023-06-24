@@ -1,0 +1,9 @@
+.paragraph_pb_medium {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .paragraph_pb_medium {
+    padding-bottom: 32px;
+  }
+}

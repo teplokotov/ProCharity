@@ -1,14 +1,13 @@
 .table__row {
   display: flex;
   align-items: center;
-  height: 48px;
+  height: 44px;
   border-bottom:  1px solid #E3E9F0;
   box-sizing: border-box;
-  justify-content: space-between;
 }
 
 @media screen and (max-width: 900px) {
-  .table__row   {
-    height: 44px;
+  .table__row {
+    justify-content: space-between;
   }
 }

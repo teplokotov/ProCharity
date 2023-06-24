@@ -1,3 +1,9 @@
 .fieldset_style_pb-small {
   padding-bottom: 20px;
 }
+
+@media screen and (max-width: 900px) {
+  .fieldset_style_pb-small {
+    padding-bottom: 16px;
+  }
+}

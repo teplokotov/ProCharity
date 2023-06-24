@@ -197,6 +197,9 @@ const table = document.querySelector('.table');
 const pagination = new TablePagination(table);
 const loadMore = document.querySelector('.btn_load_more');
 const pager = document.querySelector(".pagination");
+const mobileTableHead = document.querySelector('.makeSort');
+const fieldsetLegend = lkAccess.querySelector('#fieldsetLegend');
+const fieldsetContainer = lkAccess.querySelector('#fieldsetContainer');
 
 if (table) {
   pagination.genTables();
@@ -227,6 +230,20 @@ if (table) {
   sorting.sortByIndex(0);
   // Включение сортировки
   sorting.enableSorting();
+
+
+  if (table.rows.length > 1) {
+    table.classList.remove('display-none');
+    pager.classList.remove('display-none');
+    mobileTableHead.classList.remove('display-none');
+    loadMore.classList.remove('display-none');
+    lkAccess.classList.remove('main_pb_small');
+
+    if (fieldsetContainer.classList.contains('fieldset_style_p-none')) {
+      fieldsetLegend.classList.add('paragraph_pbm_small');
+      fieldsetContainer.classList.remove('fieldset_style_p-none');
+    }
+  }
 
 
   const popupSelector = {
@@ -300,8 +317,8 @@ if (table) {
     const isAdmin = row.querySelector('.table__wrench').innerHTML !== '';
     const email = row.querySelector('.table__email').textContent;
     popupEditEmployer.setInputValues({ 
-      name: { type: 'text', value: fullname[0] },
-      surname: { type: 'text', value: fullname[1] },
+      name: { type: 'text', value: fullname[1] },
+      surname: { type: 'text', value: fullname[0] },
       email: { type: 'email', value: email },
       isAdmin: { type: 'checkbox', isChecked: isAdmin },
     });
@@ -386,6 +403,7 @@ if (table) {
     pager.innerHTML = '';
     const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
     pagination.genTables();
+    pagination.loadMore(loadMore, table);
     pagination.openPage(table, pageNum);
 
     // Добавить сортировку вновь
@@ -396,6 +414,19 @@ if (table) {
       lkAccessItem.classList.add('display-none');
       lkAccess.classList.remove('display-none');
       profileSettings.remove();
+    }
+
+    if (table.rows.length <= 1) {
+      table.classList.add('display-none');
+      pager.classList.add('display-none');
+      mobileTableHead.classList.add('display-none');
+      loadMore.classList.add('display-none');
+      lkAccess.classList.add('main_pb_small');
+  
+      if (fieldsetLegend.classList.contains('paragraph_pbm_small')) {
+        fieldsetContainer.classList.add('fieldset_style_p-none');
+        fieldsetLegend.classList.remove('paragraph_pbm_small');
+      }
     }
 
     popupDelete.close();
@@ -434,7 +465,7 @@ if (table) {
     const dataForm = popupEditEmployer.getInputValues();
     const tbody = table.querySelector('.table__body');
     const currentRow = tbody.children[indexOfRow];
-    currentRow.querySelector('.table__name').textContent = `${dataForm['name'].value} ${dataForm['surname'].value}`;
+    currentRow.querySelector('.table__name').textContent = `${dataForm['surname'].value} ${dataForm['name'].value}`;
     currentRow.querySelector('.table__email').textContent = `${dataForm['email'].value}`;
     if (dataForm['isAdmin'].isChecked) {
       const adminIconFormEdit = new Image();
@@ -449,7 +480,7 @@ if (table) {
     if (!lkAccessItem.classList.contains('display-none')) {
       const profileTitle = lkAccessItem.querySelector(templateProfileSelector.title);
       const profileWrenchContainer = lkAccessItem.querySelector(templateProfileSelector.wrenchContainer);
-      profileTitle.textContent = String(dataForm['name'].value + ' ' + dataForm['surname'].value);
+      profileTitle.textContent = String(dataForm['surname'].value + ' ' + dataForm['name'].value);
       if (dataForm['isAdmin'].isChecked) {
         const adminIconFormEdit = new Image();
         adminIconFormEdit.src = IconAdmin;
@@ -483,7 +514,7 @@ if (table) {
 
     const tname = document.createElement('td');
     tname.classList.add('table__name');
-    tname.textContent = `${dataForm['name'].value} ${dataForm['surname'].value}`;
+    tname.textContent = `${dataForm['surname'].value} ${dataForm['name'].value}`;
     trow.prepend(tname);
 
     const twrench = document.createElement('td');
@@ -539,12 +570,23 @@ if (table) {
 
     // Новая отрисовка
     pager.innerHTML = '';
-    const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
     pagination.genTables();
-    pagination.openPage(table, pageNum);
 
     // Добавить сортировку вновь
     sorting.updateSort();
+
+    if (table.classList.contains('display-none')) {
+      table.classList.remove('display-none');
+      pager.classList.remove('display-none');
+      mobileTableHead.classList.remove('display-none');
+      loadMore.classList.remove('display-none');
+      lkAccess.classList.remove('main_pb_small');
+  
+      if (fieldsetContainer.classList.contains('fieldset_style_p-none')) {
+        fieldsetLegend.classList.add('paragraph_pbm_small');
+        fieldsetContainer.classList.remove('fieldset_style_p-none');
+      }
+    }
 
     popupAddEmployer.close();
   }
@@ -595,8 +637,8 @@ if (table) {
       const isAdmin = row.querySelector('.table__wrench').innerHTML !== '';
       const email = row.querySelector('.table__email').textContent;
       popupEditEmployer.setInputValues({ 
-        name: { type: 'text', value: fullname[0] },
-        surname: { type: 'text', value: fullname[1] },
+        name: { type: 'text', value: fullname[1] },
+        surname: { type: 'text', value: fullname[0] },
         email: { type: 'email', value: email },
         isAdmin: { type: 'checkbox', isChecked: isAdmin },
       });

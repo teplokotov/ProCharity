@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="author" content="Команда 1 Когорта 23 Web+" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Команда 1 Когорта 23 Web+">
     <title>ProCharity - Реквизиты</title>
   </head>
   <body class="page">
@@ -12,7 +12,7 @@
       <div class="header__wrap">
         <button class="menu-icon" type="button"></button>
         <a href="https://procharity.ru/">
-          <img src="<%=require('./images/logo.svg')%>" alt="ProCharity" class="main-logo" />
+          <img src="<%=require('./images/logo.svg')%>" alt="ProCharity" class="main-logo">
         </a>
         <nav class="header__nav">
           <ul class="header__menu">
@@ -101,7 +101,10 @@
       </section>
       <section class="sidebar">
         <h2 class="sidebar__title">Статус профиля</h2>
-        <a href="#" class="sidebar__status sidebar__status_state_process">На модерации</a>
+        <button class="sidebar__status sidebar__status_state_process" type="button">
+          На модерации
+          <span class="sidebar__tooltip">Пояснение статуса профиля</span>
+        </button>
       </section>
       <section class="content">
         <h1 class="heading heading heading_type_title">Реквизиты</h1>
@@ -115,7 +118,7 @@
                 id="inn"
                 placeholder="ИНН"
                 required
-                value="1234567890" />
+                value="1234567890">
               <label for="inn" class="input__label">ИНН</label>
               <button class="btn input__btn input__btn_type_clear-text"></button>
               <span class="input__error-message">Ошибка</span>
@@ -128,7 +131,7 @@
                 id="ogrn"
                 placeholder="ОГРН"
                 required
-                value="1234567890123" />
+                value="1234567890123">
               <label for="ogrn" class="input__label">ОГРН</label>
               <button class="btn input__btn input__btn_type_clear-text"></button>
               <span class="input__error-message">Ошибка</span>
@@ -143,10 +146,10 @@
                 id="registrationDate"
                 value="16.04.2004"
                 placeholder="Дата регистрации"
-                required />
+                required>
               <label for="registrationDate" class="input__label">Дата регистрации</label>
-              <button class="btn input__btn input__btn_type_clear-text input__btn_position_first"></button>
-              <button class="btn input__btn input__btn_type_calendar"></button>
+              <button class="btn input__btn input__btn_type_clear-text input__btn_position_first" type="button"></button>
+              <button class="btn input__btn input__btn_type_calendar" type="button"></button>
               <span class="input__error-message">Ошибка</span>
             </div>
           </fieldset>
@@ -157,9 +160,7 @@
                 name="full-name"
                 id="fullName"
                 maxlength="2000"
-                placeholder="Полное название">
-Всемирный фонд дикой природы (WWF)</textarea
-              >
+                placeholder="Полное название">Всемирный фонд дикой природы (WWF)</textarea>
               <label class="textarea__label" for="fullName">Полное название</label>
               <div class="textarea__counter textarea__counter_style_invisible">
                 <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">0</span>
@@ -167,16 +168,16 @@
               <button class="btn textarea__btn textarea__btn_type_clear-text"></button>
             </div>
           </fieldset>
-          <fieldset class="fieldset fieldset_template_grid-one-col fieldset_style_pb-small">
+          <fieldset class="fieldset fieldset_template_grid-one-col fieldset_pb_xsmall fieldset_pbm_xsmall">
             <div class="textarea">
               <textarea
                 class="textarea__field textarea__field_autosize"
                 name="legal-adress"
                 id="legalAdress"
+                rows="4"
                 maxlength="2000"
-                placeholder="Юридический адрес">
-128738, Россия, Кабардино-Балкарская республика, село Кременчуг-Константиновское, Центральный проезд Хорошевского Серебряного Бора, дом&nbsp;17, офис 24</textarea
-              >
+                placeholder="Юридический адрес">128738, Россия, Кабардино-Балкарская республика, село Кременчуг-Константиновское, Центральный проезд Хорошевского Серебряного Бора, дом 17, офис 243
+              </textarea>
               <label class="textarea__label" for="legalAdress">Юридический адрес</label>
               <div class="textarea__counter textarea__counter_style_invisible">
                 <span class="textarea__count-symbols">0</span>/<span class="textarea__total-symbols">0</span>
@@ -311,35 +312,35 @@
           <li class="footer__firms-item">
             <p class="footer__logo-text">Создатель проекта</p>
             <a href="#" class="footer__firms-link">
-              <img src="<%=require('./images/logo_fund_frainds.svg')%>" alt="Фонд Друзья" class="footer__logo-img" />
+              <img src="<%=require('./images/logo_fund_frainds.svg')%>" alt="Фонд Друзья" class="footer__logo-img">
             </a>
           </li>
           <li class="footer__firms-item">
             <p class="footer__logo-text">Генеральный партнер</p>
             <a href="#" class="footer__firms-link">
-              <img src="<%=require('./images/logo_mastercard.svg')%>" alt="Mastercard" class="footer__logo-img" />
+              <img src="<%=require('./images/logo_mastercard.svg')%>" alt="Mastercard" class="footer__logo-img">
             </a>
           </li>
           <li class="footer__firms-item">
             <a href="#" class="footer__firms-link">
-              <img src="<%=require('./images/pgrants logo gark.svg')%>" alt="Фонд президентских грантов" class="footer__logo-img" />
+              <img src="<%=require('./images/pgrants logo gark.svg')%>" alt="Фонд президентских грантов" class="footer__logo-img">
             </a>
           </li>
         </ul>
         <ul class="footer__social">
           <li class="footer__social-item">
             <a href="#" class="footer__social-link">
-              <img src="<%=require('./images/facebook.svg')%>" alt="Facebook" class="footer__social-img" />
+              <img src="<%=require('./images/facebook.svg')%>" alt="Facebook" class="footer__social-img">
             </a>
           </li>
           <li class="footer__social-item">
             <a href="#" class="footer__social-link">
-              <img src="<%=require('./images/instagramm.svg')%>" alt="Instagramm-logo" class="footer__logo-img" />
+              <img src="<%=require('./images/instagramm.svg')%>" alt="Instagramm-logo" class="footer__logo-img">
             </a>
           </li>
           <li class="footer__social-item">
             <a href="#" class="footer__social-link">
-              <img src="<%=require('./images/vk.svg')%>" alt="Vk" class="footer__logo-img" />
+              <img src="<%=require('./images/vk.svg')%>" alt="Vk" class="footer__logo-img">
             </a>
           </li>
         </ul>
@@ -350,7 +351,7 @@
           <a href="#" class="copy__link">Юридическая информация и защита персональных данных</a>
         </p>
         <a href="#" class="buroburo-logo">
-          <img src="<%=require('./images/logo_buroburo.svg')%>" alt="Бюробюро" />
+          <img src="<%=require('./images/logo_buroburo.svg')%>" alt="Бюробюро">
         </a>
       </div>
     </footer>

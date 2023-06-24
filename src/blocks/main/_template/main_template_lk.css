@@ -8,6 +8,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, minmax(min-content, max-content)) auto;
     padding-bottom: 80px;
-    row-gap: 16px;
+    row-gap: 32px;
   }
 }

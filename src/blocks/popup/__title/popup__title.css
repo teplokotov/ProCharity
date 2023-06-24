@@ -23,3 +23,9 @@
   position: absolute;
   top: 0;
 }
+
+@media screen and (max-width: 900px) {
+  .popup_type_window .popup__title {
+    padding-bottom: 16px;
+  }
+}

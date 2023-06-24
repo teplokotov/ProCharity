@@ -46,7 +46,7 @@
       </div>
     </header>
     <main>
-      <div class="main main_template_lk" id="lkAccess">
+      <div class="main main_template_lk main_pb_small" id="lkAccess">
         <nav class="breadcrumbs">
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item">
@@ -86,17 +86,22 @@
         </section>
         <section class="sidebar">
           <h2 class="sidebar__title">Статус профиля</h2>
-          <a href="#" class="sidebar__status sidebar__status_state_process">На модерации</a>
+          <button class="sidebar__status sidebar__status_state_process" type="button">
+            На модерации
+            <span class="sidebar__tooltip">Пояснение статуса профиля</span>
+          </button>
         </section>
         <section class="content">
           <form action="#" method="get">
             <h1 class="heading heading_type_title">Сотрудники</h1>
-            <fieldset class="fieldset fieldset_template_grid-form">
-              <legend class="paragraph paragraph_fat">Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО</legend>
+            <fieldset class="fieldset fieldset_template_grid-form fieldset_style_pbm-small" id="fieldsetContainer">
+              <legend class="paragraph paragraph_pb_medium paragraph_pbm_small" id="fieldsetLegend">
+                Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО
+              </legend>
               <button class="btn btn_style_primary" id="btnAddWorker" type="button">Добавить</button>
             </fieldset>
           </form>
-          <table class="table" data-pagecount="10">
+          <table class="table display-none" data-pagecount="10">
             <thead class="table__head">
               <tr class="table__row">
                 <th class="table__name-container" data-type="string">
@@ -130,7 +135,7 @@
                       <button class="table__btn-redact"></button>
                       <div class="table__menu-body">
                         <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                        <button class="table__btn-lk btnReset" type="button">Сбросить</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
                         <div class="table__border-lk"></div>
                         <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
@@ -150,7 +155,7 @@
                       <button class="table__btn-redact"></button>
                       <div class="table__menu-body">
                         <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                        <button class="table__btn-lk btnReset" type="button">Сбросить</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
                         <div class="table__border-lk"></div>
                         <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
@@ -168,16 +173,13 @@
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
@@ -191,46 +193,40 @@
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Хоревич Анастасия</td>
+                <td class="table__name">Левина Виктория</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Ольга Преображенская</td>
+                <td class="table__name">Озеров Филипп</td>
                 <td class="table__wrench">
                   <img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора">
                 </td>
@@ -239,338 +235,293 @@
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Владислав Еремин</td>
+                <td class="table__name">Петухова Ульяна</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Олег Бархатов</td>
+                <td class="table__name">Новикова Медина</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Филипп Добриков</td>
+                <td class="table__name">Андреева Анна</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Месси Карамесси</td>
+                <td class="table__name">Борисов Арсений</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Джеймс Смитт</td>
+                <td class="table__name">Мухина Лидия</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Эмма Джонсон</td>
+                <td class="table__name">Баранова Мария</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Анастасия Иванова</td>
+                <td class="table__name">Прокофьева Амина</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Алисия Сантос</td>
+                <td class="table__name">Малахов Матвей</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Франческо Росси</td>
+                <td class="table__name">Малинина Аглая</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">София Руссо</td>
+                <td class="table__name">Гаврилова Кристина</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Куртев Иван</td>
+                <td class="table__name">Смирнова Анастасия</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Чак Норрис</td>
+                <td class="table__name">Куликова Александра</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Дуейн Джонсон</td>
+                <td class="table__name">Сорокин Марк</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr class="table__row">
-                <td class="table__name">Кристиано Роналдо</td>
+                <td class="table__name">Назарова Дарья</td>
                 <td class="table__wrench"></td>
                 <td class="table__data-cell">16.05.2020 14:30</td>
                 <td class="table__email">user@mail.ru</td>
                 <td class="table__edit">
                   <div class="table__container-btn">
                     <button class="table__btn-edit"></button>
-                    <div class="table__container-btn">
-                      <button class="table__btn-edit"></button>
-                      <div class="table__menu-container">
-                        <button class="table__btn-redact"></button>
-                        <div class="table__menu-body">
-                          <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-                          <button class="table__btn-lk btnReset" type="button">Сбросить</button>
-                          <div class="table__border-lk"></div>
-                          <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
-                        </div>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
                       </div>
                     </div>
                   </div>
@@ -578,15 +529,15 @@
               </tr>
             </tbody>
           </table>
-          <div class="input input_type_bottom-interval input_type_desk-none">
+          <div class="makeSort input input_mb_small display-none input_type_desk-none">
             <select name="makeSort" id="makeSort" class="custom-select">
               <option>по фамилии и имени</option>
               <option>по правам администратора</option>
               <option>по дате регистрации</option>
             </select>
           </div>
-          <div class="pagination"></div>
-          <button class="btn btn_style_secondary btn_style_none btn_load_more">Показать еще 5</button>
+          <div class="pagination display-none"></div>
+          <button class="btn btn_style_secondary btn_style_none btn_load_more display-none">Показать еще 5</button>
         </section>
       </div>
       <div class="main main_template_table-element display-none" id="lkAccessItem">
@@ -774,15 +725,15 @@
             <div class="checkbox">
               <input type="checkbox" class="checkbox__input" name="isAdmin" id="isAdminFirst">
               <label for="isAdminFirst" class="checkbox__label">Права администратора</label>
-              <div class="hint">
-                <div class="hint__tooltip hint__tooltip_position_right-bottom">
-                  <p class="paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</p>
-                  <ul class="list-ul">
-                    <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
-                    <li>редактировать профиль организации.</li>
-                  </ul>
-                </div>
-              </div>
+              <button class="hint" type="button">
+                <span class="hint__tooltip hint__tooltip_position_center-bottom">
+                  <span class="paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</span>
+                  <span class="list-ul">
+                    <span class="list-ul__items">добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</span>
+                    <span class="list-ul__items">редактировать профиль организации.</span>
+                  </span>
+                </span>
+              </button>
             </div>
             <div class="input">
               <input
@@ -834,15 +785,15 @@
             <div class="checkbox">
               <input type="checkbox" class="checkbox__input" name="isAdmin" id="isAdminSecond">
               <label for="isAdminSecond" class="checkbox__label">Права администратора</label>
-              <div class="hint">
-                <div class="hint__tooltip hint__tooltip_position_right-bottom">
-                  <p class="paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</p>
-                  <ul class="list-ul">
-                    <li>добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</li>
-                    <li>редактировать профиль организации.</li>
-                  </ul>
-                </div>
-              </div>
+              <button class="hint" type="button">
+                <span class="hint__tooltip hint__tooltip_position_center-bottom">
+                  <span class="paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</span>
+                  <span class="list-ul">
+                    <span class="list-ul__items">добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</span>
+                    <span class="list-ul__items">редактировать профиль организации.</span>
+                  </span>
+                </span>
+              </button>
             </div>
             <div class="input">
               <input
@@ -942,7 +893,7 @@
           <button class="table__btn-redact"></button>
           <div class="table__menu-body">
             <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
-            <button class="table__btn-lk btnReset" type="button">Сбросить</button>
+            <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
             <div class="table__border-lk"></div>
             <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
           </div>

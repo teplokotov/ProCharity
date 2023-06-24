@@ -36,8 +36,9 @@
   display: block;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 450px) {
   .hint__tooltip {
-    min-width: 240px;
+    max-width: 312px;
+    min-width: 312px;
   }
 }

@@ -1,8 +1,9 @@
 .table__data-container {
   width: 100%;
-  max-width: 174px;
+  max-width: 164px;
+  min-width: 145px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;

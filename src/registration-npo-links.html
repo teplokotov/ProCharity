@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="author" content="Команда 1 Когорта 23 Web+" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Команда 1 Когорта 23 Web+">
     <title>ProCharity - Ссылки</title>
   </head>
   <body class="page">
@@ -12,7 +12,7 @@
       <div class="header__wrap">
         <button class="menu-icon" type="button"></button>
         <a href="https://procharity.ru/">
-          <img src="<%=require('./images/logo.svg')%>" alt="ProCharity" class="main-logo" />
+          <img src="<%=require('./images/logo.svg')%>" alt="ProCharity" class="main-logo">
         </a>
         <nav class="header__nav">
           <ul class="header__menu">
@@ -45,7 +45,7 @@
         </a>
       </div>
     </header>
-    <main class="main main_template_lk">
+    <main class="main main_template_lk main_rowgap_pb-medium">
       <nav class="breadcrumbs">
         <ul class="breadcrumbs__list">
           <li class="breadcrumbs__item">
@@ -88,7 +88,7 @@
           </li>
         </ul>
         <div class="sidebar-nav__description">
-          <p class="sidebar-nav__description-title">Регистрация <br />НКО</p>
+          <p class="sidebar-nav__description-title">Регистрация <span class="display-block">НКО</span></p>
           <span class="sidebar-nav__description-steps">Шаг 5 из 5</span>
         </div>
       </section>
@@ -102,80 +102,68 @@
       <section class="content">
         <h1 class="heading heading_type_title">Ссылки</h1>
         <form name="socialLinksForm" id="socialLinksForm" action="#" method="get">
-        <fieldset class="fieldset" form="socialLinksForm">
-          <div class="input">
-            <input type="url" class="input__field input__field_default input__field_interval_right_small" name="sait" placeholder="Сайт" value="" required="">
-            <label class="input__label">Сайт</label>
-            <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
-            <span class="input__error-message">Ошибка</span>
-          </div>
-        </fieldset>
-        <h2 class="paragraph">Соцсети</h2>
-          <fieldset class="fieldset fieldset_template_grid-social-links">
-            <label for="telegram" class="label-icon"><img src="<%=require('./images/Telegram.svg')%>" alt="телеграм" /></label>
+          <fieldset class="fieldset fieldset_template_grid-one-col">
             <div class="input">
               <input
                 type="url"
-                id="telegram"
-                placeholder="https://telegram.com/username/"
-                class="input__field input__field_default input__field_padding_center" />
-              <button class="btn input__btn input__btn_type_clear-text"></button>
-            </div>
-            <label for="vk" class="label-icon"><img src="<%=require('./images/vk-social.svg')%>" alt="Вконтакте" /></label>
-            <div class="input">
-              <input
-                type="url"
-                id="vk"
-                placeholder="https://vk.com/username/"
-                class="input__field input__field_default input__field_padding_center" />
-              <button class="btn input__btn input__btn_type_clear-text"></button>
-            </div>
-            <label for="instagram" class="label-icon"><img src="<%=require('./images/instagram-social.svg')%>" alt="инстаграм" /></label>
-            <div class="input">
-              <input
-                type="url"
-                id="instagram"
-                placeholder="https://instagram.com/username/"
-                class="input__field input__field_default input__field_padding_center" />
-              <button class="btn input__btn input__btn_type_clear-text"></button>
-            </div>
-            <label for="facebook" class="label-icon"><img src="<%=require('./images/facebook-social.svg')%>" alt="фейсбук" /></label>
-            <div class="input">
-              <input
-                type="url"
-                id="facebook"
-                placeholder="https://facebook.com/username/"
-                class="input__field input__field_default input__field_padding_center" />
-              <button class="btn input__btn input__btn_type_clear-text"></button>
-            </div>
-            <label for="ok" class="label-icon"><img src="<%=require('./images/ok-social.svg')%>" alt="ok" /></label>
-            <div class="input">
-              <input
-                type="url"
-                id="ok"
-                placeholder="https://ok.com/username/"
-                class="input__field input__field_default input__field_padding_center" />
-              <button class="btn input__btn input__btn_type_clear-text"></button>
-            </div>
-            <label for="youtube" class="label-icon"><img src="<%=require('./images/youtube.svg')%>" alt="ютуб" /></label>
-            <div class="input">
-              <input
-                type="url"
-                id="youtube"
-                placeholder="https://youtube.com/username/"
-                class="input__field input__field_default input__field_padding_center" />
-              <button class="btn input__btn input__btn_type_clear-text"></button>
-            </div>
-            <div class="fieldset__row-group fieldset__row-group_type_block">
-              <p class="note">Facebook и Instagram — продукты Meta Platforms Inc.</p>
-              <p class="note">Meta Platforms Inc. признана экстремистской организацией, запрещена на территории России</p>
+                class="input__field input__field_default input__field_interval_right_small"
+                name="sait"
+                placeholder="Сайт"
+                value=""
+                required="">
+              <label class="input__label">Сайт</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
             </div>
           </fieldset>
-          <h2 class="paragraph">Публикации в СМИ</h2>
-          <fieldset class="fieldset" form="socialLinksForm">
+          <fieldset class="fieldset fieldset_template_grid-social-links fieldset_pb_smaller">
+            <legend class="paragraph">Соцсети</legend>
+            <img src="<%=require('./images/Telegram.svg')%>" alt="Мессенджер Telegram.">
+            <div class="input">
+              <input type="url" placeholder="https://telegram.com/username/" class="input__field input__field_default input__field_padding_center">
+              <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
+            </div>
+            <img src="<%=require('./images/vk-social.svg')%>" alt="Социальная сеть ВКонтакте.">
+            <div class="input">
+              <input type="url" placeholder="https://vk.com/username/" class="input__field input__field_default input__field_padding_center">
+              <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
+            </div>
+            <img src="<%=require('./images/instagram-social.svg')%>" alt="Социальная сеть Instagram.">
+            <div class="input">
+              <input type="url" placeholder="https://instagram.com/username/" class="input__field input__field_default input__field_padding_center">
+              <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
+            </div>
+            <img src="<%=require('./images/facebook-social.svg')%>" alt="Социальная сеть Facebook.">
+            <div class="input">
+              <input type="url" placeholder="https://facebook.com/username/" class="input__field input__field_default input__field_padding_center">
+              <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
+            </div>
+            <img src="<%=require('./images/ok-social.svg')%>" alt="Социальная сеть Одноклассники.">
+            <div class="input">
+              <input type="url" placeholder="https://ok.com/username/" class="input__field input__field_default input__field_padding_center">
+              <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
+            </div>
+            <img src="<%=require('./images/youtube.svg')%>" alt="Видеохостинг YouTube.">
+            <div class="input">
+              <input type="url" placeholder="https://youtube.com/username/" class="input__field input__field_default input__field_padding_center">
+              <button class="btn input__btn input__btn_type_clear-text" type="button"></button>
+            </div>
+          </fieldset>
+          <fieldset class="fieldset">
+            <p class="note">Facebook и Instagram — продукты Meta Platforms Inc.</p>
+            <p class="note">Meta Platforms Inc. признана экстремистской организацией, запрещена на территории России</p>
+          </fieldset>
+          <fieldset class="fieldset fieldset_template_grid-one-col">
+            <legend class="paragraph">Публикации в СМИ</legend>
             <div class="input-group input-group_type_column">
               <div class="input">
-                <input type="url" class="input__field input__field_default input__field_interval_right_small" name="CNN" placeholder="https://" value="" required="">
+                <input
+                  type="url"
+                  class="input__field input__field_default input__field_interval_right_small"
+                  name="CNN"
+                  placeholder="https://"
+                  value=""
+                  required="">
                 <label class="input__label">https://</label>
                 <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
                 <span class="input__error-message">Ошибка</span>
@@ -183,7 +171,7 @@
             </div>
             <button type="button" class="btn btn_type_add">Добавить ссылку</button>
           </fieldset>
-          <button type="submit" class="btn btn_style_primary">Сохранить</button>
+          <button type="submit" class="btn btn_style_primary btn_mb_small">Сохранить</button>
         </form>
       </section>
     </main>
@@ -310,35 +298,35 @@
           <li class="footer__firms-item">
             <p class="footer__logo-text">Создатель проекта</p>
             <a href="#" class="footer__firms-link">
-              <img src="<%=require('./images/logo_fund_frainds.svg')%>" alt="Фонд Друзья" class="footer__logo-img" />
+              <img src="<%=require('./images/logo_fund_frainds.svg')%>" alt="Фонд Друзья" class="footer__logo-img">
             </a>
           </li>
           <li class="footer__firms-item">
             <p class="footer__logo-text">Генеральный партнер</p>
             <a href="#" class="footer__firms-link">
-              <img src="<%=require('./images/logo_mastercard.svg')%>" alt="Mastercard" class="footer__logo-img" />
+              <img src="<%=require('./images/logo_mastercard.svg')%>" alt="Mastercard" class="footer__logo-img">
             </a>
           </li>
           <li class="footer__firms-item">
             <a href="#" class="footer__firms-link">
-              <img src="<%=require('./images/pgrants logo gark.svg')%>" alt="Фонд президентских грантов" class="footer__logo-img" />
+              <img src="<%=require('./images/pgrants logo gark.svg')%>" alt="Фонд президентских грантов" class="footer__logo-img">
             </a>
           </li>
         </ul>
         <ul class="footer__social">
           <li>
             <a href="#">
-              <img src="<%=require('./images/facebook.svg')%>" alt="Facebook" class="footer__social-img" />
+              <img src="<%=require('./images/facebook.svg')%>" alt="Facebook" class="footer__social-img">
             </a>
           </li>
           <li>
             <a href="#" class="footer__social-link">
-              <img src="<%=require('./images/instagramm.svg')%>" alt="Instagramm-logo" class="footer__logo-img" />
+              <img src="<%=require('./images/instagramm.svg')%>" alt="Instagramm-logo" class="footer__logo-img">
             </a>
           </li>
           <li>
             <a href="#" class="footer__social-link">
-              <img src="<%=require('./images/vk.svg')%>" alt="Vk" class="footer__logo-img" />
+              <img src="<%=require('./images/vk.svg')%>" alt="Vk" class="footer__logo-img">
             </a>
           </li>
         </ul>
@@ -349,7 +337,7 @@
           <a href="#" class="copy__link">Юридическая информация и защита персональных данных</a>
         </p>
         <a href="#" class="buroburo-logo">
-          <img src="<%=require('./images/logo_buroburo.svg')%>" alt="Бюробюро" />
+          <img src="<%=require('./images/logo_buroburo.svg')%>" alt="Бюробюро">
         </a>
       </div>
     </footer>

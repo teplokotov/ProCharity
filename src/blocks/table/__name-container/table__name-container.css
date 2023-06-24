@@ -1,6 +1,7 @@
 .table__name-container {
   width: 100%;
   max-width: 276px;
+  min-width: 145px;
   display: flex;
   gap: 6px;
   flex-wrap: nowrap;

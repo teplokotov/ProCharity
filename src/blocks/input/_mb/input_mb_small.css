@@ -1,0 +1,5 @@
+@media screen and (max-width: 900px) {
+  .input_mb_small {
+    margin-bottom: 12px;
+  }
+}

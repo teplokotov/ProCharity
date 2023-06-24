@@ -7,3 +7,9 @@
     padding-top: 0;
     padding-bottom: 20px;
 }
+
+@media screen and (max-width: 900px) {
+    .popup__paragraph_style_fat {
+        padding-bottom: 16px;
+    }
+}
