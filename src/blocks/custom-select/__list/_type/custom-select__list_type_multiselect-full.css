@@ -1,5 +1,6 @@
 .custom-select__list_type_multiselect-full {
   max-width: 100%;
+  min-width: 252px;
   display: flex;
   flex-direction: column;
   gap: 8px;

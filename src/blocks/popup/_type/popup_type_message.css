@@ -15,3 +15,9 @@
     top: 16px;
   }
 }
+
+@media screen and (max-width: 359px) {
+  .popup_type_message {
+    max-width: 252px;
+  }
+}

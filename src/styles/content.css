@@ -212,6 +212,7 @@
 
 @import url(../blocks/input/input.css);
 @import url(../blocks/input/_type/_error/input_type_error.css);
+@import url(../blocks/input/_type/input_type_make-sort.css);
 @import url(../blocks/input/_type/input_type_desk-none.css);
 @import url(../blocks/input/__field/input__field.css);
 @import url(../blocks/input/__field/_default/input__field_default.css);

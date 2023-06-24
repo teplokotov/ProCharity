@@ -42,3 +42,10 @@
     min-width: 312px;
   }
 }
+
+@media screen and (max-width: 359px) {
+  .hint__tooltip {
+    max-width: 252px;
+    min-width: 252px;
+  }
+}

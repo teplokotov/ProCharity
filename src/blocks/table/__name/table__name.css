@@ -13,3 +13,9 @@
     width: 276px;
   }
 }
+
+@media screen and (max-width: 359px) {
+  .table__name {
+    max-width: 200px;
+  }
+}

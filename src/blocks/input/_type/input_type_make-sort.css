@@ -1,0 +1,5 @@
+@media screen and (max-width: 359px) {
+  .input_type_make-sort {
+    max-width: 265px;
+  }
+}

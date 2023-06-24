@@ -228,7 +228,7 @@ if (table) {
 
   const lkAccess = document.querySelector('#lkAccess');
   const lkAccessItem = document.querySelector('#lkAccessItem');
-  const mobileTableHead = document.querySelector('.makeSort');
+  const mobileTableHead = document.querySelector('.input_type_make-sort');
   const fieldsetLegend = lkAccess.querySelector('#fieldsetLegend');
   const fieldsetContainer = lkAccess.querySelector('#fieldsetContainer');
 
@@ -402,10 +402,7 @@ if (table) {
     
     // Новая отрисовка
     pager.innerHTML = '';
-    const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
     pagination.genTables();
-    pagination.loadMore(loadMore, table);
-    pagination.openPage(table, pageNum);
 
     // Добавить сортировку вновь
     sorting.updateSort();
