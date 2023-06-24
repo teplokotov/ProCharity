@@ -228,6 +228,7 @@ if (table) {
 
   const lkAccess = document.querySelector('#lkAccess');
   const lkAccessItem = document.querySelector('#lkAccessItem');
+  const headerlkAccess = document.querySelector('#lkAccessHeader');
   const mobileTableHead = document.querySelector('.input_type_make-sort');
   const fieldsetLegend = lkAccess.querySelector('#fieldsetLegend');
   const fieldsetContainer = lkAccess.querySelector('#fieldsetContainer');
@@ -492,9 +493,8 @@ if (table) {
 
     // Новая отрисовка
     pager.innerHTML = '';
-    const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
+    console.log(pageNum);
     pagination.genTables();
-    pagination.openPage(table, pageNum);
 
     // Добавить сортировку вновь
     sorting.updateSort();
@@ -562,7 +562,7 @@ if (table) {
     const btnDelete = trow.querySelector('.btnDelete');
     btnDelete.addEventListener('click', handleBtnDelete);
 
-    if (screen.width <= 900) {
+    if (window.innerWidth <= 900) {
       tname.addEventListener('click', handleClickOnName);
     }
 
@@ -662,9 +662,7 @@ if (table) {
     btnReturnToTable.addEventListener('click', () => {
       // Новая отрисовка
       pager.innerHTML = '';
-      const pageNum = Number(table.getAttribute('data-currentpage')) + 1;
       pagination.genTables();
-      pagination.openPage(table, pageNum);
 
       // Добавить сортировку вновь
       sorting.updateSort();
@@ -672,14 +670,35 @@ if (table) {
       lkAccessItem.classList.add('display-none');
       lkAccess.classList.remove('display-none');
       profileSettings.remove();
-      header.scrollIntoView();
+
+      if (headerlkAccess) {
+        headerlkAccess.scrollIntoView();
+      } else {
+        table.scrollIntoView();
+      }
     });
   }
 
   const employeeNames = table.querySelectorAll('.table__name');
   employeeNames.forEach((name) => {
-    if (screen.width <= 900) {
+    if (window.innerWidth <= 900) {
       name.addEventListener('click', handleClickOnName);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    const employeeNames = table.querySelectorAll('.table__name');
+    if (employeeNames.length > 0) {
+      employeeNames.forEach((name) => {
+        if (window.innerWidth <= 900) {
+          name.addEventListener('click', handleClickOnName);
+          pagination.openPage(table, 1);
+          pagination.loadMoreVisibility(loadMore, table);
+        } else {
+          name.removeEventListener('click', handleClickOnName);
+          pagination.openPage(table, 1);         
+        }
+      });
     }
   });
 }
