@@ -562,7 +562,7 @@ if (table) {
     const btnDelete = trow.querySelector('.btnDelete');
     btnDelete.addEventListener('click', handleBtnDelete);
 
-    if (window.innerWidth <= 900) {
+    if (screen.width <= 900) {
       tname.addEventListener('click', handleClickOnName);
     }
 
@@ -681,16 +681,16 @@ if (table) {
 
   const employeeNames = table.querySelectorAll('.table__name');
   employeeNames.forEach((name) => {
-    if (window.innerWidth <= 900) {
+    if (screen.width <= 900) {
       name.addEventListener('click', handleClickOnName);
     }
   });
 
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     const employeeNames = table.querySelectorAll('.table__name');
     if (employeeNames.length > 0) {
       employeeNames.forEach((name) => {
-        if (window.innerWidth <= 900) {
+        if (screen.width <= 900) {
           name.addEventListener('click', handleClickOnName);
           pagination.openPage(table, 1);
           pagination.loadMoreVisibility(loadMore, table);
