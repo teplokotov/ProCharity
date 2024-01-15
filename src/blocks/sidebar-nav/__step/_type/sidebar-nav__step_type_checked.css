@@ -1,0 +1,11 @@
+.sidebar-nav__step_type_checked {
+  background-image: url(../../../../images/checked-icon.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar-nav__step_type_checked {
+    background-image: none;
+  }
+}

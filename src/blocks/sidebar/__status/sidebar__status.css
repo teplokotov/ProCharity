@@ -1,22 +1,23 @@
 .sidebar__status {
   align-items: center;
-  background-color: #3A464C;
+  background-color: #3a464c;
   border: 2px solid transparent;
   border-radius: 12px;
   box-sizing: border-box;
   color: #fff;
-  cursor: pointer;
+  cursor: help;
   display: flex;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
   height: 24px;
+  line-height: 24px;
   justify-content: space-between;
   letter-spacing: 1px;
   padding: 0 0 0 12px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  width: 160px;
+  width: 157px;
 }
 
 .sidebar__status:after {
@@ -31,7 +32,7 @@
 }
 
 .sidebar__status:hover {
-  opacity: 0.8;
+  background-color: #899094;
 }
 
 .sidebar__status:focus {
@@ -40,5 +41,5 @@
 
 .sidebar__status:active {
   opacity: 1;
-  border: 2px solid #3A464C;
+  border: 2px solid #3a464c;
 }

@@ -1,0 +1,11 @@
+.fieldset_style_input-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (max-width: 450px) {
+  .fieldset_style_input-column {
+    gap: 16px;
+  }
+}

@@ -9,3 +9,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 430px) {
+  .custom-select__field-text {
+    max-width: 250px;
+  }
+}

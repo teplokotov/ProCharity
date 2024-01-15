@@ -1,0 +1,17 @@
+.table__btn-lk {
+  width: 100%;
+  background-color: #ffff;
+  border: none;
+  text-align: start;
+  padding: 8px 12px;
+  color: #58646A;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.table__btn-lk:hover {
+  background-color: #F5F6F8;
+}

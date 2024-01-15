@@ -1,0 +1,4 @@
+.sidebar-nav__text-column {
+  display: flex;
+  flex-direction: column;
+}

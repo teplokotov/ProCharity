@@ -17,22 +17,22 @@ export default class CustomSelect {
    *                                    использоваться в качестве подписи поля и не будет выводиться
    *                                    в кастомизированном списке
    */
-  constructor(selector, options = {
-    wrapClass: 'custom-select__wrap',
-    closeBtnClass: ['btn', 'btn_type_close', 'custom-select__btn-close'],
-    fieldClass: 'custom-select__field',
-    fieldDisabledClass: 'custom-select__field_disabled',
-    fieldTextClass: 'custom-select__field-text',
-    optionsListContainerClass: 'custom-select__list-container',
-    optionsOpenedListContainerClass: 'custom-select__list-container__opened',
-    optionsListClass: 'custom-select__list',
-    optionClass: 'custom-select__item',
-    optionParentClass: 'custom-select__item_style_parent',
-    optionSelectedClass: 'custom-select__item_selected',
-    firstOptionIsTitle: true
-  }) {
+  constructor(selector, {...options} = {}) {
     this._selectElement = document.querySelector(selector);
-    this._options = options;
+    this._options = {};
+    this._options.wrapClass = options.wrapClass ?? 'custom-select__wrap';
+    this._options.closeBtnClass = options.closeBtnClass ?? ['btn', 'btn_type_close', 'custom-select__btn_type_close'];
+    this._options.fieldClass = options.fieldClass ?? 'custom-select__field';
+    this._options.fieldDisabledClass = options.fieldDisabledClass ?? 'custom-select__field_disabled';
+    this._options.fieldTextClass = options.fieldTextClass ?? 'custom-select__field-text';
+    this._options.optionsListContainerClass = options.optionsListContainerClass ?? 'custom-select__list-container';
+    this._options.optionsOpenedListContainerClass = options.optionsOpenedListContainerClass ?? 'custom-select__list-container_opened';
+    this._options.optionsListClass = options.optionsListClass ?? 'custom-select__list';
+    this._options.optionClass = options.optionClass ?? 'custom-select__item';
+    this._options.optionParentClass = options.optionParentClass ?? 'custom-select__item_style_parent';
+    this._options.optionSelectedClass = options.optionSelectedClass ?? 'custom-select__item_selected';
+    this._options.firstOptionIsTitle = options.firstOptionIsTitle ?? true;
+    this._options.isSort = options.isSort ?? false;
   }
 
 
@@ -43,6 +43,7 @@ export default class CustomSelect {
       element.selected = !element.selected
     } else {
       this._selectElement.value = option.dataset.val;
+      this._selectElement.dispatchEvent(new Event('change'));
     }
   }
 
@@ -127,9 +128,10 @@ export default class CustomSelect {
       this.setDisabled();
     }
 
-    if (this._options.firstOptionIsTitle) {
-      this._fieldTextElement.textContent = this._selectElement
-        .querySelector('option').textContent;
+    if (this._options.firstOptionIsTitle && !this._options.isSort) {
+      this._fieldTextElement.textContent = this._selectElement.querySelector('option').textContent;
+    } else {
+      this._fieldTextElement.textContent = 'Сортировать: ' + this._selectElement.querySelector('option').textContent;
     }
 
     // Добавление текстового элемента и иконки к полю
@@ -238,7 +240,11 @@ export default class CustomSelect {
       const selectedOption = this._getSelectedOption();
 
       if(selectedOption) {
-        this._fieldTextElement.textContent = selectedOption.textContent;
+        if (!this._options.isSort) {
+          this._fieldTextElement.textContent = selectedOption.textContent;
+        } else {
+          this._fieldTextElement.textContent = 'Сортировать: ' + selectedOption.textContent;
+        }
       }
   }
 
@@ -274,6 +280,20 @@ export default class CustomSelect {
           container.append(list)
           option.append(container);
         }
+
+        parentElement.append(option);
+      } else if (this._options.isSort) {
+        // Создание элемента списка li
+        const option = this._createItem();
+
+        // Добавление атрибута для связки элементов выбора с стандартным select
+        option.setAttribute('data-val', item.value);
+
+        // Установка отображаемого текстового значения
+        option.textContent = item.text;
+
+        // Выбирает первый пункт по умолчанию
+        if (index == 0) this._setSelectedOption(option);
 
         parentElement.append(option);
       }
@@ -366,6 +386,5 @@ export default class CustomSelect {
       }
     });
   }
-  
 
 }

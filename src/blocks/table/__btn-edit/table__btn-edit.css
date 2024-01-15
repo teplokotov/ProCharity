@@ -1,0 +1,17 @@
+.table__btn-edit {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/TableEdit.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 17.69px 17.49px;
+  border: none;
+  background-color: transparent; 
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.table__btn-edit:hover  {
+  background-image: url(../../../images/TableEditActive.svg);
+}

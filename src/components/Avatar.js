@@ -21,7 +21,7 @@ export default class Avatar {
       editContainerImgSelector: '.popup__image',
       btnRemoveSelector: '.avatar__btn-delete',
       btnRemoveVisibleClass: 'avatar__btn-delete_visible',
-      previewContainerSelector: '.avatar__preview-container',
+      previewContainerSelector: '.avatar_location_preview',
       previewImageSelector: '.avatar__preview-image',
       croppedImageInputSelector: '.avatar__cropped-image-input',
       confirmBtnSelector: '.btn_confirm'

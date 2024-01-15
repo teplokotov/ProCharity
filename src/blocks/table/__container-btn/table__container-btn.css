@@ -1,0 +1,7 @@
+.table__container-btn {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+

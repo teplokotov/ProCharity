@@ -1,0 +1,15 @@
+.popup__paragraph_style_fat {
+    color: #58646a;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .popup__paragraph_style_fat {
+        padding-bottom: 16px;
+    }
+}

@@ -1,0 +1,9 @@
+.main_pb_medium {
+  padding-bottom: 114px;
+}
+
+@media screen and (max-width: 900px) {
+  .main_pb_medium {
+    padding-bottom: 80px;
+  }
+}

@@ -1,0 +1,9 @@
+.fieldset_pb_lmedium {
+  padding-bottom: 38px;
+}
+
+@media screen and (max-width: 900px) {
+  .fieldset_pb_lmedium {
+    padding-bottom: 34px;
+  }
+}

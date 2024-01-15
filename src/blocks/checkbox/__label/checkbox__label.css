@@ -10,7 +10,7 @@
   gap: 8px;
   line-height: 24px;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 4px;
 }
 
 .checkbox__label::before {
@@ -44,4 +44,15 @@
 
 .checkbox__input:disabled + .checkbox__label {
   opacity: .6;
+}
+
+@media screen and (max-width: 900px) {
+  .checkbox__label {
+    align-items: flex-start;
+  }
+
+  .checkbox__label::before {
+    display: block;
+    padding-top: 8px;
+  }
 }

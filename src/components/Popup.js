@@ -12,12 +12,21 @@ export default class Popup {
     this._popup.classList.remove('popup_opened');
   }
 
+  insertData(data) {
+    const p = this._popup.querySelector('.popup__paragraph');
+    p.innerHTML = data;
+  }
+
   setEventListeners() {
     if (this._popup) {
       this._closeButton = this._popup.querySelector('.popup__btn-close');
 
       this._closeButton.addEventListener('click', () => {
-        this.close()
+        if (this._popup.classList.contains('popup_type_message')) {
+          this._popup.remove();
+        } else {
+          this.close();
+        }
       })
     }
   }

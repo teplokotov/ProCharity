@@ -1,0 +1,12 @@
+.table__wrench {
+  width: 100%;
+  max-width: 93px;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .table__wrench   {
+    width: 24px;
+  }
+}

@@ -10,9 +10,9 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  min-height: 88px;
+  min-height: 60px;
   outline: none;
-  padding: 23px 48px 25px 16px;
+  padding: 22px 65px 8px 16px;
   resize: none;
   width: 100%;
 
@@ -37,4 +37,10 @@
 
 .textarea__field:disabled {
   opacity: .6;
+}
+
+@media screen and (max-width: 900px) {
+  .textarea__field {
+    padding: 24px 63px 28px 16px;
+  }
 }

@@ -1,0 +1,19 @@
+.custom-select__item_style_checked {
+  background-image: url(../../../../images/checkbox-checked.svg);
+}
+
+.custom-select__item_style_checked:hover {
+  background-image: url(../../../../images/checkbox-checked-hover.svg);
+}
+
+@media screen and (max-width: 900px) {
+  .custom-select__list-container.splash .custom-select__item_style_checked {
+    background: none;
+    border: solid 1px #E65609;
+    color: #E65609;
+  }
+
+  .custom-select__list-container.splash .custom-select__item_style_checked:hover {
+    background: none;
+  }
+}

@@ -1,0 +1,10 @@
+.heading_type_title_registration-final {
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+@media screen and (max-width: 900px) {
+  .heading_type_title_registration-final {
+    padding-bottom: 12px;
+  }
+}

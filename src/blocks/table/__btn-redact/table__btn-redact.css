@@ -1,0 +1,17 @@
+.table__btn-redact {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/TableRedact.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 4px 14px;
+  border: none;
+  background-color: transparent; 
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.table__btn-redact:hover  {
+  background-image: url(../../../images/TableRedactHover.svg);
+}

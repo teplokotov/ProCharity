@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 900px) {
-  .custom-select__btn {
+  .custom-select__list-container.splash .custom-select__btn {
     display: block;
   }
 }

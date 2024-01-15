@@ -1,0 +1,5 @@
+@media screen and (max-width: 900px) {
+  .btn_mb_small {
+    margin-bottom: 16px;
+  }
+}

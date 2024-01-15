@@ -1,0 +1,15 @@
+.table__btn-head { 
+  width: 16px;
+  height: 16px;
+  background-image: url(../../../images/TableDownArrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 6px;
+  border: none;
+  background-color: transparent; 
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  transition: 0.15s linear;
+}
+

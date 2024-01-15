@@ -1,13 +1,23 @@
 .popup_type_message {
   max-width: 352px;
+  width: 352px;
   right: 24px;
   top: 24px;
 }
 
+.messages .popup_type_message {
+  position: initial;
+}
+
 @media screen and (max-width: 450px) {
   .popup_type_message {
-    max-width: 100%;
-    margin-left: 24px;
-    right: 24px;
+    width: 312px;
+    top: 16px;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .popup_type_message {
+    max-width: 252px;
   }
 }

@@ -1,0 +1,5 @@
+.input-group_type_column {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 12px;
+}

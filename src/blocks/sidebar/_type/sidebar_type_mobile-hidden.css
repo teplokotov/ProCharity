@@ -1,0 +1,5 @@
+@media screen and (max-width: 900px) {
+  .sidebar_type_mobile-hidden {
+    display: none;
+  }
+}

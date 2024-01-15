@@ -1,0 +1,9 @@
+.fieldset_pb_xsmall {
+  padding-bottom: 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .fieldset_pb_xsmall {
+    padding-bottom: 28px;
+  }
+}

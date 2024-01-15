@@ -5,5 +5,20 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  max-width: 163px;
+  max-width: 157px;
+  margin: 0;
+  padding-top: 22px;
+}
+
+@media screen and (max-width: 900px) {
+  .avatar__max-volume {
+    padding-top: 0;
+    max-width: 144px;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .avatar__max-volume {
+    max-width: 100px;
+  }
 }

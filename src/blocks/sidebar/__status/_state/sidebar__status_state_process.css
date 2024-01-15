@@ -3,12 +3,17 @@
   border: 2px solid transparent;
 }
 
+.sidebar__status_state_process:hover {
+  background-color: #aae3ea;
+  border: 2px solid #aae3ea;
+}
+
 .sidebar__status_state_process:active {
   background-color: #048AA7;
   border: 2px solid #048AA7;
-  opacity: 1;
 }
 
 .sidebar__status_state_process:focus {
   border: 2px solid #048AA7;
+  background-color: #72D0DC;
 }

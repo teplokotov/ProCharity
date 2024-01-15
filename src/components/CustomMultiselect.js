@@ -1,5 +1,3 @@
-import {logPlugin} from "@babel/preset-env/lib/debug";
-
 export default class CustomMultiselect {
   /**
    *
@@ -22,7 +20,7 @@ export default class CustomMultiselect {
    *    resetAllGroupLinkClass          - css-класс ссылок для сброса всех элементов группы (только для мобильной версии)
    *    selectBtnClass                  - css-класс кнопки подтверждения выбора элементов (только для мобильной версии)
    *    resetBtnClass                   - css-класс кнопки сброса всех элементов (только для мобильной версии)
-   *    optionsListClass                - css-класс сипка элементов выбора
+   *    optionsListClass                - css-класс списка элементов выбора
    *    optionClass                     - css-класс элемента выбора
    *    optionParentClass               - css-класс элемента списка, являющегося родительским
    *    optionParentOpenedClass         - css-класс элемента списка, являющегося родительским, имеющего раскрытый дочерний
@@ -35,40 +33,43 @@ export default class CustomMultiselect {
    *                                    использоваться в качестве подписи поля и не будет выводиться
    *                                    в кастомизированном списке
    *    useTextSearch                   - true | false - использовать / не использовать текстовый поиск по элементам списка
+   *    useSelectCounter                - true | false - отображение счетчика выбранных опций
+   *    isSplash                        - true | false - показывать выбор опций для мобильной версии в модельном окне
    */
   constructor(
-    selector,
-    options = {
-      wrapClass: ['custom-select__wrap', 'custom-select__wrap_style_multiselect'],
-      headingClass: ['heading', 'heading__title', 'custom-select__heading'],
-      closeBtnClass: ['btn', 'btn_type_close', 'custom-select__btn-close'],
-      fieldClass: ['custom-select__field', 'custom-select__field_style_multiselect'],
-      labelClass: 'custom-select__label',
-      chipsClass: 'custom-select__chips',
-      chipsTextClass: 'custom-select__chips-text',
-      chipsDeleteBtnClass: ['btn', 'custom-select__chips-delete-btn'],
-      searchInputClass: 'custom-select__input',
-      messageContainerClass: 'custom-select__message',
-      modalClass: 'custom-select__modal',
-      optionsListContainerClass: 'custom-select__list-container',
-      optionsOpenedListContainerClass: 'custom-select__list-container__opened',
-      linkClass: 'custom-select__link',
-      selectAllGroupLinkClass: 'custom-select__link_type_select-all',
-      resetAllGroupLinkClass: 'custom-select__link_type_reset',
-      selectBtnClass: ['btn', 'btn_style_primary', 'custom-select__btn', 'custom-select__btn_type_select'],
-      resetBtnClass: ['btn', 'btn_style_secondary', 'custom-select__btn', 'custom-select__btn_type_reset'],
-      optionsListClass: ['custom-select__list', 'custom-select__list_type_multiselect'],
-      optionClass: 'custom-select__item',
-      optionParentClass: 'custom-select__item_style_parent',
-      optionParentOpenedClass: 'custom-select__item_style_parent-opened',
-      optionSelectableClass: 'custom-select__item_style_checkbox',
-      optionSelectedClass: 'custom-select__item_selected-checkbox',
-      mobileScreenBreakpoint: 900,
-      firstOptionIsTitle: false,
-      useTextSearch: true
-  }) {
+    selector, {...options} = {}) {
     this._selectElement = document.querySelector(selector);
-    this._options = options;
+
+    this._options = {};
+    this._options.wrapClass = options.wrapClass ?? ['custom-select__wrap', 'custom-select__wrap_style_multiselect'];
+    this._options.headingClass = options.headingClass ?? ['heading', 'heading__title', 'custom-select__heading'];
+    this._options.closeBtnClass = options.closeBtnClass ?? ['btn', 'btn_type_close', 'custom-select__btn_type_close'];
+    this._options.fieldClass = options.fieldClass ?? ['custom-select__field', 'custom-select__field_style_multiselect'];
+    this._options.labelClass = options.labelClass ?? 'custom-select__label';
+    this._options.chipsClass = options.chipsClass ?? 'custom-select__chips';
+    this._options.chipsTextClass = options.chipsTextClass ?? 'custom-select__chips-text';
+    this._options.chipsDeleteBtnClass = options.chipsDeleteBtnClass ?? ['btn', 'custom-select__chips-delete-btn'];
+    this._options.searchInputClass = options.searchInputClass ?? 'custom-select__input';
+    this._options.messageContainerClass = options.messageContainerClass ?? 'custom-select__message';
+    this._options.modalClass = options.modalClass ?? 'custom-select__modal';
+    this._options.optionsListContainerClass = options.optionsListContainerClass ?? 'custom-select__list-container';
+    this._options.optionsOpenedListContainerClass = options.optionsOpenedListContainerClass ?? 'custom-select__list-container_opened';
+    this._options.linkClass = options.linkClass ?? 'custom-select__link';
+    this._options.selectAllGroupLinkClass = options.selectAllGroupLinkClass ?? 'custom-select__link_type_select-all';
+    this._options.resetAllGroupLinkClass = options.resetAllGroupLinkClass ?? 'custom-select__link_type_reset';
+    this._options.selectBtnClass = options.selectBtnClass ?? ['btn', 'btn_style_primary', 'custom-select__btn', 'custom-select__btn_type_select'];
+    this._options.resetBtnClass = options.resetBtnClass ?? ['btn', 'btn_style_secondary', 'custom-select__btn', 'custom-select__btn_type_reset'];
+    this._options.optionsListClass = options.optionsListClass ?? ['custom-select__list', 'custom-select__list_type_multiselect'];
+    this._options.optionClass = options.optionClass ?? 'custom-select__item';
+    this._options.optionParentClass = options.optionParentClass ?? 'custom-select__item_style_parent';
+    this._options.optionParentOpenedClass = options.optionParentOpenedClass ?? 'custom-select__item_style_parent-opened';
+    this._options.optionSelectableClass = options.optionSelectableClass ?? 'custom-select__item_style_checkbox';
+    this._options.optionSelectedClass = options.optionSelectedClass ?? 'custom-select__item_style_checked';
+    this._options.mobileScreenBreakpoint = options.mobileScreenBreakpoint ?? 900;
+    this._options.firstOptionIsTitle = options.firstOptionIsTitle ?? false;
+    this._options.useTextSearch = options.useTextSearch ?? true;
+    this._options.useSelectCounter = options.useSelectCounter ?? false;
+    this._options.isSplash = options.isSplash ?? true;
 
     this._handleSearch = this._handleSearch.bind(this);
   }
@@ -99,7 +100,8 @@ export default class CustomMultiselect {
 
   _createHeading() {
     const element = document.createElement('h2');
-    element.textContent = "Выбор компетенции";
+    const heading = this._selectElement.querySelector('option').textContent;
+    element.textContent = heading === 'Выбрать' ? 'Выбор компетенции' : heading;
     element.classList.add(
       ...this._handleClassList(this._options.headingClass)
     );
@@ -378,19 +380,17 @@ export default class CustomMultiselect {
 
 
   _getOptions() {
-    this._data = [];
-
     // Рекурсивная функция для прохода по всем уровням вложенности элементов
     function createDataArray(array) {
       //Результирующий массив
       const resultArray = [];
 
-      array.forEach((item, index) => {
+      array.forEach(item => {
         // Обрабатываются только элементы optgroup и option,
         // в противном случае в результирующий массив попадут
         // текстовые узлы
-        if (item.tagName === 'OPTGROUP'
-          || item.tagName === 'OPTION') {
+        if ((item.tagName === 'OPTGROUP'
+          || item.tagName === 'OPTION') && !item.hidden) {
 
           // Объект с параметрами варианта выбора
           resultArray.push({
@@ -413,7 +413,7 @@ export default class CustomMultiselect {
 
     // Если удалось найти внутри элемента select элементы optgroup
     if (optgroups && optgroups.length > 0) {
-      //Передаем их в фукцию для рекурсивного получения данных
+      // Передаем их в функцию для рекурсивного получения данных
       return createDataArray(optgroups);
     }
 
@@ -423,11 +423,21 @@ export default class CustomMultiselect {
 
   //Multi
   _handleItemClick(evt) {
-    // Если элемент списка иммеет класс выбранного (отмеченного) элемента
+    // Если элемент списка имеет класс выбранного (отмеченного) элемента
     if (evt.target.classList.contains(this._options.optionSelectedClass)) {
-      this._removeChips(evt.target.dataset.val);
+      if (this._options.useSelectCounter) {
+        this._labelElement.textContent = this._selectElement
+          .querySelector('option').textContent + `: ${this._selectElement.selectedOptions.length - 1} из ${this._optionTotalCount}`;
+      } else {
+        this._removeChips(evt.target.dataset.val);
+      }
     } else {
-      this._fieldElement.append(this._createChips(evt.target));
+      if (this._options.useSelectCounter) {
+        this._labelElement.textContent = this._selectElement
+          .querySelector('option').textContent + `: ${this._selectElement.selectedOptions.length + 1} из ${this._optionTotalCount}`;
+      } else {
+        this._fieldElement.append(this._createChips(evt.target));
+      }
     }
 
     // Переключение класса "выбранного" (отмеченного) элемента
@@ -437,13 +447,13 @@ export default class CustomMultiselect {
     this._changeOption(evt.target);
 
     // Очистка поля ввода текста
-    this._searchInputElement.value = '';
+    // this._searchInputElement.value = '';
   }
 
 
   //Multi
   _handleParentItemClick(evt) {
-    console.log(window.innerWidth, this._options.mobileScreenBreakpoint, window.outerWidth < this._options.mobileScreenBreakpoint)
+    // console.log(window.innerWidth, this._options.mobileScreenBreakpoint, window.outerWidth < this._options.mobileScreenBreakpoint)
 
     if (window.innerWidth < this._options.mobileScreenBreakpoint) {
       evt.target.classList.toggle(this._options.optionParentOpenedClass);
@@ -468,8 +478,8 @@ export default class CustomMultiselect {
     // Скрываем все родительские пункты списка
     this._optionsListElement.querySelectorAll(`.${this._options.optionParentClass}`)
       .forEach((parentItem) => {
-      parentItem.style.display = 'none';
-    })
+        parentItem.style.display = 'none';
+      })
 
     // Поиск всех элементов списка среди элементов, доступных для выбора
     this._optionsListElement.querySelectorAll(`.${this._options.optionClass}[data-is-selectable="true"]`)
@@ -481,7 +491,9 @@ export default class CustomMultiselect {
           item.style.display = 'list-item';
 
           // Находим родительский пункт списка и делаем его видимым
-          item.closest(`.${this._options.optionParentClass}`).style.display = 'list-item';
+          if (!this._options.useSelectCounter) {
+            item.closest(`.${this._options.optionParentClass}`).style.display = 'list-item';
+          }
 
           resultCounter += 1;
         } else {
@@ -528,8 +540,9 @@ export default class CustomMultiselect {
       this._resetSelectedOption(option);
       this._changeOption(option);
     })
-  }
 
+    this._renderCountSelector();
+  }
 
   _handleChipsClick(evt) {
     const val = evt.target.dataset.val;
@@ -553,7 +566,7 @@ export default class CustomMultiselect {
 
 
   _createItems(data, parentElement) {
-    data.forEach((item, index) => {
+    data.forEach(item => {
       // Создание элемента списка li
       const option = this._createItem();
 
@@ -611,6 +624,13 @@ export default class CustomMultiselect {
     option.classList.remove(this._options.optionSelectedClass);
   }
 
+  _renderCountSelector() {
+    if (this._options.useSelectCounter) {
+      this._labelElement.textContent = this._selectElement
+        .querySelector('option').textContent + `: ${this._selectElement.selectedOptions.length} из ${this._optionTotalCount}`;
+    }
+  }
+
 
   //Multi
   generate() {
@@ -628,6 +648,11 @@ export default class CustomMultiselect {
 
       //Установка обработчиков событий
       this.setEventListeners();
+
+      // Общее кол-во опций
+      this._optionTotalCount = this._selectElement.options.length - 1;
+      // Отрисовка текущего выбора
+      this._renderCountSelector();
     }
   }
 
@@ -671,8 +696,11 @@ export default class CustomMultiselect {
 
 
   openDropdown() {
-    this._optionsListContainerElement.classList
-      .add(this._options.optionsOpenedListContainerClass);
+    this._optionsListContainerElement.classList.add(this._options.optionsOpenedListContainerClass);
+
+    if (this._options.isSplash) {
+      this._optionsListContainerElement.classList.add('splash');
+    }
   }
 
 
@@ -691,7 +719,7 @@ export default class CustomMultiselect {
       }
     });
 
-    this._resetBtnElement.addEventListener('mousedown', (evt) => {
+    this._resetBtnElement.addEventListener('mousedown', () => {
       this._handleResetGroup();
     })
 
@@ -720,7 +748,7 @@ export default class CustomMultiselect {
         // присутствовать элементы optgroup, не имеющие вложенных элементов option
         // В этом случае клик по пункту никак обработан не будет
         if (evt.target.dataset.isSelectable === 'true') {
-          console.log(987)
+          // console.log(987)
           // Обработка клика по элементу
           this._handleItemClick(evt);
 
@@ -729,13 +757,13 @@ export default class CustomMultiselect {
             // После выбора элемента возвращаем фокус на поле
             this._searchInputElement.focus();
           }
-        // Если клик был произведен по элементу списка, который не доступен для
-        // выбора - значит это родительский пункт, при нажатии на который
-        // следует раскрыть дочерний список кликабельных элементов
+          // Если клик был произведен по элементу списка, который не доступен для
+          // выбора - значит это родительский пункт, при нажатии на который
+          // следует раскрыть дочерний список кликабельных элементов
         } else {
           // Перед открытием вложенного списка скрываются все ранее открытые элементы
           this._closeOtherItems();
-          console.log('parent')
+          // console.log('parent')
           this._handleParentItemClick(evt);
         }
 

@@ -1,0 +1,21 @@
+.table__name {
+  width: 100%;
+  max-width: 276px;
+  min-width: 145px;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  text-align: start;
+}
+
+@media screen and (max-width: 900px) {
+  .table__name   {
+    width: 276px;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .table__name {
+    max-width: 200px;
+  }
+}

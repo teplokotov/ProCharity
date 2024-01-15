@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Команда 1 Когорта 23 Web+">
+    <title>ProCharity - Сотрудники / Сотрудник</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__wrap">
+        <button class="menu-icon" type="button"></button>
+        <a href="https://procharity.ru/">
+          <img src="<%=require('./images/logo.svg')%>" alt="ProCharity" class="main-logo">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li>
+              <a href="#" class="header__menu-link">О проекте</a>
+            </li>
+            <li>
+              <a href="#" class="header__menu-link">Задания</a>
+            </li>
+            <li>
+              <a href="#" class="header__menu-link">Волонтерам</a>
+            </li>
+            <li>
+              <a href="#" class="header__menu-link">Для НКО</a>
+            </li>
+            <li>
+              <a href="#" class="header__menu-link">Бизнесу</a>
+            </li>
+            <li>
+              <a href="#" class="header__menu-link">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="search" type="button"></button>
+        <a href="#" class="account-btn">
+          <div class="account-btn__content account-btn__content_type_lk">
+            <span class="account-btn__text">Личный кабинет</span>
+          </div>
+          <div class="account-btn__avatar"></div>
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="main main_template_lk main_pb_small" id="lkAccess">
+        <nav class="breadcrumbs">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Личный кабинет</a>
+            </li>
+            <li class="breadcrumbs__item">Настройки</li>
+          </ul>
+        </nav>
+        <section class="sidebar-nav" aria-label="Боковая панель с разделами профиля">
+          <ul class="sidebar-nav__list">
+            <li class="sidebar-nav__item">
+              <a href="#" class="sidebar-nav__link">
+                <div class="sidebar-nav__step sidebar-nav__step_style_lk">
+                  <span class="sidebar-nav__step-text">1</span>
+                </div>
+                <span class="sidebar-nav__item-text">Пожертвования</span>
+              </a>
+            </li>
+            <li class="sidebar-nav__item sidebar-nav__item_type_current">
+              <div class="sidebar-nav__step sidebar-nav__step_style_lk sidebar-nav__step_type_current">
+                <span class="sidebar-nav__step-text">2</span>
+              </div>
+              <span class="sidebar-nav__item-text">Сотрудники</span>
+            </li>
+            <li class="sidebar-nav__item sidebar-nav__item_type_current">
+              <a href="#" class="sidebar-nav__link">
+                <div class="sidebar-nav__step sidebar-nav__step_style_lk">
+                  <span class="sidebar-nav__step-text">3</span>
+                </div>
+                <span class="sidebar-nav__item-text">Смена пароля</span>
+              </a>
+            </li>
+          </ul>
+          <div class="sidebar-nav__description">
+            <p class="sidebar-nav__description-title">Настройки</p>
+          </div>
+        </section>
+        <section class="sidebar">
+          <h2 class="sidebar__title">Статус профиля</h2>
+          <button class="sidebar__status sidebar__status_state_process" type="button">
+            На модерации
+            <span class="sidebar__tooltip">Пояснение статуса профиля</span>
+          </button>
+        </section>
+        <section class="content">
+          <form action="#" method="get">
+            <h1 class="heading heading_type_title" id="lkAccessHeader">Сотрудники</h1>
+            <fieldset class="fieldset fieldset_template_grid-form fieldset_style_pbm-small" id="fieldsetContainer">
+              <legend class="paragraph paragraph_pb_medium paragraph_pbm_small" id="fieldsetLegend">
+                Приглашайте сотрудников, чтобы они могли размещать задания от имени вашей НКО
+              </legend>
+              <button class="btn btn_style_primary" id="btnAddWorker" type="button">Добавить</button>
+            </fieldset>
+          </form>
+          <table class="table display-none" data-pagecount="10">
+            <thead class="table__head">
+              <tr class="table__row">
+                <th class="table__name-container" data-type="string">
+                  <p class="table__head-text">Фамилия и имя</p>
+                  <button class="table__btn-head"></button>
+                </th>
+                <th class="table__wrench-container" data-type="bool">
+                  <p class="table__head-text">Права</p>
+                  <button class="table__btn-head"></button>
+                </th>
+                <th class="table__data-container" data-type="date">
+                  <p class="table__head-text">Дата регистрации</p>
+                  <button class="table__btn-head"></button>
+                </th>
+                <th class="table__email"></th>
+                <th class="table__edit"></th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <tr class="table__row">
+                <td class="table__name">Виноградов Михаил</td>
+                <td class="table__wrench">
+                  <img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора">
+                </td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">misha@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Новоселова Алевтина</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">12.01.2018 11:27</td>
+                <td class="table__email">novoselova@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Щедрина-Вольфембюттельская Мария</td>
+                <td class="table__wrench">
+                  <img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора">
+                </td>
+                <td class="table__data-cell">28.09.2021 08:04</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Яковлев Анатолий</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">14.12.2020 18:39</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Левина Виктория</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Озеров Филипп</td>
+                <td class="table__wrench">
+                  <img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора">
+                </td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Петухова Ульяна</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Новикова Медина</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Андреева Анна</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Борисов Арсений</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Мухина Лидия</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Баранова Мария</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Прокофьева Амина</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Малахов Матвей</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Малинина Аглая</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Гаврилова Кристина</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Смирнова Анастасия</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Куликова Александра</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Сорокин Марк</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__name">Назарова Дарья</td>
+                <td class="table__wrench"></td>
+                <td class="table__data-cell">16.05.2020 14:30</td>
+                <td class="table__email">user@mail.ru</td>
+                <td class="table__edit">
+                  <div class="table__container-btn">
+                    <button class="table__btn-edit"></button>
+                    <div class="table__menu-container">
+                      <button class="table__btn-redact"></button>
+                      <div class="table__menu-body">
+                        <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+                        <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+                        <div class="table__border-lk"></div>
+                        <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="input input_type_make-sort input_mb_small display-none input_type_desk-none">
+            <select name="makeSort" id="makeSort" class="custom-select">
+              <option>по фамилии и имени</option>
+              <option>по правам администратора</option>
+              <option>по дате регистрации</option>
+            </select>
+          </div>
+          <div class="pagination display-none"></div>
+          <button class="btn btn_style_secondary btn_style_none btn_load_more display-none">Показать еще 5</button>
+        </section>
+      </div>
+      <div class="main main_template_table-element display-none" id="lkAccessItem">
+        <nav class="breadcrumbs breadcrumbs_type_mobile">
+          <ul class="breadcrumbs__list breadcrumbs__list_pt_small">
+            <li class="breadcrumbs__item">
+              <button class="breadcrumbs__btn breadcrumbs__btn_type_return" type="button" id="btnReturnToTable">Сотрудники</button>
+            </li>
+          </ul>
+        </nav>
+        <section class="content" aria-label="Настройки учётной записи сотрудника"></section>
+      </div>
+    </main>
+    <footer class="footer">
+      <nav class="footer__menu">
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a href="#" class="footer__menu-title-link">О проекте</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">О платформе</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Команда</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Новости</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Документы</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Партнеры</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Отзывы</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Контакты</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Пожертвовать в фонды</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a href="#" class="footer__menu-title-link">Задания</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Ждут исполнителей</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">В работе</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Выполненные</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a href="#" class="footer__menu-title-link">Волонтерам</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Как помочь</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Задания</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Список НКО</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Бонусы</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Отзывы волонтеров</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Премия ProCharity</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a href="#" class="footer__menu-title-link">Фондам</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Как получить помощь</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Список волонтеров</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Компании-волонтеры</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Отзывы НКО</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Вебинары</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a href="#" class="footer__menu-title-link">Бизнесу</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Как помочь</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Список НКО</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Отзывы НКО</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a href="#" class="footer__menu-title-link">FAQ</a>
+          </h2>
+        </div>
+      </nav>
+      <div class="footer__logo-container">
+        <ul class="footer__firms-list">
+          <li class="footer__firms-item">
+            <p class="footer__logo-text">Создатель проекта</p>
+            <a href="#" class="footer__firms-link">
+              <img src="<%=require('./images/logo_fund_frainds.svg')%>" alt="Фонд Друзья" class="footer__logo-img">
+            </a>
+          </li>
+          <li class="footer__firms-item">
+            <p class="footer__logo-text">Генеральный партнер</p>
+            <a href="#" class="footer__firms-link">
+              <img src="<%=require('./images/logo_mastercard.svg')%>" alt="Mastercard" class="footer__logo-img">
+            </a>
+          </li>
+          <li class="footer__firms-item">
+            <a href="#" class="footer__firms-link">
+              <img src="<%=require('./images/pgrants logo gark.svg')%>" alt="Фонд президентских грантов" class="footer__logo-img">
+            </a>
+          </li>
+        </ul>
+        <ul class="footer__social">
+          <li>
+            <a href="#">
+              <img src="<%=require('./images/facebook.svg')%>" alt="Facebook" class="footer__social-img">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="<%=require('./images/instagramm.svg')%>" alt="Instagramm-logo" class="footer__logo-img">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="<%=require('./images/vk.svg')%>" alt="Vk" class="footer__logo-img">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="copy">
+        <p class="copy__text">&copy; 2017-2019 ProCharity</p>
+        <p class="copy__text">
+          <a href="#" class="copy__link">Юридическая информация и защита персональных данных</a>
+        </p>
+        <a href="#" class="buroburo-logo">
+          <img src="<%=require('./images/logo_buroburo.svg')%>" alt="Бюробюро">
+        </a>
+      </div>
+    </footer>
+    <div class="popup popup_type_window popup_type_window-bottom" id="popupAddEmployer">
+      <div class="popup__container">
+        <h2 class="heading heading_type_title popup__title">Новый сотрудник</h2>
+        <form class="form" novalidate>
+          <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column">
+            <div class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="isAdmin" id="isAdminFirst">
+              <label for="isAdminFirst" class="checkbox__label">Права администратора</label>
+              <button class="hint" type="button">
+                <span class="hint__tooltip hint__tooltip_position_center-bottom">
+                  <span class="paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</span>
+                  <span class="list-ul">
+                    <span class="list-ul__items">добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</span>
+                    <span class="list-ul__items">редактировать профиль организации.</span>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div class="input">
+              <input
+                type="text"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="name"
+                placeholder="Имя"
+                value=""
+                required>
+              <label class="input__label">Имя</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+            <div class="input">
+              <input
+                type="text"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="surname"
+                placeholder="Фамилия"
+                value=""
+                required>
+              <label class="input__label">Фамилия</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+            <div class="input">
+              <input
+                type="email"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="email"
+                placeholder="Электронная почта"
+                value=""
+                required>
+              <label class="input__label">Электронная почта</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn_style_primary">Добавить</button>
+          <button type="button" class="btn btn_type_close popup__btn-close"></button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_type_window popup_type_window-bottom" id="popupEditEmployer">
+      <div class="popup__container">
+        <h2 class="heading heading_type_title popup__title">Данные сотрудника</h2>
+        <form class="form" novalidate>
+          <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column">
+            <div class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="isAdmin" id="isAdminSecond">
+              <label for="isAdminSecond" class="checkbox__label">Права администратора</label>
+              <button class="hint" type="button">
+                <span class="hint__tooltip hint__tooltip_position_center-bottom">
+                  <span class="paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</span>
+                  <span class="list-ul">
+                    <span class="list-ul__items">добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</span>
+                    <span class="list-ul__items">редактировать профиль организации.</span>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div class="input">
+              <input
+                type="text"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="name"
+                placeholder="Имя"
+                value=""
+                required>
+              <label class="input__label">Имя</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+            <div class="input">
+              <input
+                type="text"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="surname"
+                placeholder="Фамилия"
+                value=""
+                required>
+              <label class="input__label">Фамилия</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+            <div class="input">
+              <input
+                type="email"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="email"
+                placeholder="Электронная почта"
+                value=""
+                required>
+              <label class="input__label">Электронная почта</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn_style_primary">Сохранить</button>
+          <button type="button" class="btn btn_type_close popup__btn-close"></button>
+        </form>
+      </div>
+    </div>
+    <div class="messages">
+      <div class="popup popup_type_message popup_opened" id="popupAlertPassword">
+        <div class="popup__container">
+          <p class="popup__title popup__title_style_weight">
+            Приглашение и пароль для входа в личный кабинет отправили на электронную почту
+            <a href="mailto:user@mail.ru" class="link">user@mail.ru</a>
+          </p>
+          <button type="button" class="btn btn_type_close popup__btn-close"></button>
+        </div>
+      </div>
+      <div class="popup popup_type_message popup_opened" id="popupAlertError">
+        <div class="popup__container">
+          <p class="popup__title popup__title_style_weight popup__title_type_error">
+            Не удалось добавить сотрудника Обновите страницу или попробуйте позже
+          </p>
+          <button type="button" class="btn btn_type_close popup__btn-close"></button>
+        </div>
+      </div>
+      <div class="popup popup_type_message popup_opened" id="popupAlertData">
+        <div class="popup__container">
+          <p class="popup__title popup__title_style_weight">Яблочкина Виктория</p>
+          <p class="popup__text">Данные пользователя успешно удалены</p>
+          <button type="button" class="btn btn_type_close popup__btn-close"></button>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_type_window popup_type_window-bottom" id="popupReset">
+      <div class="popup__container">
+        <h2 class="heading heading_type_title popup__title">Сбросить пароль сотрудника?</h2>
+        <p class="popup__paragraph popup__paragraph_style_fat">
+          Новый пароль будет отправлен на электронную почту
+          <a href="mailto:found@mail.ru" class="link">found@mail.ru</a>
+        </p>
+        <form class="form" id="resetWorkerPassword" novalidate>
+          <button type="submit" class="btn btn_style_primary">Сбросить</button>
+        </form>
+        <button type="button" class="btn btn_type_close popup__btn-close"></button>
+      </div>
+    </div>
+    <div class="popup popup_type_window popup_type_window-bottom" id="popupDelete">
+      <div class="popup__container">
+        <h2 class="heading heading_type_title popup__title">Удалить данные сотрудника?</h2>
+        <p class="popup__paragraph popup__paragraph_style_fat">Данные о сотруднике Новоселова Алевтина будут удалены</p>
+        <form class="form" id="removeWorkerData" novalidate>
+          <button type="submit" class="btn btn_style_primary">Удалить</button>
+        </form>
+        <button type="button" class="btn btn_type_close popup__btn-close"></button>
+      </div>
+    </div>
+    <template id="contextMenu">
+      <div class="table__container-btn">
+        <button class="table__btn-edit"></button>
+        <div class="table__menu-container">
+          <button class="table__btn-redact"></button>
+          <div class="table__menu-body">
+            <button class="table__btn-lk" type="button">Личный кабинет сотрудника</button>
+            <button class="table__btn-lk btnReset" type="button">Сбросить пароль</button>
+            <div class="table__border-lk"></div>
+            <button class="table__btn-lk table__btn-lk_color-text btnDelete" type="button">Удалить</button>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="profileSettings">
+      <div class="table-element">
+        <div class="table-element__group">
+          <div class="table-element__info">
+            <h1 class="table-element__text table-element__text_type_title"></h1>
+            <div class="table-element__wrench-container"></div>
+          </div>
+          <div class="table-element__info">
+            <p class="table-element__text table-element__text_type_subtitle">Дата регистрации</p>
+            <p class="table-element__text table-element__text_type_date"></p>
+          </div>
+        </div>
+        <div class="table-element__buttons">
+          <button class="btn btn_style_primary btn_style_wide" id="changeData" type="button">Изменить данные</button>
+          <button class="btn btn_style_secondary btn_style_wide" id="openProfile" type="button">Личный кабинет сотрудника</button>
+          <button class="btn btn_style_secondary btn_style_wide" id="resetPassword" type="button">Сбросить пароль</button>
+          <button class="btn btn_style_dark btn_style_wide" id="deleteUser" type="button">Удалить</button>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

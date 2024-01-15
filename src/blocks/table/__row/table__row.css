@@ -1,0 +1,14 @@
+.table__row {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  border-bottom:  1px solid #E3E9F0;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 900px) {
+  .table__row {
+    cursor: pointer;
+    justify-content: space-between;
+  }
+}

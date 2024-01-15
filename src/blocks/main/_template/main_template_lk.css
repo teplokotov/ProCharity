@@ -1,6 +1,6 @@
 .main_template_lk {
   grid-template-columns: 256px minmax(min-content, 736px);
-  grid-template-rows: repeat(3, minmax(min-content, max-content)) 100%;
+  grid-template-rows: repeat(3, minmax(min-content, max-content)) auto;
 }
 
 @media screen and (max-width: 900px) {

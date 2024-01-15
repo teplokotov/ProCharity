@@ -1,0 +1,14 @@
+.link-published__content {
+    border: 1px solid #A0ABB5;
+    border-radius: 8px;
+
+    padding: 19px 16px;
+
+    position: relative;
+}
+
+@media screen and (max-width: 900px) {
+    .link-published__content {
+        padding: 14px 16px;
+    }
+  }

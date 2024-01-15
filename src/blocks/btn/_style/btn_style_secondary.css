@@ -1,10 +1,10 @@
 .btn_style_secondary {
-  border: 1px solid #A0ABB5;
   box-sizing: border-box;
   color: #374045;
   max-width: max-content;
-  padding: 18px 30px;
+  padding: 20px 29px;
   width: 100%;
+  border: 1px solid #A0ABB5;
 }
 
 .btn_style_secondary:hover {
@@ -14,15 +14,13 @@
 }
 
 .btn_style_secondary:focus {
-  border: 2px solid #7B878F;
+  border: 1px solid #7B878F;
   color: #374045;
-  padding: 17px 29px;
 }
 
 .btn_style_secondary:active {
-  border: solid 1px #CC4D00;
+  border: 1px solid #CC4D00;
   color: #CC4D00;
-  padding: 18px 30px;
 }
 
 .btn_style_secondary:disabled {
@@ -31,7 +29,6 @@
 
 @media screen and (max-width: 900px) {
   .btn_style_secondary {
-    margin: 0 auto;
     max-width: 100%;
     order: 1;
     width: 100%;

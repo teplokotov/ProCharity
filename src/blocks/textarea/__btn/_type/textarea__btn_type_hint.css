@@ -1,0 +1,5 @@
+.textarea__btn_type_hint {
+  display: block;
+  position: absolute;
+  cursor: help;
+}

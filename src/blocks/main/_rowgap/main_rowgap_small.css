@@ -1,0 +1,6 @@
+@media screen and (max-width: 900px) {
+  .main_rowgap_small {
+    row-gap: 16px;
+    padding-bottom: 64px;
+  }
+}

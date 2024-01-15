@@ -11,6 +11,7 @@
   padding: 12px 0;
   text-align: center;
   width: 100%;
+  letter-spacing: .5px;
 }
 
 .uploader__input:hover + .uploader__label {

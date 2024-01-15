@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Команда 1 Когорта 23 Web+">
+    <title>ProCharity - Сотрудник</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__wrap">
+        <button class="menu-icon" type="button"></button>
+        <a href="https://procharity.ru/">
+          <img src="<%=require('./images/logo.svg')%>" alt="ProCharity" class="main-logo">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li>
+              <a class="header__menu-link" href="#">О проекте</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Задания</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Волонтерам</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Для НКО</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Бизнесу</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="search" type="button"></button>
+        <a class="account-btn" href="#">
+          <div class="account-btn__content account-btn__content_type_lk">
+            <span class="account-btn__text">Личный кабинет</span>
+          </div>
+          <div class="account-btn__avatar"></div>
+        </a>
+      </div>
+    </header>
+    <main class="main main_template_table-element">
+      <nav class="breadcrumbs breadcrumbs_type_mobile">
+        <ul class="breadcrumbs__list breadcrumbs__list_pt_small">
+          <li class="breadcrumbs__item">
+            <button class="breadcrumbs__btn breadcrumbs__btn_type_return" type="button">Сотрудники</button>
+          </li>
+        </ul>
+      </nav>
+      <section class="content">
+        <div class="table-element">
+          <div class="table-element__group">
+            <div class="table-element__info">
+              <h1 class="table-element__text table-element__text_type_title">Виноградов Михаил</h1>
+              <div class="table-element__wrench-container">
+                <img src="<%=require('./images/Table-key.svg')%>" alt="Права администратора">
+              </div>
+            </div>
+            <div class="table-element__info">
+              <p class="table-element__text table-element__text_type_subtitle">Дата регистрации</p>
+              <p class="table-element__text table-element__text_type_date">16.05.2020 14:30</p>
+            </div>
+          </div>
+          <div class="table-element__buttons">
+            <button class="btn btn_style_primary btn_style_wide" id="changeData" type="button">Изменить данные</button>
+            <button class="btn btn_style_secondary btn_style_wide" id="openProfile" type="button">Личный кабинет сотрудника</button>
+            <button class="btn btn_style_secondary btn_style_wide" id="resetPassword" type="button">Сбросить пароль</button>
+            <button class="btn btn_style_dark btn_style_wide" id="deleteUser" type="button">Удалить</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <nav class="footer__menu">
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a class="footer__menu-title-link" href="#">О проекте</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">О платформе</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Команда</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Новости</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Документы</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Партнеры</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Отзывы</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Контакты</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Пожертвовать в фонды</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a class="footer__menu-title-link" href="#">Задания</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Ждут исполнителей</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">В работе</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Выполненные</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a class="footer__menu-title-link" href="#">Волонтерам</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Как помочь</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Задания</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Список НКО</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Бонусы</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Отзывы волонтеров</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Премия ProCharity</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a class="footer__menu-title-link" href="#">Фондам</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Как получить помощь</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Список волонтеров</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Компании-волонтеры</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Отзывы НКО</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Вебинары</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a class="footer__menu-title-link" href="#">Бизнесу</a>
+          </h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Как помочь</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Список НКО</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Отзывы НКО</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__menu-chapter">
+          <h2 class="footer__menu-title">
+            <a class="footer__menu-title-link" href="#">FAQ</a>
+          </h2>
+        </div>
+      </nav>
+      <div class="footer__logo-container">
+        <ul class="footer__firms-list">
+          <li class="footer__firms-item">
+            <p class="footer__logo-text">Создатель проекта</p>
+            <a class="footer__firms-link" href="#">
+              <img alt="Фонд Друзья" class="footer__logo-img" src="<%=require('./images/logo_fund_frainds.svg')%>">
+            </a>
+          </li>
+          <li class="footer__firms-item">
+            <p class="footer__logo-text">Генеральный партнер</p>
+            <a class="footer__firms-link" href="#">
+              <img alt="Mastercard" class="footer__logo-img" src="<%=require('./images/logo_mastercard.svg')%>">
+            </a>
+          </li>
+          <li class="footer__firms-item">
+            <a class="footer__firms-link" href="#">
+              <img alt="Фонд президентских грантов" class="footer__logo-img" src="<%=require('./images/pgrants logo gark.svg')%>">
+            </a>
+          </li>
+        </ul>
+        <ul class="footer__social">
+          <li>
+            <a href="#">
+              <img alt="Facebook" class="footer__social-img" src="<%=require('./images/facebook.svg')%>">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img alt="Instagramm-logo" class="footer__logo-img" src="<%=require('./images/instagramm.svg')%>">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img alt="Vk" class="footer__logo-img" src="<%=require('./images/vk.svg')%>">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="copy">
+        <p class="copy__text">&copy; 2017-2019 ProCharity</p>
+        <p class="copy__text">
+          <a class="copy__link" href="#">Юридическая информация и защита персональных данных</a>
+        </p>
+        <a class="buroburo-logo" href="#">
+          <img alt="Бюробюро" src="<%=require('./images/logo_buroburo.svg')%>">
+        </a>
+      </div>
+    </footer>
+    <div class="popup popup_type_window popup_type_window-bottom" id="popupEditEmployerItem">
+      <div class="popup__container">
+        <h2 class="heading heading_type_title popup__title">Данные сотрудника</h2>
+        <form class="form" novalidate>
+          <fieldset class="fieldset fieldset_style_pb-small fieldset_style_input-column">
+            <div class="checkbox">
+              <input type="checkbox" class="checkbox__input" name="isAdmin" id="isAdminSecond">
+              <label for="isAdminSecond" class="checkbox__label">Права администратора</label>
+              <button class="hint" type="button">
+                <span class="hint__tooltip hint__tooltip_position_center-bottom">
+                  <span class="paragraph paragraph_slim">Сотрудник с&nbsp;правами администратора может:</span>
+                  <span class="list-ul">
+                    <span class="list-ul__items">добавлять коллег в&nbsp;личный кабинет НКО и&nbsp;удалять их&nbsp;оттуда,</span>
+                    <span class="list-ul__items">редактировать профиль организации.</span>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div class="input">
+              <input
+                type="text"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="name"
+                placeholder="Имя"
+                value="Михаил"
+                required>
+              <label class="input__label">Имя</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+            <div class="input">
+              <input
+                type="text"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="surname"
+                placeholder="Фамилия"
+                value="Виноградов"
+                required>
+              <label class="input__label">Фамилия</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+            <div class="input">
+              <input
+                type="email"
+                class="input__field input__field_default input__field_interval_right_small"
+                name="email"
+                placeholder="Электронная почта"
+                value="found@mail.ru"
+                required>
+              <label class="input__label">Электронная почта"</label>
+              <button type="button" class="btn input__btn input__btn_type_clear-text"></button>
+              <span class="input__error-message">Ошибка</span>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn_style_primary">Сохранить</button>
+          <button type="button" class="btn btn_type_close popup__btn-close"></button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_type_window popup_type_window-bottom" id="popupResetItem">
+      <div class="popup__container">
+        <div class="popup__content">
+          <h2 class="heading heading_type_title popup__title">Сбросить пароль сотрудника?</h2>
+          <p class="popup__paragraph popup__paragraph_style_fat">
+            Новый пароль будет отправлен на электронную почту
+            <a href="mailto:found@mail.ru" class="link">found@mail.ru</a>
+          </p>
+          <form class="form" novalidate>
+            <button class="btn btn_style_primary" type="submit">Сбросить</button>
+          </form>
+          <button class="btn btn_type_close popup__btn-close" type="button"></button>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_type_window popup_type_window-bottom" id="popupDeleteItem">
+      <div class="popup__container">
+        <div class="popup__content">
+          <h2 class="heading heading_type_title popup__title">Удалить данные сотрудника?</h2>
+          <p class="popup__paragraph popup__paragraph_style_fat">Данные о сотруднике Виноградов Михаил будут удалены</p>
+          <form class="form" novalidate>
+            <button class="btn btn_style_primary" type="submit">Удалить</button>
+          </form>
+          <button class="btn btn_type_close popup__btn-close" type="button"></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

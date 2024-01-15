@@ -1,0 +1,14 @@
+.table__data-cell {
+  width: 100%;
+  max-width: 174px;
+  min-width: 145px;
+  text-align: left;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 900px) {
+  .table__data-cell   {
+    display: none;
+  }
+}

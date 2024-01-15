@@ -1,0 +1,11 @@
+@media screen and (max-width: 900px) {
+    .breadcrumbs_type_mobile {
+      display: flex;
+    }
+}
+
+.breadcrumbs_type_mobile .breadcrumbs__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

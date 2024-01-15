@@ -1,0 +1,12 @@
+@media screen and (max-width: 450px) {
+  .popup_type_window-bottom {
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

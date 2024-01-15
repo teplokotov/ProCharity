@@ -1,0 +1,12 @@
+.table__edit {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 190px;
+}
+
+@media screen and (max-width: 900px) {
+  .table__edit {
+    display: none;
+  }
+}

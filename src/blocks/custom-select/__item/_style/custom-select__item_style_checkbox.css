@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 900px) {
-  .custom-select__item_style_checkbox {
+  .custom-select__list-container.splash .custom-select__item_style_checkbox {
     background: none;
     border: solid 1px #C7D0DA;
     border-radius: 20px;
@@ -20,7 +20,7 @@
     width: fit-content;
   }
 
-  .custom-select__item_style_checkbox:hover {
+  .custom-select__list-container.splash .custom-select__item_style_checkbox:hover {
     background: none;
   }
 }

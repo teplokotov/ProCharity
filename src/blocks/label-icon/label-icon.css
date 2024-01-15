@@ -1,0 +1,11 @@
+.label-icon {
+  width: 40px;
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  .label-icon {
+    /*width: 33.33px;*/
+    /*height: 33.33px;*/
+  }
+}

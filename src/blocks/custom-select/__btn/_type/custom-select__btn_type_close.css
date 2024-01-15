@@ -1,0 +1,14 @@
+.custom-select__btn_type_close {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .custom-select__list-container.splash .custom-select__btn_type_close {
+    display: block;
+    height: 20px;
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    width: 20px;
+  }
+}

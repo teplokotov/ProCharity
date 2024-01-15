@@ -5,9 +5,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: {
-        main: './src/index.js',
-        layout: './src/layout.js',
-        content: './src/content.js',
+        main: './src/scripts/index.js',
+        layout: './src/scripts/layout.js',
+        content: './src/scripts/content.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -108,6 +108,86 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'settings-profile.html',
             template: './src/settings-profile.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-contacts.html',
+            template: './src/registration-npo-contacts.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-confirmation-email.html',
+            template: './src/registration-npo-confirmation-email.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-legal.html',
+            template: './src/registration-npo-legal.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-documents.html',
+            template: './src/registration-npo-documents.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-decription.html',
+            template: './src/registration-npo-decription.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-links.html',
+            template: './src/registration-npo-links.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration-npo-final.html',
+            template: './src/registration-npo-final.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-contacts.html',
+            template: './src/lk-npo-contacts.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-legal.html',
+            template: './src/lk-npo-legal.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-documents.html',
+            template: './src/lk-npo-documents.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-description.html',
+            template: './src/lk-npo-description.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-npo-links.html',
+            template: './src/lk-npo-links.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-access.html',
+            template: './src/lk-access.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-change-password.html',
+            template: './src/lk-change-password.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-donations.html',
+            template: './src/lk-donations.html',
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'lk-access-item.html',
+            template: './src/lk-access-item.html',
             inject: 'body'
         }),
         new CleanWebpackPlugin(),

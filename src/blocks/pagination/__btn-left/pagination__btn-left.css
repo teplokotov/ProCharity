@@ -1,0 +1,18 @@
+.pagination__btn-left {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/TableArrowLeft.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent; 
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  transition: 0.1s linear;
+}
+
+.pagination__btn-left:hover {
+  transition: 0.2s linear;
+  background-image: url(../../../images/TableArrowLeftHover.svg);
+}

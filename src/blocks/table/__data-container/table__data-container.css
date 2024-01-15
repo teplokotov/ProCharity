@@ -1,0 +1,12 @@
+.table__data-container {
+  width: 100%;
+  max-width: 164px;
+  min-width: 145px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+

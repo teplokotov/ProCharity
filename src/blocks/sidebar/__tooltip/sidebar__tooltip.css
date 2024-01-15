@@ -1,0 +1,44 @@
+.sidebar__tooltip {
+  background: #FFFFFF;
+  border-radius: 8px;
+  bottom: 30px;
+  box-shadow: 0 4px 24px rgba(0, 77, 95, 0.24);
+  box-sizing: border-box;
+  color: #58646A;
+  display: none;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  height: min-content;
+  line-height: 20px;
+  margin: 0;
+  width: 100%;
+  max-width: 280px;
+  /*min-width: 352px;*/
+  padding: 12px 16px;
+  position: absolute;
+  left: 0;
+  text-align: left;
+  z-index: 3;
+  text-transform: none;
+}
+
+.sidebar__tooltip::after {
+  border: solid 8px transparent;
+  border-top-color: #fff;
+  bottom: -16px;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 16px;
+}
+
+.sidebar__status:focus > .sidebar__tooltip {
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar__tooltip {
+    min-width: 240px;
+  }
+}

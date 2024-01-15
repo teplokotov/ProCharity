@@ -1,0 +1,10 @@
+.btn_style_none {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .btn_style_none   {
+    display: flex;
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,27 @@
+.btn_style_dark {
+  background: #3A464C;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  min-width: max-content;
+  padding: 19px 29px;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.btn_style_dark:hover {
+  background: #283238;
+  opacity: 1;
+}
+
+.btn_style_dark:focus {
+  background: #24323b;
+  border: 1px solid #1e2b33;
+}
+
+.btn_style_dark:active {
+  background: #17242c;
+}
+
+.btn_style_dark:disabled {
+  opacity: .6;
+}
